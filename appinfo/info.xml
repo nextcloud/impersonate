@@ -31,6 +31,6 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <bugs>https://github.com/nextcloud/impersonate/issues</bugs>
     <repository type="git">https://github.com/nextcloud/impersonate.git</repository>
     <dependencies>
-        <nextcloud min-version="12.0" max-version="12.0" />
+        <nextcloud min-version="12" max-version="12" />
     </dependencies>
 </info>
