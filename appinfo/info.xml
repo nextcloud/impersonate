@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<info>
+    <id>impersonate</id>
+    <name>Impersonate</name>
+    <summary>Impersonate other users</summary>
+    <description><![CDATA[By installing the impersonate app of your Nextcloud you enable administrators to impersonate other users on the Nextcloud server. This is especially useful for debugging issues reported by users.
+
+To impersonate an user an administrator has to simply follow the following three steps:
+
+1. Login as administrator to Nextcloud
+2. Open the user administration interface
+3. Select the impersonate button on the affected user
+4. Confirm the impersonation
+
+The administrator is then logged-in as the user, to switch back to the regular user account they simply have to press the logout button.
+
+**Note:**
+
+- This app is not compatible with instances that have encryption enabled.
+- While impersonate actions are logged note that actions performed impersonated will be logged as the impersonated user.
+- Impersonating an user is only possible after their first login.]]></description>
+    <licence>agpl</licence>
+    <category>tools</category>
+    <author>Nextcloud</author>
+    <version>1.0.0</version>
+    <namespace>Impersonate</namespace>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/1.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/2.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/3.png</screenshot>
+    <website>https://github.com/nextcloud/impersonate</website>
+    <bugs>https://github.com/nextcloud/impersonate/issues</bugs>
+    <repository type="git">https://github.com/nextcloud/impersonate.git</repository>
+    <dependencies>
+        <nextcloud min-version="12.0" max-version="12.0" />
+    </dependencies>
+</info>
