@@ -22,7 +22,7 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <licence>agpl</licence>
     <category>tools</category>
     <author>Nextcloud</author>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <namespace>Impersonate</namespace>
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/1.png</screenshot>
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/2.png</screenshot>
