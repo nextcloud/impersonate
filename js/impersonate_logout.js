@@ -2,14 +2,9 @@ $(document).ready(function () {
 
 	$("#logout").attr("href","#");
 
-	var text = t(
-		'core',
-		'<a href="{docUrl}">{displayText}</a>',
-		{
-			docUrl: OC.generateUrl('apps/files'),
-			displayText: "Logged in as " + OC.getCurrentUser().uid
-		}
-	);
+	var text = '<a href="' + OC.generateUrl('apps/files') + '">' +
+		t('core', 'Logged in as {uid}', {uid: OC.getCurrentUser().uid}) +
+		'</a>';
 
 	OC.Notification.showHtml(
 		text,
