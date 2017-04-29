@@ -4,7 +4,6 @@ OC.L10N.register(
     "Could not impersonate user" : "Der Benutzer konnte nicht nachgeahmt werden",
     "Impersonate" : "Nachahmen",
     "Are you sure you want to impersonate \"{userId}\"?" : "Möchtest Du wirklich  \"{userId}\" nachahmen?",
-    "Impersonate user" : "Benutzer nachahmen",
-    "<a href=\"{docUrl}\">{displayText}</a>" : "<a href=\"{docUrl}\">{displayText}</a>"
+    "Impersonate user" : "Benutzer nachahmen"
 },
 "nplurals=2; plural=(n != 1);");

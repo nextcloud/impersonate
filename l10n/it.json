@@ -1,0 +1,7 @@
+{ "translations": {
+    "Could not impersonate user" : "Impossibile impersonare l'utente",
+    "Impersonate" : "Impersona",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Sei sicuro di voler impersonare \"{userId}\"?",
+    "Impersonate user" : "Impersona utente"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

@@ -4,7 +4,6 @@ OC.L10N.register(
     "Could not impersonate user" : "Kişinin yerine geçilemedi",
     "Impersonate" : "Yerine Geç",
     "Are you sure you want to impersonate \"{userId}\"?" : "\"{userId}\" kullanıcısının yerine geçmek istediğinize emin misiniz?",
-    "Impersonate user" : "Kullanıcının Yerine Geç",
-    "<a href=\"{docUrl}\">{displayText}</a>" : "<a href=\"{docUrl}\">{displayText}</a>"
+    "Impersonate user" : "Kullanıcının Yerine Geç"
 },
 "nplurals=2; plural=(n > 1);");
