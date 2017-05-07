@@ -1,0 +1,6 @@
+{ "translations": {
+    "Could not impersonate user" : "Αδυνατή η παραποίηση του χρήστη",
+    "Impersonate" : "Προσωποποιημένο",
+    "Logged in as {uid}" : "Συνδεδεμένος ως {uid}"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
