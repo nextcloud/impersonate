@@ -3,7 +3,7 @@ OC.L10N.register(
     {
     "Could not impersonate user" : "ვერ განვასახიერეთ მომხმარებელი",
     "Impersonate" : "განსახიერება",
-    "Are you sure you want to impersonate \"{userId}\"?" : "დარწმუნებული ხართ რომ გსურთ განასაიეროთ \"{userId}\"?",
+    "Are you sure you want to impersonate \"{userId}\"?" : "დარწმუნებული ხართ რომ გსურთ განასახიეროთ \"{userId}\"?",
     "Impersonate user" : "მომხმარებელის განსახიერება",
     "Logged in as {uid}" : "ავტორიზებული ხართ როგორც {uid} "
 },
