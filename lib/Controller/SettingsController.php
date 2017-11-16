@@ -76,8 +76,19 @@ class SettingsController extends Controller {
 		$user = $this->userManager->get($userId);
 		if ($user === null) {
 			return new JSONResponse(
-				sprintf('No user found for %s', $userId),
+				[
+					'message' => sprintf('No user found for %s', $userId),
+				],
 				Http::STATUS_NOT_FOUND
+			);
+		}
+
+		if ($user->getLastLogin() === 0) {
+			return new JSONResponse(
+				[
+					'message' => sprintf('Can\'t impersonate %s, user has to be logged in at least once.', $userId),
+				],
+				Http::STATUS_FORBIDDEN
 			);
 		}
 
