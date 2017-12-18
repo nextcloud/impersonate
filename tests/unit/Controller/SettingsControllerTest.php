@@ -75,7 +75,7 @@ class SettingsControllerTest extends TestCase {
 			->method('setUser');
 
 		$this->assertEquals(
-			new JSONResponse('No user found for notexisting@uid', Http::STATUS_NOT_FOUND),
+			new JSONResponse(['message' => 'No user found for notexisting@uid'], Http::STATUS_NOT_FOUND),
 			$this->controller->impersonate('notexisting@uid')
 		);
 	}
