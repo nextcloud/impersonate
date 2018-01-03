@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "Nem sikerült a felhasználó megszemélyesítése",
-    "Impersonate" : "Megszemélyesítés",
     "Are you sure you want to impersonate \"{userId}\"?" : "Biztosan meg akarod személyesíteni \"{userId}\"-t?",
     "Impersonate user" : "Felhasználó megszemélyesítése",
-    "Logged in as {uid}" : "Bejelentkezve {uid} néven"
+    "Logged in as {uid}" : "Bejelentkezve {uid} néven",
+    "Impersonate" : "Megszemélyesítés"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
