@@ -1,4 +1,5 @@
-(function(){
+/* global OC, $ */
+(function(OC, $){
 
 	$(document).ready(function() {
 		if(!OC.isUserAdmin()) {
@@ -16,13 +17,17 @@
 			});
 		}
 
-        $('<li><a href="#" class="menuitem permanent impersonate">' +
-            '<span class="icon icon-user"></span><span>Impersonate</span></a></li>').insertAfter(
-                $(".userActionsMenu").find("li:last-child"));
+		var $impersonateAction = $('<li>').append(
+			$('<a>').attr('href', '#').addClass('menuitem action-impersonate permanent')
+				.append($('<span>').addClass('icon icon-user'))
+				.append($('<span>').text(t('impersonate', 'Impersonate')))
+		);
 
-		$('body').on('click', '.impersonate', function() {
+		$impersonateAction.insertAfter($(".userActionsMenu").find("li:last-child"));
+
+		$('body').on('click', '.action-impersonate', function() {
 			var userId = $(this).parents('tr').find('.name').text();
-			OCdialogs.confirm(
+			OC.dialogs.confirm(
 				t('impersonate', 'Are you sure you want to impersonate "{userId}"?', {userId: userId}),
 				t('impersonate', 'Impersonate user' ),
 				function(result) {
@@ -36,4 +41,4 @@
 
 	});
 
-})();
+})(OC, $);
