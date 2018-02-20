@@ -2,10 +2,6 @@
 (function(OC, $){
 
 	$(document).ready(function() {
-		if(!OC.isUserAdmin()) {
-			return;
-		}
-
 		function impersonate(userId) {
 			$.post(
 				OC.generateUrl('apps/impersonate/user'),
