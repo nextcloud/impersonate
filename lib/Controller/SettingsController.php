@@ -14,6 +14,7 @@ namespace OCA\Impersonate\Controller;
 use OC\Group\Manager;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
+use OCP\IConfig;
 use OCP\IGroupManager;
 use OCP\IL10N;
 use OCP\ILogger;
@@ -33,6 +34,8 @@ class SettingsController extends Controller {
 	private $userSession;
 	/** @var ISession */
 	private $session;
+	/** @var IConfig */
+	private $config;
 	/** @var ILogger */
 	private $logger;
 	/** @var IL10N */
@@ -45,6 +48,7 @@ class SettingsController extends Controller {
 	 * @param IGroupManager $groupManager
 	 * @param IUserSession $userSession
 	 * @param ISession $session
+	 * @param IConfig $config
 	 * @param ILogger $logger
 	 * @param IL10N $l
 	 */
@@ -54,6 +58,7 @@ class SettingsController extends Controller {
 								IGroupManager $groupManager,
 								IUserSession $userSession,
 								ISession $session,
+								IConfig $config,
 								ILogger $logger,
 								IL10N $l) {
 		parent::__construct($appName, $request);
@@ -61,6 +66,7 @@ class SettingsController extends Controller {
 		$this->groupManager = $groupManager;
 		$this->userSession = $userSession;
 		$this->session = $session;
+		$this->config = $config;
 		$this->logger = $logger;
 		$this->l = $l;
 	}
@@ -102,6 +108,18 @@ class SettingsController extends Controller {
 
 		if (!$this->groupManager->isAdmin($currentUser->getUID())
 			&& !$this->groupManager->getSubAdmin()->isUserAccessible($currentUser, $user)) {
+			return new JSONResponse(
+				[
+					'message' => $this->l->t('Not enough permissions to impersonate user'),
+				],
+				Http::STATUS_FORBIDDEN
+			);
+		}
+
+		$authorized = json_decode($this->config->getAppValue('impersonate', 'authorized', '["admin"]'));
+		$userGroups = $this->groupManager->getUserGroupIds($currentUser);
+
+		if (!array_intersect($userGroups, $authorized)) {
 			return new JSONResponse(
 				[
 					'message' => $this->l->t('Not enough permissions to impersonate user'),
