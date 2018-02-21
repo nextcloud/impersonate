@@ -20,18 +20,26 @@ The administrator is then logged-in as the user, to switch back to the regular u
 - This app is not compatible with instances that have encryption enabled.
 - While impersonate actions are logged note that actions performed impersonated will be logged as the impersonated user.
 - Impersonating an user is only possible after their first login.]]></description>
+
     <version>1.1.0</version>
     <licence>agpl</licence>
     <author>Nextcloud</author>
     <namespace>Impersonate</namespace>
+
     <category>tools</category>
     <website>https://github.com/nextcloud/impersonate</website>
     <bugs>https://github.com/nextcloud/impersonate/issues</bugs>
     <repository>https://github.com/nextcloud/impersonate.git</repository>
+
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/1.png</screenshot>
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/2.png</screenshot>
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/3.png</screenshot>
+
     <dependencies>
         <nextcloud min-version="14" max-version="14" />
     </dependencies>
+
+    <settings>
+        <admin>OCA\Impersonate\AdminSettings</admin>
+    </settings>
 </info>
