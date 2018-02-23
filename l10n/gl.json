@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "Non foi posíbel suplantar ao usuario",
+    "Impersonate" : "Suplantar",
     "Are you sure you want to impersonate \"{userId}\"?" : "Confirma que quere suplantar a «{userId}»?",
     "Impersonate user" : "Suplantar usuario",
-    "Logged in as {uid}" : "Iniciouse sesión sesión como {uid}",
-    "Impersonate" : "Suplantar"
+    "Logged in as {uid}" : "Iniciouse sesión sesión como {uid}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "Ei saa kasutajat muuta",
+    "Impersonate" : "Kehasta",
     "Are you sure you want to impersonate \"{userId}\"?" : "Kas oled kindel, et tahad kehastuda kasutajaks \"{userId}\"?",
     "Impersonate user" : "Kehastu kasutajaks",
-    "Logged in as {uid}" : "Sisse logitud kui {uid}",
-    "Impersonate" : "Kehasta"
+    "Logged in as {uid}" : "Sisse logitud kui {uid}"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
