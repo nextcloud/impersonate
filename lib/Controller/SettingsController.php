@@ -88,7 +88,7 @@ class SettingsController extends Controller {
 		$this->logger->warning(
 			sprintf(
 				'User %s trying to impersonate user %s',
-				$oldUserId,
+				$currentUser->getUID(),
 				$userId
 				),
 				[
