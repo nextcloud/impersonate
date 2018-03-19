@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.0.3
+
+- Allow group admins to impersonate
+- Clean up template generation and bring back translation
+- Move Impersonate-Button to Dropdown
+
 ## 1.0.2
 
 ### Added

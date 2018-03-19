@@ -20,7 +20,7 @@ The administrator is then logged-in as the user, to switch back to the regular u
 - While impersonate actions are logged note that actions performed impersonated will be logged as the impersonated user.
 - Impersonating an user is only possible after their first login.]]></description>
 
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <licence>agpl</licence>
     <category>tools</category>
     <author>Nextcloud</author>
