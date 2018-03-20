@@ -5,7 +5,7 @@ clone:
 
 pipeline:
   check-app-compatbility:
-    image: nextcloudci/php5.6:php5.6-3
+    image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
       - CORE_BRANCH=master
