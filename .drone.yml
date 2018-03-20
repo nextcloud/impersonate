@@ -42,7 +42,7 @@ pipeline:
     image: nextcloudci/php5.6:php5.6-3
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable12
       - DB=sqlite
     commands:
       - apt update && apt-get -y install php5-xdebug
