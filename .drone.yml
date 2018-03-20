@@ -5,10 +5,10 @@ clone:
 
 pipeline:
   check-app-compatbility:
-    image: nextcloudci/php5.6:php5.6-3
+    image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable13
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -27,7 +27,7 @@ pipeline:
     image: nextcloudci/php7.0:php7.0-2
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable13
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -42,7 +42,7 @@ pipeline:
     image: nextcloudci/php5.6:php5.6-3
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable12
       - DB=sqlite
     commands:
       - apt update && apt-get -y install php5-xdebug
@@ -67,7 +67,7 @@ pipeline:
     image: nextcloudci/php7.0:php7.0-2
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable13
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -85,7 +85,7 @@ pipeline:
     image: nextcloudci/php7.1:php7.1-3
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable13
       - DB=sqlite
     commands:
       # FIXME: Move into Docker image

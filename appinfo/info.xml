@@ -22,7 +22,6 @@ The administrator is then logged-in as the user, to switch back to the regular u
 
     <version>1.0.3</version>
     <licence>agpl</licence>
-    <category>tools</category>
     <author>Nextcloud</author>
     <namespace>Impersonate</namespace>
 
