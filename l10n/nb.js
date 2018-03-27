@@ -5,6 +5,7 @@ OC.L10N.register(
     "Impersonate" : "Etterlign",
     "Are you sure you want to impersonate \"{userId}\"?" : "Er du sikker på at du vil etterligne \"{userId}\"?",
     "Impersonate user" : "Etterlign bruker",
-    "Logged in as {uid}" : "Logget på som {uid}"
+    "Logged in as {uid}" : "Logget på som {uid}",
+    "User not found" : "Fant ikke brukeren"
 },
 "nplurals=2; plural=(n != 1);");
