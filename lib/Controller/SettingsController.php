@@ -110,7 +110,7 @@ class SettingsController extends Controller {
 			&& !$this->groupManager->getSubAdmin()->isUserAccessible($currentUser, $user)) {
 			return new JSONResponse(
 				[
-					'message' => $this->l->t('Not enough permissions to impersonate user'),
+					'message' => $this->l->t('Insufficient permissions to impersonate user'),
 				],
 				Http::STATUS_FORBIDDEN
 			);
@@ -123,7 +123,7 @@ class SettingsController extends Controller {
 			if (!array_intersect($userGroups, $authorized)) {
 				return new JSONResponse(
 					[
-						'message' => $this->l->t('Not enough permissions to impersonate user'),
+						'message' => $this->l->t('Insufficient permissions to impersonate user'),
 					],
 					Http::STATUS_FORBIDDEN
 				);
