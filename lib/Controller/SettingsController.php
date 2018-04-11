@@ -117,15 +117,17 @@ class SettingsController extends Controller {
 		}
 
 		$authorized = json_decode($this->config->getAppValue('impersonate', 'authorized', '["admin"]'));
-		$userGroups = $this->groupManager->getUserGroupIds($currentUser);
+		if (!empty($authorized)) {
+			$userGroups = $this->groupManager->getUserGroupIds($currentUser);
 
-		if (!array_intersect($userGroups, $authorized)) {
-			return new JSONResponse(
-				[
-					'message' => $this->l->t('Not enough permissions to impersonate user'),
-				],
-				Http::STATUS_FORBIDDEN
-			);
+			if (!array_intersect($userGroups, $authorized)) {
+				return new JSONResponse(
+					[
+						'message' => $this->l->t('Not enough permissions to impersonate user'),
+					],
+					Http::STATUS_FORBIDDEN
+				);
+			}
 		}
 
 		if ($user->getLastLogin() === 0) {
