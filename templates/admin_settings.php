@@ -32,6 +32,6 @@ script('impersonate', 'admin_settings');
 	<p>
 		<input type="hidden" name="authorized" class="authorized" value="<?php p($_['authorized']) ?>" style="width: 320px;" />
 		<br />
-		<em><?php p($l->t('These groups will be able to impersonate users they are allowed to administrate.')); ?></em>
+		<em><?php p($l->t('These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate.')); ?></em>
 	</p>
 </div>
