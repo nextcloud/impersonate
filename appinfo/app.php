@@ -18,9 +18,15 @@ $eventDispatcher->addListener(
 	'OC\Settings\Users::loadAdditionalScripts',
 	function() {
 		$authorized = json_decode(\OC::$server->getConfig()->getAppValue('impersonate', 'authorized', '["admin"]'));
-		$userGroups = \OC::$server->getGroupManager()->getUserGroupIds(\OC::$server->getUserSession()->getUser());
 
-		if (array_intersect($userGroups, $authorized)) {
+		$loadScript = true;
+		if(!empty($authorized)) {
+			$userGroups = \OC::$server->getGroupManager()->getUserGroupIds(\OC::$server->getUserSession()->getUser());
+			if (!array_intersect($userGroups, $authorized)) {
+				$loadScript = false;
+			}
+		}
+		if($loadScript){
 			\OCP\Util::addScript('impersonate', 'impersonate');
 		}
 	}
