@@ -9,6 +9,6 @@ OC.L10N.register(
     "User not found" : "Notandi fannst ekki",
     "Not enough permissions to impersonate user" : "Ekki nægar heimildir til að gerast staðgengill notanda",
     "Can not impersonate the user because it was never logged in." : "Gert ekki gerst staðgengill notanda því hann hefur aldrei skráð sig inn.",
-    "These groups will be able to impersonate users they are allowed to administrate." : "Þessir hópar munu geta gerst staðgenglar þeirra notenda sem þeim er leyft að stýra."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Þessir hópar munu geta gerst staðgenglar þeirra notenda sem þeim er leyft að stýra. Ef þú fjarlægir alla hópa, má stjórnandi hvers hóps vera staðgengill."
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

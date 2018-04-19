@@ -9,7 +9,6 @@ OC.L10N.register(
     "User not found" : "Utente non trovato",
     "Not enough permissions to impersonate user" : "Permessi insufficienti per impersonare l'utente",
     "Can not impersonate the user because it was never logged in." : "Impossibile impersonare l'utente perché non ha mai eseguito l'accesso.",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Questi gruppi saranno in grado di impersonare gli utenti che gli è consentito amministrare. Se rimuovi tutti i gruppi, ogni amministratore di gruppo avrà il permesso di impersonare.",
-    "These groups will be able to impersonate users they are allowed to administrate." : "Questi gruppi saranno in grado di impersonare gli utenti che gli è consentito amministrare."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Questi gruppi saranno in grado di impersonare gli utenti che gli è consentito amministrare. Se rimuovi tutti i gruppi, ogni amministratore di gruppo avrà il permesso di impersonare."
 },
 "nplurals=2; plural=(n != 1);");
