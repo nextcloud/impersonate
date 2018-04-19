@@ -8,7 +8,6 @@ OC.L10N.register(
     "Logged in as {uid}" : "Sesión iniciada como {uid}",
     "User not found" : "No se encontró el usuario",
     "Not enough permissions to impersonate user" : "No tienes permisos suficientes para hacers pasar por el usuario",
-    "Can not impersonate the user because it was never logged in." : "No se pudo hacer pasar por el usuario porque nunca inició sesión. ",
-    "These groups will be able to impersonate users they are allowed to administrate." : "Estos grupos siempre podrán hacerse pasar por los usuarios que tienen permitidos administrar."
+    "Can not impersonate the user because it was never logged in." : "No se pudo hacer pasar por el usuario porque nunca inició sesión. "
 },
 "nplurals=2; plural=(n != 1);");

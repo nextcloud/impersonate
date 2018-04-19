@@ -8,7 +8,6 @@ OC.L10N.register(
     "Logged in as {uid}" : "Logged in as {uid}",
     "User not found" : "User not found",
     "Not enough permissions to impersonate user" : "Not enough permissions to impersonate user",
-    "Can not impersonate the user because it was never logged in." : "Can not impersonate the user because it was never logged in.",
-    "These groups will be able to impersonate users they are allowed to administrate." : "These groups will be able to impersonate users they are allowed to administer."
+    "Can not impersonate the user because it was never logged in." : "Can not impersonate the user because it was never logged in."
 },
 "nplurals=2; plural=(n != 1);");
