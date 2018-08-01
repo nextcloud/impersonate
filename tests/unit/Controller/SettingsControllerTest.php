@@ -271,7 +271,7 @@ class SettingsControllerTest extends TestCase {
 			->willReturnArgument(2);
 
 		$this->assertEquals(
-			new JSONResponse(['message' => 'Not enough permissions to impersonate user'], Http::STATUS_FORBIDDEN),
+			new JSONResponse(['message' => 'Insufficient permissions to impersonate user'], Http::STATUS_FORBIDDEN),
 			$this->controller->impersonate($query)
 		);
 	}
@@ -316,7 +316,7 @@ class SettingsControllerTest extends TestCase {
 			->with($user);
 
 		$this->assertEquals(
-			new JSONResponse(['message' => 'Not enough permissions to impersonate user'], Http::STATUS_FORBIDDEN),
+			new JSONResponse(['message' => 'Insufficient permissions to impersonate user'], Http::STATUS_FORBIDDEN),
 			$this->controller->impersonate($query)
 		);
 	}
