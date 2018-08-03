@@ -7,7 +7,7 @@ OC.L10N.register(
     "Impersonate user" : "Felhasználó megszemélyesítése",
     "Logged in as {uid}" : "Bejelentkezve {uid} néven",
     "User not found" : "Felhasználó nem található",
-    "Not enough permissions to impersonate user" : "Nincs elegendő jogosultság a felhasználó megszemélyesítéséhez",
-    "Can not impersonate the user because it was never logged in." : "Nem lehet megszemélyesíteni a felhasználót mert még sosem jelentkezett be."
+    "Can not impersonate the user because it was never logged in." : "Nem lehet megszemélyesíteni a felhasználót mert még sosem jelentkezett be.",
+    "Not enough permissions to impersonate user" : "Nincs elegendő jogosultság a felhasználó megszemélyesítéséhez"
 },
 "nplurals=2; plural=(n != 1);");
