@@ -31,10 +31,12 @@ appstore: clean
 	--exclude=/tests \
 	--exclude=/.git \
 	--exclude=/.github \
+	--exclude=/.drone.yml \
 	--exclude=/l10n/l10n.pl \
 	--exclude=/CONTRIBUTING.md \
 	--exclude=/issue_template.md \
 	--exclude=/README.md \
+	--exclude=/CHANGELOG.md \
 	--exclude=/.gitattributes \
 	--exclude=/.gitignore \
 	--exclude=/.scrutinizer.yml \
