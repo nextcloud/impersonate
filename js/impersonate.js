@@ -13,16 +13,8 @@
 			});
 		}
 
-		var $impersonateAction = $('<li>').append(
-			$('<a>').attr('href', '#').addClass('menuitem action-impersonate permanent')
-				.append($('<span>').addClass('icon icon-user'))
-				.append($('<span>').text(t('impersonate', 'Impersonate')))
-		);
-
-		$impersonateAction.insertAfter($(".userActionsMenu").find("li:last-child"));
-
-		$('body').on('click', '.action-impersonate', function() {
-			var userId = $(this).parents('tr').find('.name').text();
+		function impersonateDialog(event) {
+			let userId = event.target.closest('.row').dataset.id;
 			OC.dialogs.confirm(
 				t('impersonate', 'Are you sure you want to impersonate "{userId}"?', {userId: userId}),
 				t('impersonate', 'Impersonate user' ),
@@ -33,8 +25,9 @@
 				},
 				true
 			);
-		});
+		}
 
+		OCA.Settings.UserList.registerAction('icon-user', t('impersonate', 'Impersonate'), impersonateDialog);
 	});
 
 })(OC, $);
