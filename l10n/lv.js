@@ -2,9 +2,9 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "Neizdevās uzdoties par lietotāju",
-    "Impersonate" : "Uzdoties",
     "Are you sure you want to impersonate \"{userId}\"?" : "Vai tu tiešām gribi uzdoties par \"{userId}\"?",
     "Impersonate user" : "Uzdoties par lietotāju",
+    "Impersonate" : "Uzdoties",
     "Logged in as {uid}" : "Pieteicies kā {uid}",
     "User not found" : "Lietotājs nav atrasts",
     "Can not impersonate the user because it was never logged in." : "Nevarēja uzdoties par lietotāju, jo tas nekad nebija pieteicies.",

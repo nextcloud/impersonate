@@ -2,9 +2,9 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "Impossible de prendre l'identité de l'utilisateur",
-    "Impersonate" : "Prendre l'identité d'un utilisateur",
     "Are you sure you want to impersonate \"{userId}\"?" : "Êtes-vous certain de vouloir prendre l'identité de \"{userId}\" ?",
     "Impersonate user" : "Prendre l'identité de l'utilisateur",
+    "Impersonate" : "Prendre l'identité d'un utilisateur",
     "Logged in as {uid}" : "Connecté en tant que {uid}",
     "User not found" : "Utilisateur non trouvé",
     "Insufficient permissions to impersonate user" : "Autorisations insuffisantes pour prendre l'identité de l'utilisateur",
