@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "Konnte den Benutzer nicht nachahmen",
-    "Impersonate" : "Nachahmen",
     "Are you sure you want to impersonate \"{userId}\"?" : "Möchtest Du wirklich  \"{userId}\" nachahmen?",
     "Impersonate user" : "Benutzer nachahmen",
+    "Impersonate" : "Nachahmen",
     "Logged in as {uid}" : "Angemeldet als {uid}",
     "User not found" : "Benutzer nicht gefunden",
     "Insufficient permissions to impersonate user" : "Keine ausreichenden Berechtigungen zum Nachahmen des Benutzers",

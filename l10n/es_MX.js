@@ -2,9 +2,9 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "No fue posible suplantar al usuario",
-    "Impersonate" : "Suplantar un usuario",
     "Are you sure you want to impersonate \"{userId}\"?" : "Está seguro que desea suplantar al usuario \"{userId}\"?",
     "Impersonate user" : "Suplantar un usuario",
+    "Impersonate" : "Suplantar un usuario",
     "Logged in as {uid}" : "Sesión iniciada como {uid}",
     "User not found" : "No se encontró el usuario",
     "Can not impersonate the user because it was never logged in." : "No se pudo suplantar al usuario porque nunca inició sesión. ",

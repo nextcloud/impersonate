@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "Could not impersonate user",
-    "Impersonate" : "Impersonate",
     "Are you sure you want to impersonate \"{userId}\"?" : "Are you sure you want to impersonate \"{userId}\"?",
     "Impersonate user" : "Impersonate user",
+    "Impersonate" : "Impersonate",
     "Logged in as {uid}" : "Logged in as {uid}",
     "User not found" : "User not found",
     "Can not impersonate the user because it was never logged in." : "Can not impersonate the user because it was never logged in.",

@@ -2,9 +2,9 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "Не могу да имитирам корисника",
-    "Impersonate" : "Имитирај",
     "Are you sure you want to impersonate \"{userId}\"?" : "Да ли сте сигурни да желите да имитирате корисника \"{userId}\"?",
     "Impersonate user" : "Имитирај корисника",
+    "Impersonate" : "Имитирај",
     "Logged in as {uid}" : "Пријављени као {uid}",
     "User not found" : "Корисник није нађен",
     "Insufficient permissions to impersonate user" : "Недовољно дозвола за имитирање корисника",

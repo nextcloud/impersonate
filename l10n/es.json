@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "No has podido encarnarte en este usuario",
-    "Impersonate" : "Imitar",
     "Are you sure you want to impersonate \"{userId}\"?" : "¿Estás seguro de que quieres imitar al usuario \"{userId}\"?",
     "Impersonate user" : "Imitar usuario",
+    "Impersonate" : "Imitar",
     "Logged in as {uid}" : "Identificado como {uid}",
     "User not found" : "Usuario no encontrado",
     "Insufficient permissions to impersonate user" : "Permisos insuficientes para hacerse pasar por el usuario",

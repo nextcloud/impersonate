@@ -2,9 +2,9 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "לא ניתן להתחזות למשתמש",
-    "Impersonate" : "התחזות",
     "Are you sure you want to impersonate \"{userId}\"?" : "להתחזות למשתמש „{userId}”?",
     "Impersonate user" : "התחזות למשתמש",
+    "Impersonate" : "התחזות",
     "Logged in as {uid}" : "נכנסת בתור {uid}",
     "User not found" : "משתמש לא נמצא",
     "Can not impersonate the user because it was never logged in." : "לא ניתן להתחזות למשתמש כיוון שהמשתמש מעולם לא נכנס למערכת.",
