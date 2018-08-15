@@ -1,10 +1,16 @@
 OC.L10N.register(
     "impersonate",
     {
-    "Could not impersonate user" : "Ei saa kasutajat muuta",
+    "Could not impersonate user" : "Kasutajat ei saanud kehastada",
     "Are you sure you want to impersonate \"{userId}\"?" : "Kas oled kindel, et tahad kehastuda kasutajaks \"{userId}\"?",
     "Impersonate user" : "Kehastu kasutajaks",
     "Impersonate" : "Kehasta",
-    "Logged in as {uid}" : "Sisse logitud kui {uid}"
+    "Logged in as {uid}" : "Sisse logitud kui {uid}",
+    "User not found" : "Kasutajat ei leitud",
+    "Insufficient permissions to impersonate user" : "Kasutaja kehastamiseks pole piisavalt õigusi",
+    "Can not impersonate the user because it was never logged in." : "Kasutajat ei saa kehastada, sest ta pole kunagi sisse loginud.",
+    "Impersonate other users" : "Kehasta teisi kasutajaid",
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Need grupid saavad kehastada kasutajaid, kelle administreerimieks neil luba on. Kui kõik grupid eemaldada, siis on igal grupi administraatoril kehastamisõigus.",
+    "Not enough permissions to impersonate user" : "Kasutaja kehastamiseks pole piisavalt õigusi"
 },
 "nplurals=2; plural=(n != 1);");
