@@ -31,9 +31,9 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <bugs>https://github.com/nextcloud/impersonate/issues</bugs>
     <repository>https://github.com/nextcloud/impersonate.git</repository>
 
-    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/1.png</screenshot>
-    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/2.png</screenshot>
-    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/3.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/stable14/screenshots/1.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/stable14/screenshots/2.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/stable14/screenshots/3.png</screenshot>
 
     <dependencies>
         <nextcloud min-version="14" max-version="14" />
