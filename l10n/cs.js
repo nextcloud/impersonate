@@ -2,7 +2,7 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "Nešlo imitovat uživatele",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Opravdu chcete imitovat \"{userId}\"?",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Opravdu chcete napodobit „{userId}“?",
     "Impersonate user" : "Imitovat uživatele",
     "Impersonate" : "Imitovat",
     "Logged in as {uid}" : "Přihlášen jako {uid}",
