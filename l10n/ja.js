@@ -5,6 +5,7 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "\"{userId}\" を偽装してもよろしいですか?",
     "Impersonate user" : "ユーザーの偽装",
     "Impersonate" : "偽装",
-    "Logged in as {uid}" : "{uid} としてログインしました"
+    "Logged in as {uid}" : "{uid} としてログインしました",
+    "User not found" : "ユーザーが見つかりません"
 },
 "nplurals=1; plural=0;");
