@@ -6,7 +6,7 @@
     <summary>Impersonate other users</summary>
     <description><![CDATA[By installing the impersonate app of your Nextcloud you enable administrators to impersonate other users on the Nextcloud server. This is especially useful for debugging issues reported by users.
 
-To impersonate an user an administrator has to simply follow the following three steps:
+To impersonate a user an administrator has to simply follow the following four steps:
 
 1. Login as administrator to Nextcloud
 2. Open the user administration interface
