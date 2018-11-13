@@ -27,7 +27,22 @@
 			);
 		}
 
-		OCA.Settings.UserList.registerAction('icon-user', t('impersonate', 'Impersonate'), impersonateDialog);
+		let registerFunction = function (delay) {
+			if(OCA.Settings === undefined) {
+				delay = delay * 2;
+				if(delay === 0) {
+					delay = 15;
+				}
+				if(delay > 500) {
+					console.warn("Could not register impersonate script");
+					return;
+				}
+				setTimeout(function() {registerFunction(delay)}, delay);
+			} else {
+				OCA.Settings.UserList.registerAction('icon-user', t('impersonate', 'Impersonate'), impersonateDialog)
+			}
+		};
+		registerFunction(0);
 	});
 
 })(OC, $);
