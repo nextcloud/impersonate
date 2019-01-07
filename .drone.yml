@@ -18,8 +18,8 @@ pipeline:
     when:
       matrix:
         TESTS: check-app-compatbility
-  syntax-php7.0:
-    image: nextcloudci/php7.0:php7.0-19
+  syntax-php7.1:
+    image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
       - CORE_BRANCH=master
@@ -33,9 +33,9 @@ pipeline:
       - ./lib/composer/bin/parallel-lint apps/$APP_NAME/
     when:
       matrix:
-        TESTS: syntax-php7.0
+        TESTS: syntax-php7.1
   signed-off-check:
-    image: nextcloudci/php7.0:php7.0-19
+    image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
       - CORE_BRANCH=master
@@ -50,8 +50,48 @@ pipeline:
     when:
       matrix:
         TESTS: signed-off-check
-  php7.0:
-    image: nextcloudci/php7.0:php7.0-19
+  php7.1:
+    image: nextcloudci/php7.1:php7.1-16
+    environment:
+      - APP_NAME=impersonate
+      - CORE_BRANCH=master
+      - DB=sqlite
+    commands:
+      # Pre-setup steps
+      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
+      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
+      - cd ../server/
+      - ./occ app:enable $APP_NAME
+      - cd apps/$APP_NAME
+
+      # Run phpunit tests
+      - cd tests/unit/
+      - phpunit --configuration phpunit.xml
+    when:
+      matrix:
+        TESTS: php7.1
+  php7.2:
+    image: nextcloudci/php7.2:php7.2-12
+    environment:
+      - APP_NAME=impersonate
+      - CORE_BRANCH=master
+      - DB=sqlite
+    commands:
+      # Pre-setup steps
+      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
+      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
+      - cd ../server/
+      - ./occ app:enable $APP_NAME
+      - cd apps/$APP_NAME
+
+      # Run phpunit tests
+      - cd tests/unit/
+      - phpunit --configuration phpunit.xml
+    when:
+      matrix:
+        TESTS: php7.2
+  php7.3:
+    image: nextcloudci/php7.3:php7.3-1
     environment:
       - APP_NAME=impersonate
       - CORE_BRANCH=master
@@ -74,54 +114,14 @@ pipeline:
       - sh -c "if [ '$DRONE_BUILD_EVENT' != 'pull_request' ]; then bash codecov.sh -B $DRONE_BRANCH -C $DRONE_COMMIT -t f3e5390a-15fe-46ea-9e10-8b24addb0d40 -f clover.xml; fi"
     when:
       matrix:
-        TESTS: php7.0
-  php7.1:
-    image: nextcloudci/php7.1:php7.1-16
-    environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=master
-      - DB=sqlite
-    commands:
-      # Pre-setup steps
-      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
-      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
-      - cd ../server/
-      - ./occ app:enable $APP_NAME
-      - cd apps/$APP_NAME
-
-      # Run phpunit tests
-      - cd tests/unit/
-      - phpunit --configuration phpunit.xml
-    when:
-      matrix:
-        TESTS: php7.1
-  php7.2:
-    image: nextcloudci/php7.2:php7.2-11
-    environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=master
-      - DB=sqlite
-    commands:
-      # Pre-setup steps
-      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
-      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
-      - cd ../server/
-      - ./occ app:enable $APP_NAME
-      - cd apps/$APP_NAME
-
-      # Run phpunit tests
-      - cd tests/unit/
-      - phpunit --configuration phpunit.xml
-    when:
-      matrix:
-        TESTS: php7.2
+        TESTS: php7.3
 
 matrix:
   include:
-    - TESTS: php7.0
     - TESTS: php7.1
     - TESTS: php7.2
+    - TESTS: php7.3
     - TESTS: check-app-compatbility
-    - TESTS: syntax-php7.0
+    - TESTS: syntax-php7.1
     - TESTS: signed-off-check
 
