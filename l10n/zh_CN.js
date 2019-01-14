@@ -5,6 +5,7 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "你确定要模拟\"{userId}\"用户吗？",
     "Impersonate user" : "模拟用户",
     "Impersonate" : "模拟",
-    "Logged in as {uid}" : "以{uid}的身份登录"
+    "Logged in as {uid}" : "以{uid}的身份登录",
+    "User not found" : "未找到用户"
 },
 "nplurals=1; plural=0;");
