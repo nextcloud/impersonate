@@ -6,7 +6,6 @@ OC.L10N.register(
     "Impersonate user" : "模拟用户",
     "Impersonate" : "模拟",
     "Logged in as {uid}" : "以 {uid} 的身份登录",
-    "User not found" : "未找到用户",
-    "Not enough permissions to impersonate user" : "没有足够的权限来模拟用户"
+    "User not found" : "未找到用户"
 },
 "nplurals=1; plural=0;");
