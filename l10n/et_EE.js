@@ -10,7 +10,6 @@ OC.L10N.register(
     "Insufficient permissions to impersonate user" : "Kasutaja kehastamiseks pole piisavalt õigusi",
     "Can not impersonate the user because it was never logged in." : "Kasutajat ei saa kehastada, sest ta pole kunagi sisse loginud.",
     "Impersonate other users" : "Kehasta teisi kasutajaid",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Need grupid saavad kehastada kasutajaid, kelle administreerimieks neil luba on. Kui kõik grupid eemaldada, siis on igal grupi administraatoril kehastamisõigus.",
-    "Not enough permissions to impersonate user" : "Kasutaja kehastamiseks pole piisavalt õigusi"
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Need grupid saavad kehastada kasutajaid, kelle administreerimieks neil luba on. Kui kõik grupid eemaldada, siis on igal grupi administraatoril kehastamisõigus."
 },
 "nplurals=2; plural=(n != 1);");
