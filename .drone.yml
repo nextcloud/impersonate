@@ -3,7 +3,7 @@ pipeline:
     image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable16
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -22,7 +22,7 @@ pipeline:
     image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable16
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -38,7 +38,7 @@ pipeline:
     image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable16
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -54,7 +54,7 @@ pipeline:
     image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable16
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -74,7 +74,7 @@ pipeline:
     image: nextcloudci/php7.2:php7.2-12
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable16
       - DB=sqlite
     commands:
       # Pre-setup steps
@@ -94,7 +94,7 @@ pipeline:
     image: nextcloudci/php7.3:php7.3-1
     environment:
       - APP_NAME=impersonate
-      - CORE_BRANCH=master
+      - CORE_BRANCH=stable16
       - DB=sqlite
     commands:
       # Pre-setup steps
