@@ -5,9 +5,9 @@ steps:
   - name: check-app-compatbility
     image: nextcloudci/php7.1:php7.1-16
     environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=stable15
-      - DB=sqlite
+      APP_NAME: impersonate
+      CORE_BRANCH: stable15
+      DB: sqlite
     commands:
       # Pre-setup steps
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -35,9 +35,9 @@ steps:
   - name: syntax-php7.0
     image: nextcloudci/php7.0:php7.0-19
     environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=stable15
-      - DB=sqlite
+      APP_NAME: impersonate
+      CORE_BRANCH: stable15
+      DB: sqlite
     commands:
       # Pre-setup steps
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -62,9 +62,9 @@ steps:
   - name: php7.0
     image: nextcloudci/php7.0:php7.0-19
     environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=stable15
-      - DB=sqlite
+      APP_NAME: impersonate
+      CORE_BRANCH: stable15
+      DB: sqlite
     commands:
       # Pre-setup steps
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -98,9 +98,9 @@ steps:
   - name: php7.1
     image: nextcloudci/php7.1:php7.1-16
     environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=stable15
-      - DB=sqlite
+      APP_NAME: impersonate
+      CORE_BRANCH: stable15
+      DB: sqlite
     commands:
       # Pre-setup steps
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -129,9 +129,9 @@ steps:
   - name: php7.2
     image: nextcloudci/php7.2:php7.2-11
     environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=stable15
-      - DB=sqlite
+      APP_NAME: impersonate
+      CORE_BRANCH: stable15
+      DB: sqlite
     commands:
       # Pre-setup steps
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
