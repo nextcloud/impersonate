@@ -1,5 +1,8 @@
-pipeline:
-  check-app-compatbility:
+kind: pipeline
+name: check-app-compatbility
+
+steps:
+  - name: check-app-compatbility
     image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
@@ -15,10 +18,21 @@ pipeline:
       - ./occ app:check-code $APP_NAME -c strong-comparison
       - ./occ app:check-code $APP_NAME -c deprecation
       - cd apps/$APP_NAME/
-    when:
-      matrix:
-        TESTS: check-app-compatbility
-  syntax-php7.0:
+
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
+
+---
+kind: pipeline
+name: syntax-php7.0
+
+steps:
+  - name: syntax-php7.0
     image: nextcloudci/php7.0:php7.0-19
     environment:
       - APP_NAME=impersonate
@@ -31,26 +45,21 @@ pipeline:
       - cd ../server
       - composer install
       - ./lib/composer/bin/parallel-lint apps/$APP_NAME/
-    when:
-      matrix:
-        TESTS: syntax-php7.0
-  signed-off-check:
-    image: nextcloudci/php7.0:php7.0-19
-    environment:
-      - APP_NAME=impersonate
-      - CORE_BRANCH=stable15
-      - DB=sqlite
-    commands:
-      # Pre-setup steps
-      - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
-      - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
-      - cd ../server
-      - php ./build/signed-off-checker.php
-    secrets: [ github_token ]
-    when:
-      matrix:
-        TESTS: signed-off-check
-  php7.0:
+
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
+
+---
+kind: pipeline
+name: php7.0
+
+steps:
+  - name: php7.0
     image: nextcloudci/php7.0:php7.0-19
     environment:
       - APP_NAME=impersonate
@@ -72,10 +81,21 @@ pipeline:
       - wget https://codecov.io/bash -O codecov.sh
       - sh -c "if [ '$DRONE_BUILD_EVENT' = 'pull_request' ]; then bash codecov.sh -B $DRONE_BRANCH -C $DRONE_COMMIT -P $DRONE_PULL_REQUEST -t f3e5390a-15fe-46ea-9e10-8b24addb0d40 -f clover.xml; fi"
       - sh -c "if [ '$DRONE_BUILD_EVENT' != 'pull_request' ]; then bash codecov.sh -B $DRONE_BRANCH -C $DRONE_COMMIT -t f3e5390a-15fe-46ea-9e10-8b24addb0d40 -f clover.xml; fi"
-    when:
-      matrix:
-        TESTS: php7.0
-  php7.1:
+
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
+
+---
+kind: pipeline
+name: php7.1
+
+steps:
+  - name: php7.1
     image: nextcloudci/php7.1:php7.1-16
     environment:
       - APP_NAME=impersonate
@@ -92,10 +112,21 @@ pipeline:
       # Run phpunit tests
       - cd tests/unit/
       - phpunit --configuration phpunit.xml
-    when:
-      matrix:
-        TESTS: php7.1
-  php7.2:
+
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
+
+---
+kind: pipeline
+name: php7.2
+
+steps:
+  - name: php7.2
     image: nextcloudci/php7.2:php7.2-11
     environment:
       - APP_NAME=impersonate
@@ -112,16 +143,11 @@ pipeline:
       # Run phpunit tests
       - cd tests/unit/
       - phpunit --configuration phpunit.xml
-    when:
-      matrix:
-        TESTS: php7.2
 
-matrix:
-  include:
-    - TESTS: php7.0
-    - TESTS: php7.1
-    - TESTS: php7.2
-    - TESTS: check-app-compatbility
-    - TESTS: syntax-php7.0
-    - TESTS: signed-off-check
-
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
