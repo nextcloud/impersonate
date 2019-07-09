@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$("#logout").attr("href","#");
 
 	var text = '<a href="' + OC.generateUrl('apps/files') + '">' +
-		t('core', 'Logged in as {uid}', {uid: OC.getCurrentUser().uid}) +
+		t('impersonate', 'Logged in as {uid}', {uid: OC.getCurrentUser().uid}) +
 		'</a>';
 
 	OC.Notification.showHtml(
