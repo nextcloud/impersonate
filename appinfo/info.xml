@@ -21,7 +21,7 @@ The administrator is then logged-in as the user, to switch back to the regular u
 - While impersonate actions are logged note that actions performed impersonated will be logged as the impersonated user.
 - Impersonating an user is only possible after their first login.]]></description>
 
-    <version>1.4.0</version>
+    <version>1.5.0</version>
     <licence>agpl</licence>
     <author>Nextcloud</author>
     <namespace>Impersonate</namespace>
@@ -36,7 +36,7 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/3.png</screenshot>
 
     <dependencies>
-        <nextcloud min-version="17" max-version="17" />
+		<nextcloud min-version="18" max-version="18" />
     </dependencies>
 
     <settings>
