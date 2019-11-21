@@ -3,7 +3,7 @@
     "Are you sure you want to impersonate \"{userId}\"?" : "Opravdu chcete vystupovat jako „{userId}“?",
     "Impersonate user" : "Vystupovat jako jiný uživatel",
     "Impersonate" : "Vystupovat jako někdo jiný",
-    "Logged in as {uid}" : "Přihlášen jako {uid}",
+    "Logged in as {uid}" : "Přihlášeni jako {uid}",
     "User not found" : "Uživatel nenalezen",
     "Insufficient permissions to impersonate user" : "Nedostatečná oprávnění pro vystupování jako uživatel",
     "Can not impersonate the user because it was never logged in." : "Není možné napodobit uživatele protože se ještě nikdy nepřihlásil.",
