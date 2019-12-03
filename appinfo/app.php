@@ -9,6 +9,8 @@
  * @copyright Jörn Friedrich Dreyer 2015
  */
 
+use OCA\Impersonate\Notification\Notifier;
+
 if(\OC::$server->getSession()->get('oldUserId') !== null) {
 	\OCP\Util::addScript('impersonate','impersonate_logout');
 }
@@ -31,3 +33,6 @@ $eventDispatcher->addListener(
 		}
 	}
 );
+
+$notificationManager = \OC::$server->getNotificationManager();
+$notificationManager->registerNotifierService(Notifier::class);
