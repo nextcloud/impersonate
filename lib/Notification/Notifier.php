@@ -24,29 +24,23 @@
 namespace OCA\Impersonate\Notification;
 
 
-use OCP\IConfig;
 use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
-use OCP\Notification\AlreadyProcessedException;
 use OCP\Notification\INotification;
 use OCP\Notification\INotifier;
 
 class Notifier implements INotifier {
 
-	/** @var IConfig */
-	protected $config;
 	/** @var IFactory */
 	protected $l10nFactory;
 	/** @var IURLGenerator */
 	protected $url;
 
 	/**
-	 * @param IConfig $config
 	 * @param IFactory $l10nFactory
 	 * @param IURLGenerator $urlGenerator
 	 */
-	public function __construct(IConfig $config, IFactory $l10nFactory, IURLGenerator $urlGenerator) {
-		$this->config = $config;
+	public function __construct(IFactory $l10nFactory, IURLGenerator $urlGenerator) {
 		$this->l10nFactory = $l10nFactory;
 		$this->url = $urlGenerator;
 	}
@@ -58,7 +52,7 @@ class Notifier implements INotifier {
 	 * @since 17.0.0
 	 */
 	public function getID(): string {
-		return "impersonate";
+		return 'impersonate';
 	}
 
 	/**
@@ -68,7 +62,7 @@ class Notifier implements INotifier {
 	 * @since 17.0.0
 	 */
 	public function getName(): string {
-		return $this->l10nFactory->get("impersonate")->t('Impersonate');
+		return $this->l10nFactory->get('impersonate')->t('Impersonate');
 	}
 
 	/**
@@ -78,7 +72,7 @@ class Notifier implements INotifier {
 	 * @throws \InvalidArgumentException When the notification was not prepared by a notifier
 	 */
 	public function prepare(INotification $notification, string $languageCode): INotification {
-		if ($notification->getApp() !== "impersonate") {
+		if ($notification->getApp() !== 'impersonate') {
 			// Wrong app
 			throw new \InvalidArgumentException('Unknown app');
 		}
@@ -86,12 +80,12 @@ class Notifier implements INotifier {
 		$parameters = $notification->getSubjectParameters();
 		$impersonator = $parameters['impersonator'];
 
-		$imagePath = $this->url->imagePath("impersonate", 'app-alert.svg');
+		$imagePath = $this->url->imagePath('impersonate', 'app-alert.svg');
 
 		$notification->setIcon($this->url->getAbsoluteURL($imagePath));
 
 		// Read the language from the notification
-		$l = $this->l10nFactory->get("impersonate", $languageCode);
+		$l = $this->l10nFactory->get('impersonate', $languageCode);
 
 		$notification->setParsedSubject(
 			$l->t('User %s logged in as you', $impersonator)

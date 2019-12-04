@@ -181,14 +181,14 @@ class SettingsController extends Controller {
 	protected function issueWarning($userId, $impersonator) {
 		$notification = $this->notificationManager->createNotification();
 		try {
-			$notification->setApp("impersonate")
+			$notification->setApp('impersonate')
 				->setObject('impersonation', $userId)
 				->setUser($userId)
 				->setDateTime(new \DateTime())
-				->setSubject("impersonate", ['impersonator' => $impersonator]);
+				->setSubject('impersonate', ['impersonator' => $impersonator]);
 			$this->notificationManager->notify($notification);
 		} catch (\InvalidArgumentException $e) {
-			$this->logger->logException($e, ['app' => "impersonate"]);
+			$this->logger->logException($e, ['app' => 'impersonate']);
 		}
 	}
 
