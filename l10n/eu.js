@@ -5,6 +5,7 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Ziur zaude {userId} -en nortasuna hartu nahi duzula?",
     "Impersonate user" : "Erabiltzailearen nortasuna hartu",
     "Impersonate" : "Nortasuna hartu",
-    "Logged in as {uid}" : " {uid} bezala izena emanda"
+    "Logged in as {uid}" : " {uid} bezala izena emanda",
+    "User not found" : "Ez da erabiltzailea aurkitu"
 },
 "nplurals=2; plural=(n != 1);");
