@@ -25,8 +25,6 @@ use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
 use OCP\Notification\IManager;
-use OCP\Mail\IMailer;
-use OCP\L10N\IFactory;
 
 class SettingsController extends Controller {
 	/** @var IUserManager */
@@ -43,12 +41,8 @@ class SettingsController extends Controller {
 	private $logger;
 	/** @var IL10N */
 	private $l;
-	/** @var IFactory */
-	protected $l10nFactory;
 	/** @var IManager */
 	protected $notificationManager;
-	/** @var IMailer */
-	protected $mailer;
 
 	/**
 	 * @param string $appName
@@ -59,10 +53,8 @@ class SettingsController extends Controller {
 	 * @param ISession $session
 	 * @param IConfig $config
 	 * @param ILogger $logger
-	 * @param IFactory $l10nFactory
 	 * @param IL10N $l
 	 * @param IManager $notificationManager
-	 * @param IMailer $mailer
 	 */
 	public function __construct($appName,
 								IRequest $request,
@@ -72,10 +64,8 @@ class SettingsController extends Controller {
 								ISession $session,
 								IConfig $config,
 								ILogger $logger,
-								IFactory $l10nFactory,
 								IL10N $l,
-								IManager $notificationManager,
-								IMailer $mailer) {
+								IManager $notificationManager) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->groupManager = $groupManager;
@@ -83,10 +73,8 @@ class SettingsController extends Controller {
 		$this->session = $session;
 		$this->config = $config;
 		$this->logger = $logger;
-		$this->l10nFactory = $l10nFactory;
 		$this->l = $l;
 		$this->notificationManager = $notificationManager;
-		$this->mailer = $mailer;
 	}
 
 	/**
@@ -167,7 +155,6 @@ class SettingsController extends Controller {
 			]
 		);
 		$this->issueWarning($userId, $currentUser->getUID());
-		$this->sendEmail($userId, $currentUser->getUID());
 		$this->userSession->setUser($user);
 		return new JSONResponse();
 	}
@@ -188,50 +175,6 @@ class SettingsController extends Controller {
 				->setSubject('impersonate', ['impersonator' => $impersonator]);
 			$this->notificationManager->notify($notification);
 		} catch (\InvalidArgumentException $e) {
-			$this->logger->logException($e, ['app' => 'impersonate']);
-		}
-	}
-
-	/**
-	 * Send an email to the user
-	 *
-	 * @param string $userId
-	 * @param float $impersonator
-	 */
-	protected function sendEmail($userId, $impersonator) {
-		$user = $this->userManager->get($userId);
-		if (!$user instanceof IUser) {
-			return;
-		}
-
-		$email = $user->getEMailAddress();
-		if (!$email) {
-			return;
-		}
-
-		$lang = $this->config->getUserValue($userId, 'core', 'lang');
-		$l = $this->l10nFactory->get('impersonate', $lang);
-		$emailTemplate = $this->mailer->createEMailTemplate('impersonate.Notification', [
-			'impersonator' => $impersonator,
-			'userId' => $user->getUID()
-		]);
-
-		$emailTemplate->addHeader();
-		$emailTemplate->addHeading($l->t('A user impersonating as you'), false);
-
-		$help = $l->t('User %s logged in as you', $impersonator);
-		$emailTemplate->addBodyText($help);
-
-		$emailTemplate->addFooter();
-
-		try {
-			$message = $this->mailer->createMessage();
-			$message->setTo([$email => $user->getUID()]);
-			$message->setSubject($l->t('A user impersonated you on Nextcloud'));
-			$message->setPlainBody($emailTemplate->renderText());
-			$message->setHtmlBody($emailTemplate->renderHtml());
-			$this->mailer->send($message);
-		} catch (\Exception $e) {
 			$this->logger->logException($e, ['app' => 'impersonate']);
 		}
 	}
