@@ -227,7 +227,7 @@ class SettingsController extends Controller {
 		try {
 			$message = $this->mailer->createMessage();
 			$message->setTo([$email => $user->getUID()]);
-			$message->setSubject($l->t('A user impersonating as you'));
+			$message->setSubject($l->t('A user impersonated you on Nextcloud'));
 			$message->setPlainBody($emailTemplate->renderText());
 			$message->setHtmlBody($emailTemplate->renderHtml());
 			$this->mailer->send($message);
@@ -236,4 +236,3 @@ class SettingsController extends Controller {
 		}
 	}
 }
-
