@@ -2,7 +2,7 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "Ni se mogoče lažno predstavljati za uporabnika",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Ali ste prepričani, da se želite lažno predstavljati kot \"{userId}\"?",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Ali ste prepričani, da se želite lažno predstavljati kot »{userId}«?",
     "Impersonate user" : "Lažno predstavljanje kot drug uporabnik",
     "Impersonate" : "Lažno predstavljanje kot drug uporabnik ·",
     "Logged in as {uid}" : "Vzpostavljena je prijava kot uporabnik {uid}",
