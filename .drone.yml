@@ -6,7 +6,7 @@ steps:
     image: nextcloudci/php7.2:php7.2-13
     environment:
       APP_NAME: impersonate
-      CORE_BRANCH: master
+      CORE_BRANCH: stable19
       DATABASEHOST: sqlite
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -18,7 +18,7 @@ steps:
     image: nextcloudci/php7.4:2
     environment:
       APP_NAME: impersonate
-      CORE_BRANCH: master
+      CORE_BRANCH: stable19
       DATABASEHOST: sqlite
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -30,7 +30,7 @@ steps:
     image: nextcloudci/php7.3:php7.3-5
     environment:
       APP_NAME: impersonate
-      CORE_BRANCH: master
+      CORE_BRANCH: stable19
       DATABASEHOST: sqlite
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -56,7 +56,7 @@ steps:
     image: nextcloudci/php7.2:php7.2-13
     environment:
       APP_NAME: impersonate
-      CORE_BRANCH: master
+      CORE_BRANCH: stable19
       DATABASEHOST: sqlite
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -86,7 +86,7 @@ steps:
     image: nextcloudci/php7.3:php7.3-5
     environment:
       APP_NAME: impersonate
-      CORE_BRANCH: master
+      CORE_BRANCH: stable19
       DATABASEHOST: sqlite
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
@@ -116,7 +116,7 @@ steps:
     image: nextcloudci/php7.4:2
     environment:
       APP_NAME: impersonate
-      CORE_BRANCH: master
+      CORE_BRANCH: stable19
       DATABASEHOST: sqlite
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
