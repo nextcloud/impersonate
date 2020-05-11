@@ -24,6 +24,7 @@ use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
+use OCP\Notification\IManager;
 
 class SettingsController extends Controller {
 	/** @var IUserManager */
@@ -40,6 +41,8 @@ class SettingsController extends Controller {
 	private $logger;
 	/** @var IL10N */
 	private $l;
+	/** @var IManager */
+	protected $notificationManager;
 
 	/**
 	 * @param string $appName
@@ -51,6 +54,7 @@ class SettingsController extends Controller {
 	 * @param IConfig $config
 	 * @param ILogger $logger
 	 * @param IL10N $l
+	 * @param IManager $notificationManager
 	 */
 	public function __construct($appName,
 								IRequest $request,
@@ -60,7 +64,8 @@ class SettingsController extends Controller {
 								ISession $session,
 								IConfig $config,
 								ILogger $logger,
-								IL10N $l) {
+								IL10N $l,
+								IManager $notificationManager) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->groupManager = $groupManager;
@@ -69,6 +74,7 @@ class SettingsController extends Controller {
 		$this->config = $config;
 		$this->logger = $logger;
 		$this->l = $l;
+		$this->notificationManager = $notificationManager;
 	}
 
 	/**
@@ -148,8 +154,28 @@ class SettingsController extends Controller {
 				'app' => 'impersonate',
 			]
 		);
+		$this->issueWarning($userId, $currentUser->getUID());
 		$this->userSession->setUser($user);
 		return new JSONResponse();
 	}
-}
 
+	/**
+	 * Issues the warning by creating a notification
+	 *
+	 * @param string $userId
+	 * @param string $impersonator
+	 */
+	protected function issueWarning($userId, $impersonator) {
+		$notification = $this->notificationManager->createNotification();
+		try {
+			$notification->setApp('impersonate')
+				->setObject('impersonation', $userId)
+				->setUser($userId)
+				->setDateTime(new \DateTime())
+				->setSubject('impersonate', ['impersonator' => $impersonator]);
+			$this->notificationManager->notify($notification);
+		} catch (\InvalidArgumentException $e) {
+			$this->logger->logException($e, ['app' => 'impersonate']);
+		}
+	}
+}
