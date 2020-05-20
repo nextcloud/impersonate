@@ -87,10 +87,10 @@ class SettingsController extends Controller {
 				'User %s trying to impersonate user %s',
 				$currentUser->getUID(),
 				$userId
-				),
-				[
-					'app' => 'impersonate',
-				]
+			),
+			[
+				'app' => 'impersonate',
+			]
 		);
 
 		$user = $this->userManager->get($userId);
@@ -154,7 +154,7 @@ class SettingsController extends Controller {
 				'app' => 'impersonate',
 			]
 		);
-		if($this->session->get('oldUserId') === null) {
+		if ($this->session->get('oldUserId') === null) {
 			$this->session->set('oldUserId', $currentUser->getUID());
 		}
 		$this->userSession->setUser($user);
