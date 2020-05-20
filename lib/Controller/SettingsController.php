@@ -82,9 +82,6 @@ class SettingsController extends Controller {
 		/** @var IUser $currentUser */
 		$currentUser = $this->userSession->getUser();
 
-		if($this->session->get('oldUserId') === null) {
-			$this->session->set('oldUserId', $currentUser->getUID());
-		}
 		$this->logger->warning(
 			sprintf(
 				'User %s trying to impersonate user %s',
@@ -139,6 +136,15 @@ class SettingsController extends Controller {
 			);
 		}
 
+		if ($user->getUID() === $currentUser->getUID()) {
+			return new JSONResponse(
+				[
+					'message' => $this->l->t('Can not impersonate yourself.'),
+				],
+				Http::STATUS_FORBIDDEN
+			);
+		}
+
 		$this->logger->warning(
 			sprintf(
 				'Changing to user %s',
@@ -148,6 +154,9 @@ class SettingsController extends Controller {
 				'app' => 'impersonate',
 			]
 		);
+		if($this->session->get('oldUserId') === null) {
+			$this->session->set('oldUserId', $currentUser->getUID());
+		}
 		$this->userSession->setUser($user);
 		return new JSONResponse();
 	}
