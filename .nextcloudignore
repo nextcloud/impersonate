@@ -1,0 +1,12 @@
+CHANGELOG.md
+.drone.yml
+.git
+.gitignore
+krankerl.toml
+Makefile
+.nextcloudignore
+README.md
+screenshots
+.scrutinizer.yml
+tests
+.tx
