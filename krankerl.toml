@@ -1,17 +1,4 @@
 [package]
-exclude = [
-        ".drone.yml",
-        ".git",
-        "CHANGELOG.md",
-        "README.md",
-        "Makefile",
-        ".scrutinizer.yml",
-        ".tx",
-        "krankerl.toml",
-        "screenshots",
-        "tests",
-        ".gitignore",
-]
 
 before_cmds = [
 
