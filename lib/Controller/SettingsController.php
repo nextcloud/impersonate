@@ -139,7 +139,7 @@ class SettingsController extends Controller {
 		if ($user->getUID() === $currentUser->getUID()) {
 			return new JSONResponse(
 				[
-					'message' => $this->l->t('Can not impersonate yourself.'),
+					'message' => $this->l->t('Cannot impersonate yourself.'),
 				],
 				Http::STATUS_FORBIDDEN
 			);
