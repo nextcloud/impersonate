@@ -1,8 +1,8 @@
 { "translations": {
     "Could not impersonate user" : "Не удалось войти в систему под именем другого пользователя",
     "Are you sure you want to impersonate \"{userId}\"?" : "Войти под именем «{userId}»?",
-    "Impersonate user" : "Войти под другим именем",
-    "Impersonate" : "Вход под именем другого пользователя",
+    "Impersonate user" : "Вход под другим именем",
+    "Impersonate" : "Войти под именем другого пользователя",
     "Logged in as {uid}" : "Выполнен вход под именем «{uid}»",
     "User not found" : "Пользователь не найден",
     "Insufficient permissions to impersonate user" : "Недостаточно прав доступа для входа в систему под именем другого пользователя",
