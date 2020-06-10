@@ -130,7 +130,7 @@ class SettingsController extends Controller {
 		if ($user->getLastLogin() === 0) {
 			return new JSONResponse(
 				[
-					'message' => $this->l->t('Can not impersonate the user because it was never logged in.'),
+					'message' => $this->l->t('Cannot impersonate the user because it was never logged in.'),
 				],
 				Http::STATUS_FORBIDDEN
 			);
