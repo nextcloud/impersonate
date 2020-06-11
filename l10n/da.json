@@ -7,7 +7,6 @@
     "User not found" : "Bruger ikke fundet",
     "Insufficient permissions to impersonate user" : "Du har ikke rettigheder til at udgive dig for at være andre brugere",
     "Impersonate other users" : "Udgiv dig for at være en andre brugere",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Administratorer i disse grupper kan udgive sig for brugere de administrerer. Hvis du fjerner alle grupper kan alle gruppeadministratorer udgive sig for deres brugere.",
-    "Can not impersonate the user because it was never logged in." : "Du kan ikke udgive dig for at være denne bruger fordi brugeren aldrig har været logget ind."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Administratorer i disse grupper kan udgive sig for brugere de administrerer. Hvis du fjerner alle grupper kan alle gruppeadministratorer udgive sig for deres brugere."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
