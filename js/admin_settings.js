@@ -18,13 +18,20 @@
  *
  */
 
-$(document).ready(function() {
-	var $authorized = $('#impersonate .authorized');
+/* global OC, OCA */
+(function(OC, OCA) {
+	OCA.Impersonate = {
+		initSettings: function() {
+			var $authorized = $('#impersonate .authorized')
 
-	OC.Settings.setupGroupsSelect($authorized);
-	$authorized.change(function(event) {
-		var groups = event.val || ['admin'];
-		groups = JSON.stringify(groups);
-		OCP.AppConfig.setValue('impersonate', 'authorized', groups);
-	});
-});
+			OC.Settings.setupGroupsSelect($authorized)
+			$authorized.change(function(event) {
+				var groups = event.val || ['admin']
+				groups = JSON.stringify(groups)
+				OCP.AppConfig.setValue('impersonate', 'authorized', groups)
+			})
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', OCA.Impersonate.initSettings)
+})(OC, OCA)
