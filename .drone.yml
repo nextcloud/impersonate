@@ -11,9 +11,9 @@ steps:
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
       - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DATABASEHOST
-      - cd ../server
+      - cd ../server/apps/$APP_NAME
       - composer install
-      - ./lib/composer/bin/parallel-lint apps/$APP_NAME/
+      - ./vendor/bin/parallel-lint --exclude ./vendor/ .
   - name: syntax-php7.4
     image: nextcloudci/php7.4:2
     environment:
@@ -23,9 +23,9 @@ steps:
     commands:
       - wget https://raw.githubusercontent.com/nextcloud/travis_ci/master/before_install.sh
       - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DATABASEHOST
-      - cd ../server
+      - cd ../server/apps/$APP_NAME
       - composer install
-      - ./lib/composer/bin/parallel-lint apps/$APP_NAME/
+      - ./vendor/bin/parallel-lint --exclude ./vendor/ .
   - name: app-code-check
     image: nextcloudci/php7.3:php7.3-5
     environment:
@@ -46,6 +46,8 @@ trigger:
   event:
     - pull_request
     - push
+
+type: docker
 
 ---
 kind: pipeline
@@ -77,6 +79,8 @@ trigger:
     - pull_request
     - push
 
+type: docker
+
 ---
 kind: pipeline
 name: unit-sqlite-php7.3
@@ -106,6 +110,8 @@ trigger:
   event:
     - pull_request
     - push
+
+type: docker
 
 ---
 kind: pipeline
