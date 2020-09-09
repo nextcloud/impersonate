@@ -4,7 +4,7 @@ OC.L10N.register(
     "Could not impersonate user" : "Konnte den Benutzer nicht nachahmen",
     "Are you sure you want to impersonate \"{userId}\"?" : "Möchten Sie Nextcloud wirklich als \"{userId}\" ausführen?",
     "Impersonate user" : "Benutzer nachahmen",
-    "Impersonate" : "Impersonate",
+    "Impersonate" : "Nachahmen",
     "Logged in as {uid}" : "Angemeldet als {uid}",
     "User not found" : "Benutzer nicht gefunden",
     "Insufficient permissions to impersonate user" : "Keine ausreichenden Berechtigungen zum Nachahmen des Benutzers",
