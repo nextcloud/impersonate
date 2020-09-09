@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function() {
 
 	$("#logout").attr("href","#");
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
 		var promisObj = $.post(
 			OC.generateUrl('apps/impersonate/logout'),
 			{userId: userId}
-		).promise();
+		).promise()
 
 		promisObj.done(function () {
 			OC.redirect(OC.generateUrl('settings/users'))
@@ -26,8 +26,8 @@ $(document).ready(function () {
 	}
 
 	$('#settings ul li:last').on('click', function (event) {
-		event.preventDefault();
-		var userId = $("#expandDisplayName").text();
-		logoutHandler(userId);
-	});
-});
+		event.preventDefault()
+		var userId = $("#expandDisplayName").text()
+		logoutHandler(userId)
+	})
+})
