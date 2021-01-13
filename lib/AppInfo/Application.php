@@ -48,7 +48,7 @@ class Application extends App implements IBootstrap {
 	public function boot(IBootContext $context): void {
 		$session = $context->getServerContainer()->get(ISession::class);
 
-		if($session->get('oldUserId') !== null) {
+		if ($session->get('oldUserId') !== null) {
 			Util::addScript(self::APP_ID,'impersonate_logout');
 		}
 	}

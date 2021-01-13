@@ -4,7 +4,7 @@ namespace OCA\Impersonate\Controller;
 
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
-use OCP\ILogger;
+use Psr\Log\LoggerInterface;
 use OCP\IRequest;
 use OCP\AppFramework\Controller;
 use OCP\ISession;
@@ -16,7 +16,7 @@ class LogoutController extends Controller {
 	private $userManager;
 	/** @var IUserSession */
 	private $userSession;
-	/** @var ILogger */
+	/** @var LoggerInterface */
 	private $logger;
 	/** @var ISession */
 	private $session;
@@ -27,14 +27,14 @@ class LogoutController extends Controller {
 	 * @param IUserManager $userManager
 	 * @param IUserSession $userSession
 	 * @param ISession $session
-	 * @param ILogger $logger
+	 * @param LoggerInterface $logger
 	 */
 	public function __construct($appName,
 								IRequest $request,
 								IUserManager $userManager,
 								IUserSession $userSession,
 								ISession $session,
-								ILogger $logger) {
+								LoggerInterface $logger) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->userSession = $userSession;
@@ -45,15 +45,12 @@ class LogoutController extends Controller {
 	/**
 	 * @UseSession
 	 * @NoAdminRequired
-	 *
-	 * @param string $userId
-	 * @return JSONResponse
 	 */
-	public function logout($userId) {
+	public function logout(string $userId): JSONResponse {
 		$user = $this->session->get('oldUserId');
 		$user = $this->userManager->get($user);
 
-		if($user === null) {
+		if ($user === null) {
 			return new JSONResponse(
 				sprintf(
 					'No user found for %s',

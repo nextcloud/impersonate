@@ -1,12 +1,15 @@
 CHANGELOG.md
 .drone.yml
 .git
+.github
 .gitignore
 krankerl.toml
 Makefile
 .nextcloudignore
+.php_cs.dist
 README.md
 screenshots
 .scrutinizer.yml
 tests
 .tx
+vendor

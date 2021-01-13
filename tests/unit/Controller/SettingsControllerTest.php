@@ -20,11 +20,12 @@ use OCP\IConfig;
 use OCP\IGroupManager;
 use OCP\IL10N;
 use OCP\IRequest;
-use OCP\ILogger;
 use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
+use PHPUnit\Framework\MockObject\MockObject;
+use Psr\Log\LoggerInterface;
 use Test\TestCase;
 
 /**
@@ -36,23 +37,23 @@ class SettingsControllerTest extends TestCase {
 
 	/** @var string */
 	private $appName;
-	/** @var IRequest|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var IRequest|MockObject */
 	private $request;
-	/** @var IUserManager|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var IUserManager|MockObject */
 	private $userManager;
-	/** @var IGroupManager|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var IGroupManager|MockObject */
 	private $groupManager;
-	/** @var SubAdmin|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var SubAdmin|MockObject */
 	private $subadmin;
-	/** @var IUserSession|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var IUserSession|MockObject */
 	private $userSession;
-	/** @var ISession|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var ISession|MockObject */
 	private $session;
-	/** @var IConfig|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var IConfig|MockObject */
 	private $config;
-	/** @var ILogger|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var LoggerInterface|MockObject */
 	private $logger;
-	/** @var IL10N|\PHPUnit_Framework_MockObject_MockObject */
+	/** @var IL10N|MockObject */
 	private $l;
 	/** @var SettingsController */
 	private $controller;
@@ -67,11 +68,11 @@ class SettingsControllerTest extends TestCase {
 		$this->userSession = $this->createMock(IUserSession::class);
 		$this->session = $this->createMock(ISession::class);
 		$this->config = $this->createMock(IConfig::class);
-		$this->logger = $this->createMock(ILogger::class);
+		$this->logger = $this->createMock(LoggerInterface::class);
 		$this->l = $this->createMock(IL10N::class);
 		$this->l->expects($this->any())
 			->method('t')
-			->will($this->returnCallback(function($text, $parameters = array()) {
+			->will($this->returnCallback(function ($text, $parameters = []) {
 				return vsprintf($text, $parameters);
 			}));
 		$this->subadmin = $this->createMock(SubAdmin::class);
@@ -109,7 +110,7 @@ class SettingsControllerTest extends TestCase {
 		);
 	}
 
-	public function usersProvider() {
+	public function usersProvider(): array {
 		return [
 			['username', 'username'],
 			['UserName', 'username']

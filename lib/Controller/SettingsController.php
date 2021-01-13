@@ -17,7 +17,7 @@ use OCP\AppFramework\Http\JSONResponse;
 use OCP\IConfig;
 use OCP\IGroupManager;
 use OCP\IL10N;
-use OCP\ILogger;
+use Psr\Log\LoggerInterface;
 use OCP\IRequest;
 use OCP\AppFramework\Controller;
 use OCP\ISession;
@@ -36,7 +36,7 @@ class SettingsController extends Controller {
 	private $session;
 	/** @var IConfig */
 	private $config;
-	/** @var ILogger */
+	/** @var LoggerInterface */
 	private $logger;
 	/** @var IL10N */
 	private $l;
@@ -49,7 +49,7 @@ class SettingsController extends Controller {
 	 * @param IUserSession $userSession
 	 * @param ISession $session
 	 * @param IConfig $config
-	 * @param ILogger $logger
+	 * @param LoggerInterface $logger
 	 * @param IL10N $l
 	 */
 	public function __construct($appName,
@@ -59,7 +59,7 @@ class SettingsController extends Controller {
 								IUserSession $userSession,
 								ISession $session,
 								IConfig $config,
-								ILogger $logger,
+								LoggerInterface $logger,
 								IL10N $l) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
@@ -74,11 +74,8 @@ class SettingsController extends Controller {
 	/**
 	 * @UseSession
 	 * @NoAdminRequired
-	 *
-	 * @param string $userId
-	 * @return JSONResponse
 	 */
-	public function impersonate($userId) {
+	public function impersonate(string $userId): JSONResponse {
 		/** @var IUser $currentUser */
 		$currentUser = $this->userSession->getUser();
 
@@ -161,4 +158,3 @@ class SettingsController extends Controller {
 		return new JSONResponse();
 	}
 }
-
