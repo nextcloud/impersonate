@@ -9,26 +9,21 @@
  * @copyright Jörn Friedrich Dreyer 2015
  */
 
-use OCP\AppFramework\App;
-$application = new App('impersonate');
-$application->registerRoutes(
-	$this,
-	[
-		'routes' => [
+return [
+	'routes' => [
 
-			// Land in users setting page ( for admin user only )
-			[
-				'name' => 'Settings#impersonate',
-				'url' => '/user',
-				'verb' => 'POST',
-			],
-
-			//Land in index page
-			[
-				'name' => 'Logout#logout',
-				'url' => '/logout',
-				'verb' => 'POST',
-			],
+		// Land in users setting page ( for admin user only )
+		[
+			'name' => 'Settings#impersonate',
+			'url' => '/user',
+			'verb' => 'POST',
 		],
-	]
-);
+
+		//Land in index page
+		[
+			'name' => 'Logout#logout',
+			'url' => '/logout',
+			'verb' => 'POST',
+		],
+	],
+];
