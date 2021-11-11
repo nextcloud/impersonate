@@ -20,7 +20,7 @@ jobs:
       matrix:
         php-versions: ['7.3', '7.4', '8.0']
         databases: ['sqlite']
-        server-versions: ['master']
+        server-versions: ['stable23']
 
     name: php${{ matrix.php-versions }}-${{ matrix.databases }}
 
@@ -73,13 +73,13 @@ jobs:
       matrix:
         php-versions: ['7.3', '7.4', '8.0']
         databases: ['mysql']
-        server-versions: ['master']
+        server-versions: ['stable23']
 
     name: php${{ matrix.php-versions }}-${{ matrix.databases }}
 
     services:
       mysql:
-        image: mariadb
+        image: mariadb:10.5
         ports:
           - 4444:3306/tcp
         env:
@@ -135,7 +135,7 @@ jobs:
       matrix:
         php-versions: ['7.3', '7.4', '8.0']
         databases: ['pgsql']
-        server-versions: ['master']
+        server-versions: ['stable23']
 
     name: php${{ matrix.php-versions }}-${{ matrix.databases }}
 
@@ -199,7 +199,7 @@ jobs:
       matrix:
         php-versions: ['7.3', '7.4', '8.0']
         databases: ['oci']
-        server-versions: ['master']
+        server-versions: ['stable23']
 
     name: php${{ matrix.php-versions }}-${{ matrix.databases }}
 
