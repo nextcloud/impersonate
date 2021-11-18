@@ -91,6 +91,11 @@ jobs:
           npm ci
           npm run build
 
+      - name: Fetch krankerl
+        run: |
+          wget https://github.com/ChristophWurst/krankerl/releases/download/v0.13.2/krankerl
+          chmod +x krankerl
+
       - name: Package ${{ env.APP_NAME }} ${{ env.APP_VERSION }}
         # Try krankerl, fallback to makefile
         run: |
