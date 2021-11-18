@@ -93,14 +93,14 @@ jobs:
 
       - name: Fetch krankerl
         run: |
-          wget https://github.com/ChristophWurst/krankerl/releases/download/v0.13.2/krankerl
-          chmod +x krankerl
+          wget https://github.com/ChristophWurst/krankerl/releases/download/v0.13.2/krankerl_0.13.2_amd64.deb -O krankerl.deb
+          dpkg -i krankerl.deb
 
       - name: Package ${{ env.APP_NAME }} ${{ env.APP_VERSION }}
         # Try krankerl, fallback to makefile
         run: |
           cd ${{ env.APP_NAME }}
-          ../krankerl package || make appstore
+          krankerl package || make appstore
 
       - name: Checkout server ${{ fromJSON(steps.appinfo.outputs.result).nextcloud.min-version }}
         continue-on-error: true
