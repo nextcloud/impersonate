@@ -100,7 +100,7 @@ jobs:
         # Try krankerl, fallback to makefile
         run: |
           cd ${{ env.APP_NAME }}
-          krankerl package || make appstore
+          ../krankerl package || make appstore
 
       - name: Checkout server ${{ fromJSON(steps.appinfo.outputs.result).nextcloud.min-version }}
         continue-on-error: true
