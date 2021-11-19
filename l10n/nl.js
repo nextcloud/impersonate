@@ -7,7 +7,7 @@ OC.L10N.register(
     "Impersonate" : "Nabootsen",
     "Logged in as {uid}" : "Ingelogd in {uid}",
     "User not found" : "Gebruiker niet gevonden",
-    "Insufficient permissions to impersonate user" : "Onvoldoende rechten om andere account na te bootsen.",
+    "Insufficient permissions to impersonate user" : "Onvoldoende machtigingen om andere account na te bootsen.",
     "Cannot impersonate the user because it was never logged in." : "Kan deze gebruiker niet nabootsen omdat deze nooit ingelogd is geweest.",
     "Cannot impersonate yourself." : "Kan jezelf niet nabootsen.",
     "Impersonate other users" : "Andere gebruiker nabootsen",
