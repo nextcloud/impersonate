@@ -12,9 +12,9 @@
 	<!-- filters for code coverage -->
 	<filter>
 		<whitelist>
-			<directory suffix=".php">../../../impersonate</directory>
+			<directory suffix=".php">../../impersonate</directory>
 			<exclude>
-				<directory suffix=".php">../../../impersonate/tests</directory>
+				<directory suffix=".php">../../impersonate/tests</directory>
 			</exclude>
 		</whitelist>
 	</filter>
