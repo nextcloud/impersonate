@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.11.0
+
+### Fixed
+
+- Grammar fixes and typos
+
 ## 1.0.2
 
 ### Added
