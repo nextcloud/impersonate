@@ -7,4 +7,4 @@ OC.L10N.register(
     "Impersonate" : "Hacerse pasar por un usuario",
     "Logged in as {uid}" : "Sesión iniciada como {uid}"
 },
-"nplurals=2; plural=(n != 1);");
+"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
