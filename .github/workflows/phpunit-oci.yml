@@ -14,12 +14,12 @@ env:
 
 jobs:
   phpunit-oci:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         php-versions: ['8.0']
-        server-versions: ['master']
+        server-versions: ['stable25']
 
     services:
       oracle:
