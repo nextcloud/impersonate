@@ -11,7 +11,7 @@ OC.L10N.register(
     "Cannot impersonate the user because it was never logged in" : "Не може видати себе за користувача, оскільки він ніколи не входив в систему ",
     "Cannot impersonate yourself" : "Не можна видавати себе за іншого ",
     "Impersonate other users" : "Знеособити інших користувачів",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Ці групи зможуть видавати себе за користувачів, яких їм дозволено адмініструвати. Якщо ви видалите всі групи, кожен адміністратор групи зможе видавати себе за іншого. ",
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Ці групи зможуть видавати себе за користувачів, яких їм дозволено адмініструвати. Якщо ви вилучите всі групи, кожен адміністратор групи зможе видавати себе за іншого. ",
     "Cannot impersonate the user because it was never logged in." : "Не може видавати себе за користувача, оскільки він ніколи не входив в систему. ",
     "Cannot impersonate yourself." : "Не можна видавати себе за іншого. "
 },
