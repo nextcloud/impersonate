@@ -24,6 +24,8 @@ use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
+use OCP\EventDispatcher\IEventDispatcher;
+use OCA\Impersonate\Events\ImpersonateEvent;
 
 class SettingsController extends Controller {
 	/** @var IUserManager */
@@ -40,6 +42,8 @@ class SettingsController extends Controller {
 	private $logger;
 	/** @var IL10N */
 	private $l;
+	/** @var IEventDispatcher */
+	private $eventDispatcher;
 
 	/**
 	 * @param string $appName
@@ -60,7 +64,8 @@ class SettingsController extends Controller {
 								ISession $session,
 								IConfig $config,
 								LoggerInterface $logger,
-								IL10N $l) {
+								IL10N $l,
+								IEventDispatcher $eventDispatcher) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->groupManager = $groupManager;
@@ -69,6 +74,7 @@ class SettingsController extends Controller {
 		$this->config = $config;
 		$this->logger = $logger;
 		$this->l = $l;
+		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
@@ -154,6 +160,10 @@ class SettingsController extends Controller {
 		if ($this->session->get('oldUserId') === null) {
 			$this->session->set('oldUserId', $currentUser->getUID());
 		}
+
+		$this->eventDispatcher->dispatchTyped(new ImpersonateEvent($currentUser, $user));
+		$this->userSession->getManager()->emit('\OC\User', 'impersonate', [$currentUser, $user]);
+
 		$this->userSession->setUser($user);
 		return new JSONResponse();
 	}

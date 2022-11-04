@@ -10,6 +10,8 @@ use OCP\AppFramework\Controller;
 use OCP\ISession;
 use OCP\IUserManager;
 use OCP\IUserSession;
+use OCP\EventDispatcher\IEventDispatcher;
+use OCA\Impersonate\Events\ImpersonateEvent;
 
 class LogoutController extends Controller {
 	/** @var IUserManager */
@@ -20,6 +22,8 @@ class LogoutController extends Controller {
 	private $logger;
 	/** @var ISession */
 	private $session;
+	/** @var IEventDispatcher */
+	private $eventDispatcher;
 
 	/**
 	 * @param string $appName
@@ -34,12 +38,14 @@ class LogoutController extends Controller {
 								IUserManager $userManager,
 								IUserSession $userSession,
 								ISession $session,
-								LoggerInterface $logger) {
+								LoggerInterface $logger,
+								IEventDispatcher $eventDispatcher) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->userSession = $userSession;
 		$this->session = $session;
 		$this->logger = $logger;
+		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
@@ -59,6 +65,10 @@ class LogoutController extends Controller {
 				Http::STATUS_NOT_FOUND
 			);
 		}
+
+		$currentUser = $this->userManager->get($userId);
+		$this->eventDispatcher->dispatchTyped(new ImpersonateEvent($currentUser, $user));
+		$this->userSession->getManager()->emit('\OC\User', 'impersonate', [$currentUser, $user]);
 
 		$this->userSession->setUser($user);
 
