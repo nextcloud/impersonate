@@ -11,7 +11,7 @@ use OCP\ISession;
 use OCP\IUserManager;
 use OCP\IUserSession;
 use OCP\EventDispatcher\IEventDispatcher;
-use OCA\Impersonate\Events\ImpersonateEvent;
+use OCA\Impersonate\Events\EndImpersonateEvent;
 
 class LogoutController extends Controller {
 	/** @var IUserManager */
@@ -53,10 +53,10 @@ class LogoutController extends Controller {
 	 * @NoAdminRequired
 	 */
 	public function logout(string $userId): JSONResponse {
-		$user = $this->session->get('oldUserId');
-		$user = $this->userManager->get($user);
+		$impersonator = $this->session->get('oldUserId');
+		$impersonator = $this->userManager->get($impersonator);
 
-		if ($user === null) {
+		if ($impersonator === null) {
 			return new JSONResponse(
 				sprintf(
 					'No user found for %s',
@@ -66,11 +66,10 @@ class LogoutController extends Controller {
 			);
 		}
 
-		$currentUser = $this->userManager->get($userId);
-		$this->eventDispatcher->dispatchTyped(new ImpersonateEvent($currentUser, $user));
-		$this->userSession->getManager()->emit('\OC\User', 'impersonate', [$currentUser, $user]);
+		$impersonatee = $this->userManager->get($userId);
+		$this->eventDispatcher->dispatchTyped(new EndImpersonateEvent($impersonator, $impersonatee));
 
-		$this->userSession->setUser($user);
+		$this->userSession->setUser($impersonator);
 
 		$this->logger->info(
 			sprintf(
