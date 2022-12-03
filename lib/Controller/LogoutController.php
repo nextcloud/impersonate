@@ -53,8 +53,9 @@ class LogoutController extends Controller {
 	 * @NoAdminRequired
 	 */
 	public function logout(string $userId): JSONResponse {
-		$impersonator = $this->session->get('oldUserId');
-		$impersonator = $this->userManager->get($impersonator);
+		/** @var ?string $impersonatorUid */
+		$impersonatorUid = $this->session->get('oldUserId');
+		$impersonator = $this->userManager->get($impersonatorUid);
 
 		if ($impersonator === null) {
 			return new JSONResponse(
@@ -66,8 +67,8 @@ class LogoutController extends Controller {
 			);
 		}
 
-		$impersonatee = $this->userManager->get($userId);
-		$this->eventDispatcher->dispatchTyped(new EndImpersonateEvent($impersonator, $impersonatee));
+		$impersonatedUser = $this->userManager->get($userId);
+		$this->eventDispatcher->dispatchTyped(new EndImpersonateEvent($impersonator, $impersonatedUser));
 
 		$this->userSession->setUser($impersonator);
 
