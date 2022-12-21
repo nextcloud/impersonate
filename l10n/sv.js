@@ -11,8 +11,6 @@ OC.L10N.register(
     "Cannot impersonate the user because it was never logged in" : "Kan inte imitera användaren eftersom de aldrig varit inloggade",
     "Cannot impersonate yourself" : "Kan inte imitera dig själv",
     "Impersonate other users" : "Imitera andra användare",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Dessa grupper kommer att kunna imitera användare som de får administrera. Om du tar bort alla grupper får varje gruppadministratör imitera.",
-    "Cannot impersonate the user because it was never logged in." : "Kan inte imitera användaren eftersom den aldrig loggat in.",
-    "Cannot impersonate yourself." : "Kan inte imitera dig själv."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Dessa grupper kommer att kunna imitera användare som de får administrera. Om du tar bort alla grupper får varje gruppadministratör imitera."
 },
 "nplurals=2; plural=(n != 1);");
