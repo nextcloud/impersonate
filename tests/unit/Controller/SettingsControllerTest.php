@@ -34,7 +34,6 @@ use Test\TestCase;
  */
 
 class SettingsControllerTest extends TestCase {
-
 	/** @var string */
 	private $appName;
 	/** @var IRequest|MockObject */

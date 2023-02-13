@@ -26,7 +26,6 @@ use OCP\IConfig;
 use OCP\Settings\ISettings;
 
 class AdminSettings implements ISettings {
-
 	/** @var IConfig */
 	protected $config;
 
