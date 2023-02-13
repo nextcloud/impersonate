@@ -49,7 +49,7 @@ class Application extends App implements IBootstrap {
 		$session = $context->getServerContainer()->get(ISession::class);
 
 		if ($session->get('oldUserId') !== null) {
-			Util::addScript(self::APP_ID,'impersonate_logout');
+			Util::addScript(self::APP_ID, 'impersonate_logout');
 		}
 	}
 }

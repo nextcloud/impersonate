@@ -35,7 +35,6 @@ use OCP\IUserSession;
 use OCP\Util;
 
 class BeforeTemplateRenderedListener implements IEventListener {
-
 	/** @var IConfig */
 	private $config;
 	/** @var IGroupManager */
