@@ -52,30 +52,28 @@ class LogoutController extends Controller {
 	 * @UseSession
 	 * @NoAdminRequired
 	 */
-	public function logout(string $userId): JSONResponse {
+	public function logout(): JSONResponse {
 		/** @var ?string $impersonatorUid */
 		$impersonatorUid = $this->session->get('oldUserId');
 		$impersonator = $this->userManager->get($impersonatorUid);
 
 		if ($impersonator === null) {
 			return new JSONResponse(
-				sprintf(
-					'No user found for %s',
-					$userId
-				),
+				'No impersonating user found.',
 				Http::STATUS_NOT_FOUND
 			);
 		}
 
-		$impersonatedUser = $this->userManager->get($userId);
+		$impersonatedUser = $this->userSession->getUser();
+
 		$this->eventDispatcher->dispatchTyped(new EndImpersonateEvent($impersonator, $impersonatedUser));
 
 		$this->userSession->setUser($impersonator);
 
 		$this->logger->info(
 			sprintf(
-				'Switching back to previous user %s',
-				$userId
+				'Switching back to previous user %s from user %s',
+				$impersonatorUid, $impersonatedUser->getUID()
 			),
 			[
 				'app' => 'impersonate',
