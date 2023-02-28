@@ -10,6 +10,8 @@ use OCP\AppFramework\Controller;
 use OCP\ISession;
 use OCP\IUserManager;
 use OCP\IUserSession;
+use OCP\EventDispatcher\IEventDispatcher;
+use OCA\Impersonate\Events\EndImpersonateEvent;
 
 class LogoutController extends Controller {
 	/** @var IUserManager */
@@ -20,6 +22,8 @@ class LogoutController extends Controller {
 	private $logger;
 	/** @var ISession */
 	private $session;
+	/** @var IEventDispatcher */
+	private $eventDispatcher;
 
 	/**
 	 * @param string $appName
@@ -34,38 +38,42 @@ class LogoutController extends Controller {
 								IUserManager $userManager,
 								IUserSession $userSession,
 								ISession $session,
-								LoggerInterface $logger) {
+								LoggerInterface $logger,
+								IEventDispatcher $eventDispatcher) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->userSession = $userSession;
 		$this->session = $session;
 		$this->logger = $logger;
+		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
 	 * @UseSession
 	 * @NoAdminRequired
 	 */
-	public function logout(string $userId): JSONResponse {
-		$user = $this->session->get('oldUserId');
-		$user = $this->userManager->get($user);
+	public function logout(): JSONResponse {
+		/** @var ?string $impersonatorUid */
+		$impersonatorUid = $this->session->get('oldUserId');
+		$impersonator = $this->userManager->get($impersonatorUid);
 
-		if ($user === null) {
+		if ($impersonator === null) {
 			return new JSONResponse(
-				sprintf(
-					'No user found for %s',
-					$userId
-				),
+				'No impersonating user found.',
 				Http::STATUS_NOT_FOUND
 			);
 		}
 
-		$this->userSession->setUser($user);
+		$impersonatedUser = $this->userSession->getUser();
+
+		$this->eventDispatcher->dispatchTyped(new EndImpersonateEvent($impersonator, $impersonatedUser));
+
+		$this->userSession->setUser($impersonator);
 
 		$this->logger->info(
 			sprintf(
-				'Switching back to previous user %s',
-				$userId
+				'Switching back to previous user %s from user %s',
+				$impersonatorUid, $impersonatedUser->getUID()
 			),
 			[
 				'app' => 'impersonate',

@@ -24,6 +24,8 @@ use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
+use OCP\EventDispatcher\IEventDispatcher;
+use OCA\Impersonate\Events\BeginImpersonateEvent;
 
 class SettingsController extends Controller {
 	/** @var IUserManager */
@@ -40,19 +42,10 @@ class SettingsController extends Controller {
 	private $logger;
 	/** @var IL10N */
 	private $l;
+	/** @var IEventDispatcher */
+	private $eventDispatcher;
 
-	/**
-	 * @param string $appName
-	 * @param IRequest $request
-	 * @param IUserManager $userManager
-	 * @param IGroupManager $groupManager
-	 * @param IUserSession $userSession
-	 * @param ISession $session
-	 * @param IConfig $config
-	 * @param LoggerInterface $logger
-	 * @param IL10N $l
-	 */
-	public function __construct($appName,
+	public function __construct(string $appName,
 								IRequest $request,
 								IUserManager $userManager,
 								IGroupManager $groupManager,
@@ -60,7 +53,8 @@ class SettingsController extends Controller {
 								ISession $session,
 								IConfig $config,
 								LoggerInterface $logger,
-								IL10N $l) {
+								IL10N $l,
+								IEventDispatcher $eventDispatcher) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->groupManager = $groupManager;
@@ -69,6 +63,7 @@ class SettingsController extends Controller {
 		$this->config = $config;
 		$this->logger = $logger;
 		$this->l = $l;
+		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
@@ -76,13 +71,13 @@ class SettingsController extends Controller {
 	 * @NoAdminRequired
 	 */
 	public function impersonate(string $userId): JSONResponse {
-		/** @var IUser $currentUser */
-		$currentUser = $this->userSession->getUser();
+		/** @var IUser $impersonator */
+		$impersonator = $this->userSession->getUser();
 
 		$this->logger->warning(
 			sprintf(
 				'User %s trying to impersonate user %s',
-				$currentUser->getUID(),
+				$impersonator->getUID(),
 				$userId
 			),
 			[
@@ -90,8 +85,8 @@ class SettingsController extends Controller {
 			]
 		);
 
-		$user = $this->userManager->get($userId);
-		if ($user === null) {
+		$impersonatee = $this->userManager->get($userId);
+		if ($impersonatee === null) {
 			return new JSONResponse(
 				[
 					'message' => $this->l->t('User not found'),
@@ -100,8 +95,8 @@ class SettingsController extends Controller {
 			);
 		}
 
-		if (!$this->groupManager->isAdmin($currentUser->getUID())
-			&& !$this->groupManager->getSubAdmin()->isUserAccessible($currentUser, $user)) {
+		if (!$this->groupManager->isAdmin($impersonator->getUID())
+			&& !$this->groupManager->getSubAdmin()->isUserAccessible($impersonator, $impersonatee)) {
 			return new JSONResponse(
 				[
 					'message' => $this->l->t('Insufficient permissions to impersonate user'),
@@ -112,7 +107,7 @@ class SettingsController extends Controller {
 
 		$authorized = json_decode($this->config->getAppValue('impersonate', 'authorized', '["admin"]'));
 		if (!empty($authorized)) {
-			$userGroups = $this->groupManager->getUserGroupIds($currentUser);
+			$userGroups = $this->groupManager->getUserGroupIds($impersonator);
 
 			if (!array_intersect($userGroups, $authorized)) {
 				return new JSONResponse(
@@ -124,7 +119,7 @@ class SettingsController extends Controller {
 			}
 		}
 
-		if ($user->getLastLogin() === 0) {
+		if ($impersonatee->getLastLogin() === 0) {
 			return new JSONResponse(
 				[
 					'message' => $this->l->t('Cannot impersonate the user because it was never logged in'),
@@ -133,7 +128,7 @@ class SettingsController extends Controller {
 			);
 		}
 
-		if ($user->getUID() === $currentUser->getUID()) {
+		if ($impersonatee->getUID() === $impersonator->getUID()) {
 			return new JSONResponse(
 				[
 					'message' => $this->l->t('Cannot impersonate yourself'),
@@ -152,9 +147,12 @@ class SettingsController extends Controller {
 			]
 		);
 		if ($this->session->get('oldUserId') === null) {
-			$this->session->set('oldUserId', $currentUser->getUID());
+			$this->session->set('oldUserId', $impersonator->getUID());
 		}
-		$this->userSession->setUser($user);
+
+		$this->eventDispatcher->dispatchTyped(new BeginImpersonateEvent($impersonator, $impersonatee));
+
+		$this->userSession->setUser($impersonatee);
 		return new JSONResponse();
 	}
 }
