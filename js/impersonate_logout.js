@@ -14,10 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	);
 
-	function logoutHandler(userId) {
+	function logoutHandler() {
 		var promisObj = $.post(
-			OC.generateUrl('apps/impersonate/logout'),
-			{userId: userId}
+			OC.generateUrl('apps/impersonate/logout')
 		).promise()
 
 		promisObj.done(function () {
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	$('#settings ul li:last').on('click', function (event) {
 		event.preventDefault()
-		var userId = $("#expandDisplayName").text()
-		logoutHandler(userId)
+		logoutHandler()
 	})
 })
