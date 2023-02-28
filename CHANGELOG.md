@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.11.1
+
+### Fixed
+
+* [L10n: Add dots (impersonate#158)](https://githubq.com/nextcloud/impersonate/pull/158)
+* [Fix unexpected parameter to callback (impersonate#196)](https://github.com/nextcloud/impersonate/pull/196)
+
 ## 1.11.0
 
 ### Fixed
