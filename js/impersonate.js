@@ -30,7 +30,7 @@
 		)
 	}
 
-	var registerFunction = function(delay) {
+	var registerFunction = function(event, delay) {
 		delay = delay || 0
 		if (OCA.Settings === undefined) {
 			delay = delay * 2
@@ -41,7 +41,7 @@
 				console.error('Could not register impersonate script')
 				return
 			}
-			setTimeout(function() { registerFunction(delay) }, delay)
+			setTimeout(function() { registerFunction(event, delay) }, delay)
 		} else {
 			OCA.Settings.UserList.registerAction('icon-user', t('impersonate', 'Impersonate'), impersonateDialog)
 		}
