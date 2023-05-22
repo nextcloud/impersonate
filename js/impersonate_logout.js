@@ -22,7 +22,7 @@
 		document.getElementById('logout').getElementsByTagName('a')[0].setAttribute('href', '#')
 
 		var text = '<a href="' + OC.generateUrl('apps/files') + '">' +
-			t('impersonate', 'Logged in as {uid}', {uid: OC.getCurrentUser().uid}) +
+			t('impersonate', 'Logged in as {name} ({uid})', {uid: OC.getCurrentUser().uid, name: OC.getCurrentUser().displayName}) +
 			'</a>';
 
 		OC.Notification.showHtml(
