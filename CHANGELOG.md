@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.13.1
+
+### Fixed
+
+* * [Fix: impersonate logout (impersonate#213)](https://github.com/nextcloud/impersonate/pull/213)
+
 ## 1.13.0
 
 ### Added
