@@ -1,5 +1,6 @@
 CHANGELOG.md
 composer.json
+composer.lock
 .drone.yml
 .git
 .github
@@ -7,7 +8,7 @@ composer.json
 krankerl.toml
 Makefile
 .nextcloudignore
-.php_cs.dist
+.php-cs-fixer.dist.php
 README.md
 screenshots
 .scrutinizer.yml
