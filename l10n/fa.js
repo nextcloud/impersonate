@@ -5,10 +5,10 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "آیا مطمئن هستید که می خواهید \"{userId}\" جعل کنید؟",
     "Impersonate user" : "جعل کاربر",
     "Impersonate" : "جعل",
-    "Logged in as {uid}" : "وارد سیستم شده اید {uid}",
     "User not found" : "کاربر یافت نشد",
     "Insufficient permissions to impersonate user" : "مجوزهای کافی برای جعل هویت کاربر",
     "Impersonate other users" : "جعل هویت سایر کاربران",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "این گروه ها می توانند از کاربرانی که مجاز به اداره آنها هستند جعل هویت کنند. اگر همه گروه ها را حذف کنید ، به هر مدیر گروه مجاز است جعل هویت شود."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "این گروه ها می توانند از کاربرانی که مجاز به اداره آنها هستند جعل هویت کنند. اگر همه گروه ها را حذف کنید ، به هر مدیر گروه مجاز است جعل هویت شود.",
+    "Logged in as {uid}" : "وارد سیستم شده اید {uid}"
 },
 "nplurals=2; plural=(n > 1);");
