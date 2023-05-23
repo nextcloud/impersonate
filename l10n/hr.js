@@ -5,10 +5,10 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Jeste li sigurni da se želite predstaviti kao „{userId}”?",
     "Impersonate user" : "Predstavi se kao korisnik",
     "Impersonate" : "Predstavljanje",
-    "Logged in as {uid}" : "Prijavljen kao {uid}",
     "User not found" : "Korisnik nije pronađen",
     "Insufficient permissions to impersonate user" : "Nedovoljna dopuštenja za predstavljanje kao korisnik",
     "Impersonate other users" : "Predstavljanje kao drugi korisnici",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Te se grupe mogu predstavljati samo kao korisnici koje smiju administrirati. Ako uklonite sve grupe, svakom će administratoru grupe biti omogućeno takvo predstavljanje."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Te se grupe mogu predstavljati samo kao korisnici koje smiju administrirati. Ako uklonite sve grupe, svakom će administratoru grupe biti omogućeno takvo predstavljanje.",
+    "Logged in as {uid}" : "Prijavljen kao {uid}"
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");
