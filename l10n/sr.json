@@ -3,6 +3,8 @@
     "Are you sure you want to impersonate \"{userId}\"?" : "Да ли сте сигурни да желите да имитирате корисника „{userId}?",
     "Impersonate user" : "Имитирај корисника",
     "Impersonate" : "Имитирање",
+    "Could not log out, please try again" : "Није успело одјављивање, молимо вас да покушате поново",
+    "Logged in as {name} ({uid})" : "Пријављени сте као {name} ({uid})",
     "User not found" : "Корисник није нађен",
     "Insufficient permissions to impersonate user" : "Нема потребних дозвола за имитирање корисника",
     "Cannot impersonate the user because it was never logged in" : "Корисник не може да се имитира јер се никада није пријавио на систем",
