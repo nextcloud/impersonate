@@ -5,6 +5,8 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Är du säker att du vill imitera \"{userId}\"?",
     "Impersonate user" : "Imitera användare",
     "Impersonate" : "Imitera",
+    "Could not log out, please try again" : "Det gick inte att logga ut, försök igen",
+    "Logged in as {name} ({uid})" : "Inloggad som {name} ({uid})",
     "User not found" : "Användaren hittades inte",
     "Insufficient permissions to impersonate user" : "Otillräckliga behörigheter för att imitera användare",
     "Cannot impersonate the user because it was never logged in" : "Kan inte imitera användaren eftersom de aldrig varit inloggade",
