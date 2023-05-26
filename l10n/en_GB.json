@@ -3,6 +3,8 @@
     "Are you sure you want to impersonate \"{userId}\"?" : "Are you sure you want to impersonate \"{userId}\"?",
     "Impersonate user" : "Impersonate user",
     "Impersonate" : "Impersonate",
+    "Could not log out, please try again" : "Could not log out, please try again",
+    "Logged in as {name} ({uid})" : "Logged in as {name} ({uid})",
     "User not found" : "User not found",
     "Insufficient permissions to impersonate user" : "Insufficient permissions to impersonate user",
     "Cannot impersonate the user because it was never logged in" : "Cannot impersonate the user because it was never logged in",
