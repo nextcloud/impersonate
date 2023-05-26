@@ -5,6 +5,8 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "你確定要模擬為用戶 \"{userId}\" 嗎？",
     "Impersonate user" : "模擬用戶",
     "Impersonate" : "模擬",
+    "Could not log out, please try again" : "無法登出，請重試",
+    "Logged in as {name} ({uid})" : "以 {name} ({uid}) 登入",
     "User not found" : "未找到用戶",
     "Insufficient permissions to impersonate user" : "權限不足，無法模擬用戶",
     "Cannot impersonate the user because it was never logged in" : "無法模擬用戶，因為該用戶從未登入",
