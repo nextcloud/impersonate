@@ -8,7 +8,6 @@ OC.L10N.register(
     "User not found" : "Netrovita uzanto",
     "Insufficient permissions to impersonate user" : "Nesufiĉaj permesoj por prunti identecon de uzanto",
     "Impersonate other users" : "Prunti identecon de aliaj uzantoj",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Tiuj grupoj povos prunti identecon de uzantoj, kiujn ili rajtas administri. Se vi forigas ĉiujn grupojn, ĉiu grupadministranto rajtos prunti identecon.",
-    "Logged in as {uid}" : "Konektinta kiel {uid}"
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Tiuj grupoj povos prunti identecon de uzantoj, kiujn ili rajtas administri. Se vi forigas ĉiujn grupojn, ĉiu grupadministranto rajtos prunti identecon."
 },
 "nplurals=2; plural=(n != 1);");

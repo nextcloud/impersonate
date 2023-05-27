@@ -8,7 +8,6 @@ OC.L10N.register(
     "User not found" : "Kasutajat ei leitud",
     "Insufficient permissions to impersonate user" : "Kasutaja kehastamiseks pole piisavalt õigusi",
     "Impersonate other users" : "Kehasta teisi kasutajaid",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Need grupid saavad kehastada kasutajaid, kelle administreerimieks neil luba on. Kui kõik grupid eemaldada, siis on igal grupi administraatoril kehastamisõigus.",
-    "Logged in as {uid}" : "Sisse logitud kui {uid}"
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Need grupid saavad kehastada kasutajaid, kelle administreerimieks neil luba on. Kui kõik grupid eemaldada, siis on igal grupi administraatoril kehastamisõigus."
 },
 "nplurals=2; plural=(n != 1);");
