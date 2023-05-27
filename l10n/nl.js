@@ -8,7 +8,6 @@ OC.L10N.register(
     "User not found" : "Gebruiker niet gevonden",
     "Insufficient permissions to impersonate user" : "Onvoldoende machtigingen om andere account na te bootsen.",
     "Impersonate other users" : "Andere gebruiker nabootsen",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Deze groepen kunnen andere gebruikers nabootsen als ze bevoegd zijn om te beheren. Als je alle groepen verwijdert, kan iedere groepsbeheerder gebruikers nabootsen.",
-    "Logged in as {uid}" : "Ingelogd in {uid}"
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Deze groepen kunnen andere gebruikers nabootsen als ze bevoegd zijn om te beheren. Als je alle groepen verwijdert, kan iedere groepsbeheerder gebruikers nabootsen."
 },
 "nplurals=2; plural=(n != 1);");

@@ -6,7 +6,6 @@
     "User not found" : "Utilizador não encontrado",
     "Insufficient permissions to impersonate user" : "Não tem permissões suficientes para se fazer passar por outro utilizador",
     "Impersonate other users" : "Fazer-se passar por outros utilizadores",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Os membros destes grupos poderão fazer-se passar pelos utilizadores que tenham permissões para administrar. Se remover todos os grupos, todos os administradores de grupos terão permissão de se fazer passar pelos seus utilizadores.",
-    "Logged in as {uid}" : "Iniciou sessão como {uid}"
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Os membros destes grupos poderão fazer-se passar pelos utilizadores que tenham permissões para administrar. Se remover todos os grupos, todos os administradores de grupos terão permissão de se fazer passar pelos seus utilizadores."
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
