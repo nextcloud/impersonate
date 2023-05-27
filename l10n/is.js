@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Ertu viss um að þú viljir gerast staðgengill notandans \"{userId}\"?",
     "Impersonate user" : "Gerast staðgengill notanda",
     "Impersonate" : "Gerast staðgengill notanda",
-    "Logged in as {uid}" : "Skráður inn sem {uid}",
     "User not found" : "Notandi fannst ekki",
     "Insufficient permissions to impersonate user" : "Ekki nægar heimildir til að gerast staðgengill notanda",
     "Impersonate other users" : "Gerast staðgengill annarra notenda",

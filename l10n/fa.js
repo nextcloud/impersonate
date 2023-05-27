@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "آیا مطمئن هستید که می خواهید \"{userId}\" جعل کنید؟",
     "Impersonate user" : "جعل کاربر",
     "Impersonate" : "جعل",
-    "Logged in as {uid}" : "وارد سیستم شده اید {uid}",
     "User not found" : "کاربر یافت نشد",
     "Insufficient permissions to impersonate user" : "مجوزهای کافی برای جعل هویت کاربر",
     "Impersonate other users" : "جعل هویت سایر کاربران",

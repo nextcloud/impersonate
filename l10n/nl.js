@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Weet je zeker dat je \"{userId}\" wilt nabootsen?",
     "Impersonate user" : "Gebruiker nabootsen",
     "Impersonate" : "Nabootsen",
-    "Logged in as {uid}" : "Ingelogd in {uid}",
     "User not found" : "Gebruiker niet gevonden",
     "Insufficient permissions to impersonate user" : "Onvoldoende machtigingen om andere account na te bootsen.",
     "Impersonate other users" : "Andere gebruiker nabootsen",

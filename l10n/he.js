@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "להתחזות למשתמש „{userId}”?",
     "Impersonate user" : "התחזות למשתמש",
     "Impersonate" : "התחזות",
-    "Logged in as {uid}" : "נכנסת בתור {uid}",
     "User not found" : "משתמש לא נמצא",
     "Insufficient permissions to impersonate user" : "השראות לא מספקות להתחזות משתמש.",
     "Impersonate other users" : "התחזות למשתמשים אחרים",

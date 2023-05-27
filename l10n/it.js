@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Sei sicuro di voler impersonare \"{userId}\"?",
     "Impersonate user" : "Impersona utente",
     "Impersonate" : "Impersona",
-    "Logged in as {uid}" : "Accesso effettuato come {uid}",
     "User not found" : "Utente non trovato",
     "Insufficient permissions to impersonate user" : "Permessi insufficienti per impersonare l'utente",
     "Cannot impersonate the user because it was never logged in" : "Impossibile impersonare l'utente perché non ha mai effettuato l'accesso",

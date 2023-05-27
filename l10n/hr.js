@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Jeste li sigurni da se želite predstaviti kao „{userId}”?",
     "Impersonate user" : "Predstavi se kao korisnik",
     "Impersonate" : "Predstavljanje",
-    "Logged in as {uid}" : "Prijavljen kao {uid}",
     "User not found" : "Korisnik nije pronađen",
     "Insufficient permissions to impersonate user" : "Nedovoljna dopuštenja za predstavljanje kao korisnik",
     "Impersonate other users" : "Predstavljanje kao drugi korisnici",

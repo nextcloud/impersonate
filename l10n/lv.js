@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Vai tu tiešām gribi uzdoties par \"{userId}\"?",
     "Impersonate user" : "Uzdoties par lietotāju",
     "Impersonate" : "Uzdoties",
-    "Logged in as {uid}" : "Pieteicies kā {uid}",
     "User not found" : "Lietotājs nav atrasts",
     "Insufficient permissions to impersonate user" : "Nepietiek atļauju lietotāja personificēšanai",
     "Impersonate other users" : "Uzdoties par citiem lietotājiem",

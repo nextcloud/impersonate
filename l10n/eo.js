@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Ĉu vi certas, ke vi volas prunti identecon de „{userId}“?",
     "Impersonate user" : "Prunti identecon de uzanto",
     "Impersonate" : "Prunti identecon",
-    "Logged in as {uid}" : "Konektinta kiel {uid}",
     "User not found" : "Netrovita uzanto",
     "Insufficient permissions to impersonate user" : "Nesufiĉaj permesoj por prunti identecon de uzanto",
     "Impersonate other users" : "Prunti identecon de aliaj uzantoj",

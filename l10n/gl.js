@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Confirma que quere suplantar a «{userId}»?",
     "Impersonate user" : "Suplantar usuario",
     "Impersonate" : "Suplantar",
-    "Logged in as {uid}" : "Iniciouse sesión sesión como {uid}",
     "User not found" : "Non se atopou o usuario",
     "Insufficient permissions to impersonate user" : "Non ten permisos abondo para suplantar ao usuario",
     "Cannot impersonate the user because it was never logged in" : "Non se pode suplantar ó usuario porque nunca iniciou sesión",

@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Er du sikker på at du vil udgive dig for at være \"{userId}\"?",
     "Impersonate user" : "Udgiv dig for at være en anden bruger",
     "Impersonate" : "Udgiv dig for at være",
-    "Logged in as {uid}" : "Logget ind som {uid}",
     "User not found" : "Bruger ikke fundet",
     "Insufficient permissions to impersonate user" : "Du har ikke rettigheder til at udgive dig for at være andre brugere",
     "Cannot impersonate the user because it was never logged in" : "Kan ikke efterligne brugeren, fordi den aldrig var logget ind",

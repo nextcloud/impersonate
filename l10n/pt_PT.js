@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Tem a certeza que quer fazer-se passar por \"{userId}\"?",
     "Impersonate user" : "Fazer-se passar por outro utilizador",
     "Impersonate" : "Fazer-se passar por",
-    "Logged in as {uid}" : "Iniciou sessão como {uid}",
     "User not found" : "Utilizador não encontrado",
     "Insufficient permissions to impersonate user" : "Não tem permissões suficientes para se fazer passar por outro utilizador",
     "Impersonate other users" : "Fazer-se passar por outros utilizadores",

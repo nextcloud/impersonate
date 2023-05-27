@@ -5,7 +5,6 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Ste si istý,  že sa chcete zosobniť na používateľa \"{userId}\"?",
     "Impersonate user" : "Zosobniť sa na používateľa",
     "Impersonate" : "Zosobniť sa",
-    "Logged in as {uid}" : "Prihlásený ako {uid}",
     "User not found" : "Používateľ nenájdený",
     "Insufficient permissions to impersonate user" : "Nedostatočné oprávnenie pre vystupovanie ako užívateľ",
     "Cannot impersonate the user because it was never logged in" : "Nie je možné vydávať sa za používateľa, pretože nebol nikdy prihlásený",
