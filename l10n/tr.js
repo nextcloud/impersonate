@@ -5,6 +5,8 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "\"{userId}\" kullanıcısının yerine geçmek istediğinize emin misiniz?",
     "Impersonate user" : "Kullanıcının yerine geç",
     "Impersonate" : "Yerine geç",
+    "Could not log out, please try again" : "Oturum kapatılamadı. Lütfen yeniden deneyin.",
+    "Logged in as {name} ({uid})" : "{name} ({uid}) olarak oturum açıldı",
     "User not found" : "Kullanıcı bulunamadı",
     "Insufficient permissions to impersonate user" : "İzinleriniz kişinin yerine geçmek için yeterli değil",
     "Cannot impersonate the user because it was never logged in" : "Hiç oturum açmamış olduğundan bu kullanıcının yerine geçilemedi",
