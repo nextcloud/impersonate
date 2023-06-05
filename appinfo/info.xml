@@ -26,6 +26,10 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <author>Nextcloud</author>
     <namespace>Impersonate</namespace>
 
+    <types>
+      <prevent_group_restriction />
+    </types>
+
     <category>tools</category>
     <website>https://github.com/nextcloud/impersonate</website>
     <bugs>https://github.com/nextcloud/impersonate/issues</bugs>
