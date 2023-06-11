@@ -3,6 +3,8 @@
     "Are you sure you want to impersonate \"{userId}\"?" : "Biztos, hogy meg akarja személyesíteni „{userId}” felhasználót?",
     "Impersonate user" : "Felhasználó megszemélyesítése",
     "Impersonate" : "Megszemélyesítés",
+    "Could not log out, please try again" : "Nem sikerült kijelentkezni, próbálja újra",
+    "Logged in as {name} ({uid})" : "Bejelentkezve mint {name} ({uid})",
     "User not found" : "Felhasználó nem található",
     "Insufficient permissions to impersonate user" : "Nincs elegendő jogosultsága a felhasználó megszemélyesítéséhez",
     "Cannot impersonate the user because it was never logged in" : "Nem lehet megszemélyesíteni a felhasználót mert még sosem jelentkezett be",
