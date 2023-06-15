@@ -5,7 +5,7 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Möchten Sie wirklich \"{userId}\" nachahmen?",
     "Impersonate user" : "Benutzer nachahmen",
     "Impersonate" : "Nachahmen",
-    "Could not log out, please try again" : "Fehler beim Abmelden, bitte nocheinmal probieren",
+    "Could not log out, please try again" : "Fehler beim Abmelden, bitte noch einmal probieren",
     "Logged in as {name} ({uid})" : "Angemeldet als {name} ({uid})",
     "User not found" : "Benutzer nicht gefunden",
     "Insufficient permissions to impersonate user" : "Keine ausreichenden Berechtigungen zum Nachahmen des Benutzers",
