@@ -3,6 +3,8 @@
     "Are you sure you want to impersonate \"{userId}\"?" : "\"{userId}\" の代理になってもよろしいですか?",
     "Impersonate user" : "代理ユーザー",
     "Impersonate" : "代理",
+    "Could not log out, please try again" : "ログアウトできませんでした。再度お試しください",
+    "Logged in as {name} ({uid})" : "{name} ({uid}) としてログインしました。",
     "User not found" : "ユーザーが見つかりません",
     "Insufficient permissions to impersonate user" : "代理ユーザーになる権限が不足しています",
     "Cannot impersonate the user because it was never logged in" : "ユーザーが一度もログインしていないため、ユーザーの代理になることはできません。",
