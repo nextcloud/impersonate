@@ -1,14 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 1.13.0
+## 1.15.0
 
 ### Added
 
-* Nextcloud 26 compatibility
-* [Add ImpersonateEvents for SnappyMail (and others) (impersonate#180)](https://github.com/nextcloud/impersonate/pull/180)
+* [Feat(deps): Add Nextcloud 28 support on master (impersonate#210)](https://github.com/nextcloud/impersonate/pull/210)
+  * Note for early adopters: needs at least 28 Beta 2
+* [Add info about limiting impersonation access in settings (impersonate#234)](https://github.com/nextcloud/impersonate/pull/234)
 
 ### Fixed
 
-* [L10n: Add dots (impersonate#158)](https://github.com/nextcloud/impersonate/pull/158)
-* [Fix unexpected parameter to callback (impersonate#194)](https://github.com/nextcloud/impersonate/pull/194)
+* [Fix: impersonate logout (impersonate#211)](https://github.com/nextcloud/impersonate/pull/211)
+* [Fix: Block group restriction which might lead to logout not working (impersonate#222)](https://github.com/nextcloud/impersonate/pull/222)
+* [Fix(frontend): fix determining user id (impersonate#237)](https://github.com/nextcloud/impersonate/pull/237)
