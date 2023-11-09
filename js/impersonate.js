@@ -16,14 +16,13 @@
 		xhr.send('userId=' + encodeURIComponent(userId) + '&requesttoken=' + encodeURIComponent(OC.requestToken))
 	}
 
-	function impersonateDialog(event) {
-		var userId = event.target.closest('.row').dataset.id
+	function impersonateDialog(event, user) {
 		OC.dialogs.confirm(
-			t('impersonate', 'Are you sure you want to impersonate "{userId}"?', { userId: userId }),
+			t('impersonate', 'Are you sure you want to impersonate "{userId}"?', { userId: user.id }),
 			t('impersonate', 'Impersonate user'),
 			function(result) {
 				if (result) {
-					impersonate(userId)
+					impersonate(user.id)
 				}
 			},
 			true
