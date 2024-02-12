@@ -2,16 +2,16 @@
 
 namespace OCA\Impersonate\Controller;
 
+use OCA\Impersonate\Events\EndImpersonateEvent;
+use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
-use Psr\Log\LoggerInterface;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\IRequest;
-use OCP\AppFramework\Controller;
 use OCP\ISession;
 use OCP\IUserManager;
 use OCP\IUserSession;
-use OCP\EventDispatcher\IEventDispatcher;
-use OCA\Impersonate\Events\EndImpersonateEvent;
+use Psr\Log\LoggerInterface;
 
 class LogoutController extends Controller {
 	/** @var IUserManager */
@@ -34,12 +34,12 @@ class LogoutController extends Controller {
 	 * @param LoggerInterface $logger
 	 */
 	public function __construct($appName,
-								IRequest $request,
-								IUserManager $userManager,
-								IUserSession $userSession,
-								ISession $session,
-								LoggerInterface $logger,
-								IEventDispatcher $eventDispatcher) {
+		IRequest $request,
+		IUserManager $userManager,
+		IUserSession $userSession,
+		ISession $session,
+		LoggerInterface $logger,
+		IEventDispatcher $eventDispatcher) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->userSession = $userSession;
