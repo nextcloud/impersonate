@@ -18,7 +18,7 @@ use OCA\Impersonate\Events\BeginImpersonateEvent;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\EventDispatcher\IEventDispatcher;
-use OCP\IConfig;
+use OCP\IAppConfig;
 use OCP\IGroupManager;
 use OCP\IL10N;
 use OCP\IRequest;
@@ -36,28 +36,16 @@ use Test\TestCase;
  */
 
 class SettingsControllerTest extends TestCase {
-	/** @var string */
-	private $appName;
-	/** @var IRequest|MockObject */
-	private $request;
-	/** @var IUserManager|MockObject */
-	private $userManager;
-	/** @var IGroupManager|MockObject */
-	private $groupManager;
-	/** @var SubAdmin|MockObject */
-	private $subadmin;
-	/** @var IUserSession|MockObject */
-	private $userSession;
-	/** @var ISession|MockObject */
-	private $session;
-	/** @var IConfig|MockObject */
-	private $config;
-	/** @var LoggerInterface|MockObject */
-	private $logger;
-	/** @var IL10N|MockObject */
-	private $l;
-	/** @var SettingsController */
-	private $controller;
+	private string $appName;
+	private IUserManager|MockObject $userManager;
+	private IGroupManager|MockObject $groupManager;
+	private SubAdmin|MockObject $subadmin;
+	private IUserSession|MockObject $userSession;
+	private ISession|MockObject $session;
+	private IAppConfig|MockObject $config;
+	private LoggerInterface|MockObject $logger;
+	private IL10N|MockObject $l;
+	private SettingsController $controller;
 	/** @var IEventDispatcher|IEventDispatcher&MockObject|MockObject */
 	private $eventDispatcher;
 
@@ -65,12 +53,12 @@ class SettingsControllerTest extends TestCase {
 		parent::setUp();
 
 		$this->appName = 'impersonate';
-		$this->request = $this->createMock(IRequest::class);
+		$request = $this->createMock(IRequest::class);
 		$this->userManager = $this->createMock(IUserManager::class);
 		$this->groupManager = $this->createMock(Manager::class);
 		$this->userSession = $this->createMock(IUserSession::class);
 		$this->session = $this->createMock(ISession::class);
-		$this->config = $this->createMock(IConfig::class);
+		$this->config = $this->createMock(IAppConfig::class);
 		$this->logger = $this->createMock(LoggerInterface::class);
 		$this->l = $this->createMock(IL10N::class);
 		$this->l->expects($this->any())
@@ -86,7 +74,7 @@ class SettingsControllerTest extends TestCase {
 
 		$this->controller = new SettingsController(
 			$this->appName,
-			$this->request,
+			$request,
 			$this->userManager,
 			$this->groupManager,
 			$this->userSession,
@@ -165,7 +153,7 @@ class SettingsControllerTest extends TestCase {
 			->willReturn(['admin']);
 
 		$this->config->expects($this->once())
-			->method('getAppValue')
+			->method('getValueString')
 			->with('impersonate', 'authorized', '["admin"]')
 			->willReturnArgument(2);
 
@@ -227,7 +215,7 @@ class SettingsControllerTest extends TestCase {
 			->willReturn(['subadmin']);
 
 		$this->config->expects($this->once())
-			->method('getAppValue')
+			->method('getValueString')
 			->with('impersonate', 'authorized', '["admin"]')
 			->willReturn(json_encode(['admin', 'subadmin']));
 
@@ -289,7 +277,7 @@ class SettingsControllerTest extends TestCase {
 			->willReturn(['subadmin']);
 
 		$this->config->expects($this->once())
-			->method('getAppValue')
+			->method('getValueString')
 			->with('impersonate', 'authorized', '["admin"]')
 			->willReturnArgument(2);
 

@@ -11,13 +11,13 @@
 
 namespace OCA\Impersonate\Controller;
 
-use OC\Group\Manager;
 use OCA\Impersonate\Events\BeginImpersonateEvent;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\EventDispatcher\IEventDispatcher;
-use OCP\IConfig;
+use OCP\Exceptions\AppConfigTypeConflictException;
+use OCP\IAppConfig;
 use OCP\IGroupManager;
 use OCP\IL10N;
 use OCP\IRequest;
@@ -28,47 +28,25 @@ use OCP\IUserSession;
 use Psr\Log\LoggerInterface;
 
 class SettingsController extends Controller {
-	/** @var IUserManager */
-	private $userManager;
-	/** @var IGroupManager|Manager */
-	private $groupManager;
-	/** @var IUserSession */
-	private $userSession;
-	/** @var ISession */
-	private $session;
-	/** @var IConfig */
-	private $config;
-	/** @var LoggerInterface */
-	private $logger;
-	/** @var IL10N */
-	private $l;
-	/** @var IEventDispatcher */
-	private $eventDispatcher;
-
-	public function __construct(string $appName,
+	public function __construct(
+		string $appName,
 		IRequest $request,
-		IUserManager $userManager,
-		IGroupManager $groupManager,
-		IUserSession $userSession,
-		ISession $session,
-		IConfig $config,
-		LoggerInterface $logger,
-		IL10N $l,
-		IEventDispatcher $eventDispatcher) {
+		protected IUserManager $userManager,
+		protected IGroupManager $groupManager,
+		protected IUserSession $userSession,
+		protected ISession $session,
+		protected IAppConfig $config,
+		protected LoggerInterface $logger,
+		protected IL10N $l,
+		protected IEventDispatcher $eventDispatcher
+	) {
 		parent::__construct($appName, $request);
-		$this->userManager = $userManager;
-		$this->groupManager = $groupManager;
-		$this->userSession = $userSession;
-		$this->session = $session;
-		$this->config = $config;
-		$this->logger = $logger;
-		$this->l = $l;
-		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
 	 * @UseSession
 	 * @NoAdminRequired
+	 * @throws AppConfigTypeConflictException
 	 */
 	public function impersonate(string $userId): JSONResponse {
 		/** @var IUser $impersonator */
@@ -105,7 +83,7 @@ class SettingsController extends Controller {
 			);
 		}
 
-		$authorized = json_decode($this->config->getAppValue('impersonate', 'authorized', '["admin"]'));
+		$authorized = json_decode($this->config->getValueString('impersonate', 'authorized', '["admin"]'));
 		if (!empty($authorized)) {
 			$userGroups = $this->groupManager->getUserGroupIds($impersonator);
 
