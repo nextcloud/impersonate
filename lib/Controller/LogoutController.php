@@ -14,17 +14,6 @@ use OCP\IUserSession;
 use Psr\Log\LoggerInterface;
 
 class LogoutController extends Controller {
-	/** @var IUserManager */
-	private $userManager;
-	/** @var IUserSession */
-	private $userSession;
-	/** @var LoggerInterface */
-	private $logger;
-	/** @var ISession */
-	private $session;
-	/** @var IEventDispatcher */
-	private $eventDispatcher;
-
 	/**
 	 * @param string $appName
 	 * @param IRequest $request
@@ -32,20 +21,18 @@ class LogoutController extends Controller {
 	 * @param IUserSession $userSession
 	 * @param ISession $session
 	 * @param LoggerInterface $logger
+	 * @param IEventDispatcher $eventDispatcher
 	 */
-	public function __construct($appName,
-		IRequest $request,
-		IUserManager $userManager,
-		IUserSession $userSession,
-		ISession $session,
-		LoggerInterface $logger,
-		IEventDispatcher $eventDispatcher) {
+	public function __construct(
+		string                   $appName,
+		IRequest                 $request,
+		private IUserManager     $userManager,
+		private IUserSession     $userSession,
+		private ISession         $session,
+		private LoggerInterface  $logger,
+		private IEventDispatcher $eventDispatcher
+	) {
 		parent::__construct($appName, $request);
-		$this->userManager = $userManager;
-		$this->userSession = $userSession;
-		$this->session = $session;
-		$this->logger = $logger;
-		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
