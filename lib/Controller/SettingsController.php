@@ -12,20 +12,20 @@
 namespace OCA\Impersonate\Controller;
 
 use OC\Group\Manager;
+use OCA\Impersonate\Events\BeginImpersonateEvent;
+use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\IConfig;
 use OCP\IGroupManager;
 use OCP\IL10N;
-use Psr\Log\LoggerInterface;
 use OCP\IRequest;
-use OCP\AppFramework\Controller;
 use OCP\ISession;
 use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
-use OCP\EventDispatcher\IEventDispatcher;
-use OCA\Impersonate\Events\BeginImpersonateEvent;
+use Psr\Log\LoggerInterface;
 
 class SettingsController extends Controller {
 	/** @var IUserManager */
@@ -46,15 +46,15 @@ class SettingsController extends Controller {
 	private $eventDispatcher;
 
 	public function __construct(string $appName,
-								IRequest $request,
-								IUserManager $userManager,
-								IGroupManager $groupManager,
-								IUserSession $userSession,
-								ISession $session,
-								IConfig $config,
-								LoggerInterface $logger,
-								IL10N $l,
-								IEventDispatcher $eventDispatcher) {
+		IRequest $request,
+		IUserManager $userManager,
+		IGroupManager $groupManager,
+		IUserSession $userSession,
+		ISession $session,
+		IConfig $config,
+		LoggerInterface $logger,
+		IL10N $l,
+		IEventDispatcher $eventDispatcher) {
 		parent::__construct($appName, $request);
 		$this->userManager = $userManager;
 		$this->groupManager = $groupManager;

@@ -13,11 +13,12 @@
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^9.5",
-		"nextcloud/coding-standard": "^1.0"
+		"nextcloud/coding-standard": "^1.0",
+		"nextcloud/ocp": "dev-stable27"
 	},
 	"config": {
 		"platform": {
-			"php": "8.0"
+			"php": "8.0.2"
 		}
 	}
 }
