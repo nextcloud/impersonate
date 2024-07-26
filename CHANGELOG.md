@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.17.0
+
+### Added
+
+* [feat(deps): Add Nextcloud 30 support on master (impersonate#271)](https://github.com/nextcloud/impersonate/pull/271)
+
 ## 1.16.0
 
 ### Added
