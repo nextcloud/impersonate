@@ -38,7 +38,7 @@ class SettingsController extends Controller {
 		protected IAppConfig $config,
 		protected LoggerInterface $logger,
 		protected IL10N $l,
-		protected IEventDispatcher $eventDispatcher
+		protected IEventDispatcher $eventDispatcher,
 	) {
 		parent::__construct($appName, $request);
 	}

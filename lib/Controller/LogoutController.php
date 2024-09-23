@@ -30,7 +30,7 @@ class LogoutController extends Controller {
 		private IUserSession     $userSession,
 		private ISession         $session,
 		private LoggerInterface  $logger,
-		private IEventDispatcher $eventDispatcher
+		private IEventDispatcher $eventDispatcher,
 	) {
 		parent::__construct($appName, $request);
 	}
