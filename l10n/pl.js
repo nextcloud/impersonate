@@ -5,6 +5,8 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Czy na pewno chcesz podszyć się pod użytkownika \"{userId}\"?",
     "Impersonate user" : "Podszywanie się pod użytkownika",
     "Impersonate" : "Podszywanie",
+    "Could not log out, please try again" : "Nie udało się wylogować, spróbuj ponownie",
+    "Logged in as {name} ({uid})" : "Zalogowany jako {name} ({uid})",
     "User not found" : "Nie znaleziono użytkownika",
     "Insufficient permissions to impersonate user" : "Niewystarczające uprawnienia do podszycia się pod użytkownika",
     "Cannot impersonate the user because it was never logged in" : "Nie można podszyć się pod użytkownika, ponieważ nigdy nie był zalogowany",
