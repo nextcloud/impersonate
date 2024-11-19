@@ -74,6 +74,7 @@ class SettingsController extends Controller {
 		}
 
 		if (!$this->groupManager->isAdmin($impersonator->getUID())
+			&& !$this->groupManager->isDelegatedAdmin($impersonator->getUID())
 			&& !$this->groupManager->getSubAdmin()->isUserAccessible($impersonator, $impersonatee)) {
 			return new JSONResponse(
 				[
