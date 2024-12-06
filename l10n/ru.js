@@ -5,6 +5,8 @@ OC.L10N.register(
     "Are you sure you want to impersonate \"{userId}\"?" : "Войти под именем «{userId}»?",
     "Impersonate user" : "Вход под другим именем",
     "Impersonate" : "Войти под именем другого пользователя",
+    "Could not log out, please try again" : "Не удалось выйти из системы, пожалуйста, повторите попытку",
+    "Logged in as {name} ({uid})" : "Вошел в систему как {name} ({uid})",
     "User not found" : "Пользователь не найден",
     "Insufficient permissions to impersonate user" : "Недостаточно прав доступа для входа в систему под именем другого пользователя",
     "Cannot impersonate the user because it was never logged in" : "Невозможно имперсонировать пользователя, так как он никогда не входил в систему",
