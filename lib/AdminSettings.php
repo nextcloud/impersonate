@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (c) 2018 Joas Schilling <coding@schilljs.com>
  *
