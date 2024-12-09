@@ -24,13 +24,13 @@ class LogoutController extends Controller {
 	 * @param IEventDispatcher $eventDispatcher
 	 */
 	public function __construct(
-		string                   $appName,
-		IRequest                 $request,
-		private IUserManager     $userManager,
-		private IUserSession     $userSession,
-		private ISession         $session,
-		private LoggerInterface  $logger,
-		private IEventDispatcher $eventDispatcher
+		string $appName,
+		IRequest $request,
+		private IUserManager $userManager,
+		private IUserSession $userSession,
+		private ISession $session,
+		private LoggerInterface $logger,
+		private IEventDispatcher $eventDispatcher,
 	) {
 		parent::__construct($appName, $request);
 	}
