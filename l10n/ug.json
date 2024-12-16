@@ -1,10 +1,10 @@
 { "translations": {
     "Could not impersonate user" : "ئىشلەتكۈچىگە تەقلىد قىلالمىدى",
-    "Are you sure you want to impersonate \"{userId}\"?" : "«{UserId}» نى دوراشنى خالامسىز؟",
+    "Are you sure you want to impersonate \"{userId}\"?" : "«{userId}» نى دوراشنى خالامسىز؟",
     "Impersonate user" : "ئىشلەتكۈچىگە تەقلىد قىلىش",
     "Impersonate" : "تەقلىد قىلىش",
     "Could not log out, please try again" : "تىزىمغا كىرەلمىدىڭىز ، قايتا سىناڭ",
-    "Logged in as {name} ({uid})" : "{Name} ({uid}) سۈپىتىدە كىرگەن",
+    "Logged in as {name} ({uid})" : "{name} ({uid}) سۈپىتىدە كىرگەن",
     "User not found" : "ئىشلەتكۈچى تېپىلمىدى",
     "Insufficient permissions to impersonate user" : "ئىشلەتكۈچىگە تەقلىد قىلىش ھوقۇقى يېتەرلىك ئەمەس",
     "Cannot impersonate the user because it was never logged in" : "ئىشلەتكۈچىگە تەقلىد قىلالمايدۇ ، چۈنكى ئۇ ئەزەلدىن تىزىمغا كىرمىگەن",
