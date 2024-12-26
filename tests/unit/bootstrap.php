@@ -1,17 +1,10 @@
 <?php
 
 /**
- * ownCloud
- *
- * @author Thomas Müller <deepdiver@owncloud.com>
- * @copyright (C) 2014 ownCloud, Inc.
- *
- * This code is covered by the ownCloud Commercial License.
- *
- * You should have received a copy of the ownCloud Commercial License
- * along with this program. If not, see <https://owncloud.com/licenses/owncloud-commercial/>.
- *
+ * SPDX-FileCopyrightText: 2014 ownCloud, Inc.
+ * SPDX-License-Identifier: LicenseRef-ownCloudCommercial
  */
+
 if (!defined('PHPUNIT_RUN')) {
 	define('PHPUNIT_RUN', 1);
 }

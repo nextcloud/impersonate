@@ -1,13 +1,9 @@
 <?php
 
 /**
- * ownCloud - impersonate
- *
- * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
- *
- * @author Jörn Friedrich Dreyer <jfd@owncloud.com>
- * @copyright Jörn Friedrich Dreyer 2015
+ * SPDX-FileCopyrightText: 2017-2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2015-2017 ownCloud, Inc.
+ * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
 namespace OCA\Impersonate\Controller;
