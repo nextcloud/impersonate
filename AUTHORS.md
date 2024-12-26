@@ -1,0 +1,31 @@
+<!--
+  - SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+# Authors
+
+- Alexander Müller <28591861+alexanderdd@users.noreply.github.com>
+- Allan Nordhøy <epost@anotheragency.no>
+- Andy Scherzinger <info@andy-scherzinger.de>
+- Arthur Schiwon <blizzz@arthur-schiwon.de>
+- Carl Schwan <carl@carlschwan.eu>
+- cdammanintopix <63319198+cdammanintopix@users.noreply.github.com>
+- Côme Chilliet <come.chilliet@nextcloud.com>
+- djmaze
+- Dominik <prodinger.d@outlook.com>
+- Emre Saracoglu <hello@emresaracoglu.com>
+- gt-h6k <git@gt-h6k.net>
+- Hossein Naghdbishi <42994241+niyumard@users.noreply.github.com>
+- j-ed <juergen@eisfair.org>
+- Joas Schilling <coding@schilljs.com>
+- John Molakvoæ <skjnldsv@protonmail.com>
+- Josh Richards <josh.t.richards@gmail.com>
+- Jörn Friedrich Dreyer <jfd@owncloud.com>
+- Julius Knorr <jus@bitgrid.net>
+- Lukas Reschke <lukas@statuscode.ch>
+- Morris Jobke <hey@morrisjobke.de>
+- Pytal <24800714+Pytal@users.noreply.github.com>
+- rakekniven <mark.ziegler@rakekniven.de>
+- Roeland Jago Douma <roeland@famdouma.nl>
+- Valdnet <47037905+Valdnet@users.noreply.github.com>
+- Vincent Petry <vincent@nextcloud.com>
