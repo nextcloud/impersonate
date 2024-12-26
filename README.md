@@ -4,6 +4,8 @@
 -->
 # Impersonate
 
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/impersonate)](https://api.reuse.software/info/github.com/nextcloud/impersonate)
+
 Allow administrators to become a different user by adding an impersonate action
 to the user list. This is especially useful for debugging issues reported by users.
 
