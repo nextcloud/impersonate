@@ -5,6 +5,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.0.0
+
+### Added
+
+* [Feat(deps): Add Nextcloud 31 support on master (impersonate#333)](https://github.com/nextcloud/impersonate/pull/333)
+* [Support delegated admin (impersonate#371)](https://github.com/nextcloud/impersonate/pull/371)
+* [Add reuse compliance (impersonate#392)](https://github.com/nextcloud/impersonate/pull/392)
+
 ## 1.17.0
 
 ### Added
