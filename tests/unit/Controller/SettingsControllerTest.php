@@ -125,6 +125,9 @@ class SettingsControllerTest extends TestCase {
 		$user->expects($this->any())
 			->method('getUID')
 			->willReturn($uid);
+		$user->expects($this->any())
+			->method('getLastLogin')
+			->willReturn(1737662989);
 
 		$this->userSession
 			->method('getUser')
@@ -182,6 +185,9 @@ class SettingsControllerTest extends TestCase {
 		$user->expects($this->any())
 			->method('getUID')
 			->willReturn($uid);
+		$user->expects($this->any())
+			->method('getLastLogin')
+			->willReturn(1737662989);
 
 		$this->userSession
 			->method('getUser')
