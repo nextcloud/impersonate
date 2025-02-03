@@ -7,9 +7,9 @@ OC.L10N.register(
     "Impersonate" : "Udgiv dig for at være",
     "User not found" : "Bruger ikke fundet",
     "Insufficient permissions to impersonate user" : "Du har ikke rettigheder til at udgive dig for at være andre brugere",
-    "Cannot impersonate the user because it was never logged in" : "Kan ikke efterligne brugeren, fordi den aldrig var logget ind",
+    "Cannot impersonate the user because it was never logged in" : "Kan ikke efterligne brugeren, fordi vedkommende aldrig har været logget på",
     "Cannot impersonate yourself" : "Kan ikke efterligne dig selv",
-    "Impersonate other users" : "Udgiv dig for at være en andre brugere",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Administratorer i disse grupper kan udgive sig for brugere de administrerer. Hvis du fjerner alle grupper kan alle gruppeadministratorer udgive sig for deres brugere."
+    "Impersonate other users" : "Udgiv dig for at være andre brugere",
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Administratorer i disse grupper kan udgive sig for at være brugere de administrerer. Hvis du fjerner alle grupper kan alle gruppeadministratorer udgive sig for deres brugere."
 },
 "nplurals=2; plural=(n != 1);");
