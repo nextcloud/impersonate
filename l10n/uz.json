@@ -1,4 +1,5 @@
 { "translations": {
-    "Could not impersonate user" : "Could not impersonate user"
+    "Could not impersonate user" : "Could not impersonate user",
+    "User not found" : "Foydalanuvchi topilmadi"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
