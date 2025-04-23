@@ -3,6 +3,8 @@
     "Are you sure you want to impersonate \"{userId}\"?" : "Kas oled kindel, et tahad kehastuda kasutajaks \"{userId}\"?",
     "Impersonate user" : "Kehastu kasutajaks",
     "Impersonate" : "Kehasta",
+    "Could not log out, please try again" : "Väljalogimine ei õnnestunud. Palun proovi uuesti.",
+    "Logged in as {name} ({uid})" : "Sisse logitud kui {name} ({uid})",
     "User not found" : "Kasutajat ei leitud",
     "Insufficient permissions to impersonate user" : "Kasutaja kehastamiseks pole piisavalt õigusi",
     "Cannot impersonate the user because it was never logged in" : "Ei saa kehastuda kasutajaks, sest ta pole kunagi sisse loginud",
