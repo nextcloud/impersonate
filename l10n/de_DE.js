@@ -1,7 +1,7 @@
 OC.L10N.register(
     "impersonate",
     {
-    "Could not impersonate user" : "Konnte den Benutzer nicht nachahmen",
+    "Could not impersonate user" : "Benutzer konnte nicht nachgeahmt werden",
     "Are you sure you want to impersonate \"{userId}\"?" : "Möchten Sie wirklich \"{userId}\" nachahmen?",
     "Impersonate user" : "Benutzer nachahmen",
     "Impersonate" : "Nachahmen",
