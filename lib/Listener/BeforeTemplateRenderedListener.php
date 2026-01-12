@@ -12,23 +12,21 @@ use OCA\Impersonate\AppInfo\Application;
 use OCA\Settings\Events\BeforeTemplateRenderedEvent;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
-use OCP\IConfig;
+use OCP\IAppConfig;
 use OCP\IGroupManager;
 use OCP\IUserSession;
 use OCP\Util;
 
-class BeforeTemplateRenderedListener implements IEventListener {
-	/** @var IConfig */
-	private $config;
-	/** @var IGroupManager */
-	private $groupManager;
-	/** @var IUserSession */
-	private $userSession;
+/**
+ * @template-implements IEventListener<Event|BeforeTemplateRenderedEvent>
+ */
+readonly class BeforeTemplateRenderedListener implements IEventListener {
 
-	public function __construct(IConfig $config, IGroupManager $groupManager, IUserSession $userSession) {
-		$this->config = $config;
-		$this->groupManager = $groupManager;
-		$this->userSession = $userSession;
+	public function __construct(
+		private IAppConfig $config,
+		private IGroupManager $groupManager,
+		private IUserSession $userSession,
+	) {
 	}
 
 	public function handle(Event $event): void {
@@ -36,7 +34,7 @@ class BeforeTemplateRenderedListener implements IEventListener {
 			return;
 		}
 
-		$authorized = json_decode($this->config->getAppValue(Application::APP_ID, 'authorized', '["admin"]'));
+		$authorized = json_decode($this->config->getValueString(Application::APP_ID, 'authorized', '["admin"]'));
 
 		if (!empty($authorized)) {
 			$userGroups = $this->groupManager->getUserGroupIds($this->userSession->getUser());
