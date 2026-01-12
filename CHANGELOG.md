@@ -5,6 +5,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.0.1
+
+### Fixed
+
+* [Fix: element for logout has changed (impersonate#556)](https://github.com/nextcloud/impersonate/pull/556)
+
 ## 2.0.0
 
 ### Added
