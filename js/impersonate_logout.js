@@ -10,7 +10,7 @@
 		xhr.onreadystatechange = function(data) {
 			if (xhr.readyState === XMLHttpRequest.DONE) {
 				if (xhr.status === 0 || (xhr.status >= 200 && xhr.status < 400)) {
-					OC.redirect(OC.generateUrl('settings/users'))
+					window.location = OC.generateUrl('settings/users')
 				} else {
 					OC.dialogs.alert(JSON.parse(xhr.response).message, t('impersonate', 'Could not log out, please try again'), undefined, undefined)
 				}
@@ -25,7 +25,7 @@
 			event.preventDefault()
 			logoutHandler()
 		}
-		document.getElementById('logout').getElementsByTagName('a')[0].setAttribute('href', '#')
+		document.getElementById('logout').setAttribute('href', '#')
 
 		var text = '<a href="' + OC.generateUrl('apps/files') + '">' +
 			t('impersonate', 'Logged in as {name} ({uid})', {uid: OC.getCurrentUser().uid, name: OC.getCurrentUser().displayName}) +
