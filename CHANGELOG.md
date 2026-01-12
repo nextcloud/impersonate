@@ -5,6 +5,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 4.0.0
+
+### Added
+
+* [Feat\(deps\): Add Nextcloud 33 support on master (impersonate#489)](https://github.com/nextcloud/impersonate/pull/489)
+
+### Fixed
+
+* [Fix: element for logout has changed (impersonate#555)](https://github.com/nextcloud/impersonate/pull/555)
+
+## 3.0.0
+
+### Added
+
+* [feat(deps): Add Nextcloud 32 support on master (impersonate#400)](https://github.com/nextcloud/impersonate/pull/400)
+
 ## 2.0.0
 
 ### Added
