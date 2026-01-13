@@ -15,6 +15,7 @@ use OCP\AppFramework\Http\JSONResponse;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\IRequest;
 use OCP\ISession;
+use OCP\IUser;
 use OCP\IUserManager;
 use OCP\IUserSession;
 use Psr\Log\LoggerInterface;
@@ -32,11 +33,11 @@ class LogoutController extends Controller {
 	public function __construct(
 		string $appName,
 		IRequest $request,
-		private IUserManager $userManager,
-		private IUserSession $userSession,
-		private ISession $session,
-		private LoggerInterface $logger,
-		private IEventDispatcher $eventDispatcher,
+		private readonly IUserManager $userManager,
+		private readonly IUserSession $userSession,
+		private readonly ISession $session,
+		private readonly LoggerInterface $logger,
+		private readonly IEventDispatcher $eventDispatcher,
 	) {
 		parent::__construct($appName, $request);
 	}
@@ -57,6 +58,7 @@ class LogoutController extends Controller {
 			);
 		}
 
+		/** @var IUser $impersonatedUser */
 		$impersonatedUser = $this->userSession->getUser();
 
 		$this->eventDispatcher->dispatchTyped(new EndImpersonateEvent($impersonator, $impersonatedUser));
