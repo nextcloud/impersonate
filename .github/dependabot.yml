@@ -17,6 +17,19 @@ updates:
     day: saturday
     time: "03:00"
     timezone: Europe/Paris
+  target-branch: stable33
+  open-pull-requests-limit: 10
+  ignore:
+    # ignore all GitHub linguist patch updates
+    - dependency-name: "*"
+      update-types: ["version-update:semver-major", "version-update:semver-minor"]
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "03:00"
+    timezone: Europe/Paris
   target-branch: stable32
   open-pull-requests-limit: 10
   ignore:
@@ -31,19 +44,6 @@ updates:
     time: "03:00"
     timezone: Europe/Paris
   target-branch: stable31
-  open-pull-requests-limit: 10
-  ignore:
-    # ignore all GitHub linguist patch updates
-    - dependency-name: "*"
-      update-types: ["version-update:semver-major", "version-update:semver-minor"]
-- package-ecosystem: composer
-  directory: "/"
-  schedule:
-    interval: weekly
-    day: saturday
-    time: "03:00"
-    timezone: Europe/Paris
-  target-branch: stable30
   open-pull-requests-limit: 10
   ignore:
     # ignore all GitHub linguist patch updates
