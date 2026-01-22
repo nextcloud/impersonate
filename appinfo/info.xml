@@ -27,7 +27,7 @@ The administrator is then logged-in as the user, to switch back to the regular u
 - Impersonating a user is only possible after their first login.
 - You can limit which users/groups can use impersonation in Administration settings > Additional settings.]]></description>
 
-    <version>4.0.0</version>
+    <version>5.0.0-dev.0</version>
     <licence>agpl</licence>
     <author>Nextcloud</author>
     <namespace>Impersonate</namespace>
@@ -46,7 +46,7 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <screenshot>https://raw.githubusercontent.com/nextcloud/impersonate/master/screenshots/3.png</screenshot>
 
     <dependencies>
-		<nextcloud min-version="33" max-version="33" />
+		<nextcloud min-version="34" max-version="34" />
     </dependencies>
 
     <settings>
