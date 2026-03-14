@@ -2,7 +2,7 @@ OC.L10N.register(
     "impersonate",
     {
     "Could not impersonate user" : "Benutzer konnte nicht nachgeahmt werden",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Möchten Sie wirklich \"{userId}\" nachahmen?",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Möchten Sie \"{userId}\" nachahmen?",
     "Impersonate user" : "Benutzer nachahmen",
     "Impersonate" : "Nachahmen",
     "Could not log out, please try again" : "Fehler beim Abmelden, bitte noch einmal probieren",
