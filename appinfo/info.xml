@@ -52,4 +52,10 @@ The administrator is then logged-in as the user, to switch back to the regular u
     <settings>
         <admin>OCA\Impersonate\AdminSettings</admin>
     </settings>
+
+	<activity>
+		<providers>
+			<provider>OCA\Impersonate\Activity\Provider</provider>
+		</providers>
+	</activity>
 </info>

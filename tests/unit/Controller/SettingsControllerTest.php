@@ -12,6 +12,8 @@ use OC\Group\Manager;
 use OC\SubAdmin;
 use OCA\Impersonate\Controller\SettingsController;
 use OCA\Impersonate\Events\BeginImpersonateEvent;
+use OCA\Impersonate\Service\ConfigService;
+use OCP\App\IAppManager;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\EventDispatcher\IEventDispatcher;
@@ -45,6 +47,8 @@ class SettingsControllerTest extends TestCase {
 	private SettingsController $controller;
 	/** @var IEventDispatcher|IEventDispatcher&MockObject|MockObject */
 	private $eventDispatcher;
+	private IAppManager|MockObject $appManager;
+	private ConfigService|MockObject $configService;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -68,6 +72,8 @@ class SettingsControllerTest extends TestCase {
 			->method('getSubAdmin')
 			->willReturn($this->subadmin);
 		$this->eventDispatcher = $this->createMock(IEventDispatcher::class);
+		$this->appManager = $this->createMock(IAppManager::class);
+		$this->configService = $this->createMock(ConfigService::class);
 
 		$this->controller = new SettingsController(
 			$this->appName,
@@ -79,7 +85,9 @@ class SettingsControllerTest extends TestCase {
 			$this->config,
 			$this->logger,
 			$this->l,
-			$this->eventDispatcher
+			$this->eventDispatcher,
+			$this->appManager,
+			$this->configService,
 		);
 	}
 
@@ -142,10 +150,11 @@ class SettingsControllerTest extends TestCase {
 			->method('setUser')
 			->with($user);
 
-		$this->groupManager->expects($this->once())
+		$this->groupManager->expects($this->exactly(2))
 			->method('isAdmin')
-			->with('admin')
-			->willReturn(true);
+			->willReturnCallback(function ($user) {
+				return $user === 'admin';
+			});
 
 		$this->groupManager->expects($this->once())
 			->method('getUserGroupIds')
@@ -202,9 +211,8 @@ class SettingsControllerTest extends TestCase {
 			->method('setUser')
 			->with($user);
 
-		$this->groupManager->expects($this->once())
+		$this->groupManager->expects($this->exactly(2))
 			->method('isAdmin')
-			->with('admin')
 			->willReturn(false);
 
 		$this->subadmin->expects($this->once())

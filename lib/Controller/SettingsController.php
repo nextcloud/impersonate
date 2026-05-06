@@ -9,6 +9,8 @@
 namespace OCA\Impersonate\Controller;
 
 use OCA\Impersonate\Events\BeginImpersonateEvent;
+use OCA\Impersonate\Service\ConfigService;
+use OCP\App\IAppManager;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
@@ -36,6 +38,8 @@ class SettingsController extends Controller {
 		protected LoggerInterface $logger,
 		protected IL10N $l,
 		protected IEventDispatcher $eventDispatcher,
+		protected IAppManager $appManager,
+		protected ConfigService $configService,
 	) {
 		parent::__construct($appName, $request);
 	}
@@ -108,6 +112,17 @@ class SettingsController extends Controller {
 			return new JSONResponse(
 				[
 					'message' => $this->l->t('Cannot impersonate yourself'),
+				],
+				Http::STATUS_FORBIDDEN
+			);
+		}
+
+		$config = $this->configService->getUserNotificationSetting($this->groupManager->isAdmin($impersonatee->getUID()));
+		if (($config & ConfigService::NOTIFICATION_ACTIVITY) && !$this->appManager->isEnabledForUser('activity', $impersonatee->getUID())
+			|| ($config & ConfigService::NOTIFICATION_PUSH) && !$this->appManager->isEnabledForUser('notifications', $impersonatee->getUID())) {
+			return new JSONResponse(
+				[
+					'message' => $this->l->t('Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., \'impersonate.notifications\') is not active.'),
 				],
 				Http::STATUS_FORBIDDEN
 			);

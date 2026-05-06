@@ -8,7 +8,10 @@ declare(strict_types=1);
 
 namespace OCA\Impersonate\AppInfo;
 
+use OCA\Impersonate\Events\BeginImpersonateEvent;
 use OCA\Impersonate\Listener\BeforeTemplateRenderedListener;
+use OCA\Impersonate\Listener\BeginImpersonateListener;
+use OCA\Impersonate\Notification\Notifier;
 use OCA\Settings\Events\BeforeTemplateRenderedEvent;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
@@ -26,6 +29,9 @@ class Application extends App implements IBootstrap {
 
 	public function register(IRegistrationContext $context): void {
 		$context->registerEventListener(BeforeTemplateRenderedEvent::class, BeforeTemplateRenderedListener::class);
+		$context->registerEventListener(BeginImpersonateEvent::class, BeginImpersonateListener::class);
+
+		$context->registerNotifierService(Notifier::class);
 	}
 
 	public function boot(IBootContext $context): void {
