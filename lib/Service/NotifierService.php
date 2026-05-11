@@ -62,7 +62,7 @@ class NotifierService {
 	 * @param DateTime $when the time of the impersonation
 	 * @return void
 	 */
-	private function notifyPush(IUser $user, IUser $impersonator, DateTime $when): void {
+	protected function notifyPush(IUser $user, IUser $impersonator, DateTime $when): void {
 		$notification = $this->notificationManager->createNotification();
 		$notification->setUser($user->getUID())
 			->setApp(Application::APP_ID)
@@ -81,7 +81,7 @@ class NotifierService {
 	 * @param DateTime $when the time of the impersonation
 	 * @return void
 	 */
-	private function notifyMail(IUser $user, IUser $impersonator, DateTime $when): void {
+	protected function notifyMail(IUser $user, IUser $impersonator, DateTime $when): void {
 		$template = $this->mailer->createEMailTemplate('impersonate.ImpersonateLogin', [
 			'actor' => $impersonator->getDisplayName(),
 		]);
@@ -113,7 +113,7 @@ class NotifierService {
 	 * @param DateTime $when the time of the impersonation
 	 * @return void
 	 */
-	private function notifyActivity(IUser $user, IUser $impersonator, DateTime $when): void {
+	protected function notifyActivity(IUser $user, IUser $impersonator, DateTime $when): void {
 
 		$activity = $this->activityManager->generateEvent();
 		$activity->setApp(Application::APP_ID)
