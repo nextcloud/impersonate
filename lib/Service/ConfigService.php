@@ -15,8 +15,8 @@ use OCP\IConfig;
 class ConfigService {
 	private const SETTING_NOTIFICATION_KEY = 'impersonate.notifications';
 	private const SETTING_NOTIFICATION_DEFAULT = [
-		'user' => self::NOTIFICATION_PUSH | self::NOTIFICATION_ACTIVITY,
-		'admin' => self::NOTIFICATION_PUSH | self::NOTIFICATION_ACTIVITY | self::NOTIFICATION_MAIL
+		'user' => self::NOTIFICATION_NONE,
+		'admin' => self::NOTIFICATION_MAIL
 	];
 
 	// notification values (bit field)
