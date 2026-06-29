@@ -8,6 +8,7 @@ OC.L10N.register(
     "Could not log out, please try again" : "Não foi possível sair, tente novamente",
     "User not found" : "Utilizador não encontrado",
     "Insufficient permissions to impersonate user" : "Não tem permissões suficientes para se fazer passar por outro utilizador",
+    "Cannot impersonate yourself" : "Não é possível personificar a si mesmo",
     "Impersonate other users" : "Fazer-se passar por outros utilizadores",
     "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Os membros destes grupos poderão fazer-se passar pelos utilizadores que tenham permissões para administrar. Se remover todos os grupos, todos os administradores de grupos terão permissão de se fazer passar pelos seus utilizadores."
 },
