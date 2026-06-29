@@ -29,7 +29,7 @@ Configuration is stored in the `impersonate.notifications` system setting. Defau
 `
 'impersonate.notifications' => [
     'user' => 0,
-    'admin' => 2,
+    'admin' => 0,
 ],
 `
 

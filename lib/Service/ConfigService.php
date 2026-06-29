@@ -16,7 +16,7 @@ class ConfigService {
 	private const SETTING_NOTIFICATION_KEY = 'impersonate.notifications';
 	private const SETTING_NOTIFICATION_DEFAULT = [
 		'user' => self::NOTIFICATION_NONE,
-		'admin' => self::NOTIFICATION_MAIL
+		'admin' => self::NOTIFICATION_NONE
 	];
 
 	// notification values (bit field)
