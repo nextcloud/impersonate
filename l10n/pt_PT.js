@@ -6,6 +6,7 @@ OC.L10N.register(
     "Impersonate user" : "Fazer-se passar por outro utilizador",
     "Impersonate" : "Fazer-se passar por",
     "Could not log out, please try again" : "Não foi possível sair, tente novamente",
+    "Logged in as {name} ({uid})" : "Logado como {name} ({uid})",
     "User not found" : "Utilizador não encontrado",
     "Insufficient permissions to impersonate user" : "Não tem permissões suficientes para se fazer passar por outro utilizador",
     "Cannot impersonate yourself" : "Não é possível personificar a si mesmo",
