@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d917adfd58bb7311ede960c6d58b2be",
+    "content-hash": "03cc42c70fba90c95119f1d072bcc1ad",
     "packages": [],
     "packages-dev": [
         {
@@ -79,16 +79,16 @@
         },
         {
             "name": "kubawerlos/php-cs-fixer-custom-fixers",
-            "version": "v3.35.1",
+            "version": "v3.37.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers.git",
-                "reference": "2a35f80ae24ca77443a7af1599c3a3db1b6bd395"
+                "reference": "678df979ce743466b42ddb6eea46b3f4c9a7bade"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kubawerlos/php-cs-fixer-custom-fixers/zipball/2a35f80ae24ca77443a7af1599c3a3db1b6bd395",
-                "reference": "2a35f80ae24ca77443a7af1599c3a3db1b6bd395",
+                "url": "https://api.github.com/repos/kubawerlos/php-cs-fixer-custom-fixers/zipball/678df979ce743466b42ddb6eea46b3f4c9a7bade",
+                "reference": "678df979ce743466b42ddb6eea46b3f4c9a7bade",
                 "shasum": ""
             },
             "require": {
@@ -98,7 +98,7 @@
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.6.24 || ^10.5.51 || ^11.5.32"
+                "phpunit/phpunit": "^9.6.34 || ^10.5.63 || ^11.5.55"
             },
             "type": "library",
             "autoload": {
@@ -119,7 +119,7 @@
             "description": "A set of custom fixers for PHP CS Fixer",
             "support": {
                 "issues": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers/issues",
-                "source": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers/tree/v3.35.1"
+                "source": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers/tree/v3.37.2"
             },
             "funding": [
                 {
@@ -127,7 +127,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-09-28T18:43:35+00:00"
+            "time": "2026-05-12T16:22:19+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -191,16 +191,16 @@
         },
         {
             "name": "nextcloud/coding-standard",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nextcloud/coding-standard.git",
-                "reference": "8e06808c1423e9208d63d1bd205b9a38bd400011"
+                "reference": "80547a93236fbb9c783e05f0f0899043851b0dba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nextcloud/coding-standard/zipball/8e06808c1423e9208d63d1bd205b9a38bd400011",
-                "reference": "8e06808c1423e9208d63d1bd205b9a38bd400011",
+                "url": "https://api.github.com/repos/nextcloud/coding-standard/zipball/80547a93236fbb9c783e05f0f0899043851b0dba",
+                "reference": "80547a93236fbb9c783e05f0f0899043851b0dba",
                 "shasum": ""
             },
             "require": {
@@ -230,9 +230,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nextcloud/coding-standard/issues",
-                "source": "https://github.com/nextcloud/coding-standard/tree/v1.4.0"
+                "source": "https://github.com/nextcloud/coding-standard/tree/v1.5.0"
             },
-            "time": "2025-06-19T12:27:27+00:00"
+            "time": "2026-05-19T18:30:09+00:00"
         },
         {
             "name": "nextcloud/ocp",
@@ -240,16 +240,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nextcloud-deps/ocp.git",
-                "reference": "b01a80e20e17c3bf3c5d8a0246289ec465fd0b0f"
+                "reference": "60fe6738c4cd5ef7ac576f3724ced4dc105309fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/b01a80e20e17c3bf3c5d8a0246289ec465fd0b0f",
-                "reference": "b01a80e20e17c3bf3c5d8a0246289ec465fd0b0f",
+                "url": "https://api.github.com/repos/nextcloud-deps/ocp/zipball/60fe6738c4cd5ef7ac576f3724ced4dc105309fb",
+                "reference": "60fe6738c4cd5ef7ac576f3724ced4dc105309fb",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1 || ~8.2 || ~8.3 || ~8.4 || ~8.5",
+                "php": "~8.3 || ~8.4 || ~8.5",
                 "psr/clock": "^1.0",
                 "psr/container": "^2.0.2",
                 "psr/event-dispatcher": "^1.0",
@@ -282,7 +282,7 @@
                 "issues": "https://github.com/nextcloud-deps/ocp/issues",
                 "source": "https://github.com/nextcloud-deps/ocp/tree/master"
             },
-            "time": "2026-06-04T02:37:15+00:00"
+            "time": "2026-07-02T02:08:13+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -462,16 +462,16 @@
         },
         {
             "name": "php-cs-fixer/shim",
-            "version": "v3.92.5",
+            "version": "v3.95.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/shim.git",
-                "reference": "b13b4ad0a1daa80cf036c70488e86516928a5af0"
+                "reference": "87c59806c6ec3da0c554ca154a14c7e970fe5f26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/b13b4ad0a1daa80cf036c70488e86516928a5af0",
-                "reference": "b13b4ad0a1daa80cf036c70488e86516928a5af0",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/87c59806c6ec3da0c554ca154a14c7e970fe5f26",
+                "reference": "87c59806c6ec3da0c554ca154a14c7e970fe5f26",
                 "shasum": ""
             },
             "require": {
@@ -508,9 +508,9 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/shim/issues",
-                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.92.5"
+                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.95.11"
             },
-            "time": "2026-01-08T21:58:02+00:00"
+            "time": "2026-06-25T14:17:29+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -833,16 +833,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.33",
+            "version": "9.6.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fea06253ecc0a32faf787bd31b261f56f351d049"
+                "reference": "b36f02317466907a230d3aa1d34467041271ef4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fea06253ecc0a32faf787bd31b261f56f351d049",
-                "reference": "fea06253ecc0a32faf787bd31b261f56f351d049",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b36f02317466907a230d3aa1d34467041271ef4a",
+                "reference": "b36f02317466907a230d3aa1d34467041271ef4a",
                 "shasum": ""
             },
             "require": {
@@ -916,7 +916,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.33"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.34"
             },
             "funding": [
                 {
@@ -940,7 +940,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-27T05:25:09+00:00"
+            "time": "2026-01-27T05:45:00+00:00"
         },
         {
             "name": "psr/clock",
@@ -2320,7 +2320,7 @@
     "platform": {},
     "platform-dev": {},
     "platform-overrides": {
-        "php": "8.2"
+        "php": "8.3"
     },
     "plugin-api-version": "2.9.0"
 }
