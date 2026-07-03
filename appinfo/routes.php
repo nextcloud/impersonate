@@ -8,7 +8,6 @@
 
 return [
 	'routes' => [
-
 		// Land in users setting page ( for admin user only )
 		[
 			'name' => 'Settings#impersonate',
