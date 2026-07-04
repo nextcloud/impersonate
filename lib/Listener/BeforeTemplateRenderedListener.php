@@ -42,6 +42,6 @@ readonly class BeforeTemplateRenderedListener implements IEventListener {
 				return;
 			}
 		}
-		Util::addScript(Application::APP_ID, 'impersonate');
+		Util::addScript(Application::APP_ID, 'impersonate-accountAction');
 	}
 }
