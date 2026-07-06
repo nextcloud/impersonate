@@ -5,6 +5,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 5.0.0
+
+* [Feat\(deps\): Add Nextcloud 34 support on master (impersonate#563)](https://github.com/nextcloud/impersonate/pull/563)
+* [Fix\(Settings\): overhaul settings due to deprecations (impersonate#648)](https://github.com/nextcloud/impersonate/pull/648)
+
+
 ## 4.0.0
 
 ### Added
