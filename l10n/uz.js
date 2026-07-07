@@ -1,7 +1,7 @@
 OC.L10N.register(
     "impersonate",
     {
-    "Could not impersonate user" : "Could not impersonate user",
-    "User not found" : "Foydalanuvchi topilmadi"
+    "User not found" : "Foydalanuvchi topilmadi",
+    "Could not impersonate user" : "Could not impersonate user"
 },
 "nplurals=1; plural=0;");
