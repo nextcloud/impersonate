@@ -1,15 +1,15 @@
 OC.L10N.register(
     "impersonate",
     {
-    "Could not impersonate user" : "Impossibile impersonare l'utente",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Sei sicuro di voler impersonare \"{userId}\"?",
-    "Impersonate user" : "Impersona utente",
-    "Impersonate" : "Impersona",
     "User not found" : "Utente non trovato",
     "Insufficient permissions to impersonate user" : "Permessi insufficienti per impersonare l'utente",
     "Cannot impersonate the user because it was never logged in" : "Impossibile impersonare l'utente perché non ha mai effettuato l'accesso",
     "Cannot impersonate yourself" : "Non è possibile impersonare te stesso",
+    "Impersonate" : "Impersona",
     "Impersonate other users" : "Impersona altri utenti",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Questi gruppi saranno in grado di impersonare gli utenti che gli è consentito amministrare. Se rimuovi tutti i gruppi, ogni amministratore di gruppo avrà il permesso di impersonare."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Questi gruppi saranno in grado di impersonare gli utenti che gli è consentito amministrare. Se rimuovi tutti i gruppi, ogni amministratore di gruppo avrà il permesso di impersonare.",
+    "Could not impersonate user" : "Impossibile impersonare l'utente",
+    "Impersonate user" : "Impersona utente",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Sei sicuro di voler impersonare \"{userId}\"?"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

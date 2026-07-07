@@ -1,11 +1,11 @@
 { "translations": {
-    "Could not impersonate user" : "לא ניתן להתחזות למשתמש",
-    "Are you sure you want to impersonate \"{userId}\"?" : "להתחזות למשתמש „{userId}”?",
-    "Impersonate user" : "התחזות למשתמש",
-    "Impersonate" : "התחזות",
     "User not found" : "משתמש לא נמצא",
     "Insufficient permissions to impersonate user" : "השראות לא מספקות להתחזות משתמש.",
+    "Impersonate" : "התחזות",
     "Impersonate other users" : "התחזות למשתמשים אחרים",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "הקבוצות האלו יכולות להתחזות למשתמשים שבניהולם. אם יוסרו כל הקבוצות, כל מנהל קבוצה יוכל להתחזות."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "הקבוצות האלו יכולות להתחזות למשתמשים שבניהולם. אם יוסרו כל הקבוצות, כל מנהל קבוצה יוכל להתחזות.",
+    "Could not impersonate user" : "לא ניתן להתחזות למשתמש",
+    "Impersonate user" : "התחזות למשתמש",
+    "Are you sure you want to impersonate \"{userId}\"?" : "להתחזות למשתמש „{userId}”?"
 },"pluralForm" :"nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;"
 }
