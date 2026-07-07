@@ -1,18 +1,18 @@
 OC.L10N.register(
     "impersonate",
     {
-    "Could not impersonate user" : "Kunde inte imitera användare",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Är du säker att du vill imitera \"{userId}\"?",
-    "Impersonate user" : "Imitera användare",
-    "Impersonate" : "Imitera",
-    "Could not log out, please try again" : "Det gick inte att logga ut, försök igen",
-    "Logged in as {name} ({uid})" : "Inloggad som {name} ({uid})",
     "User not found" : "Användaren hittades inte",
     "Insufficient permissions to impersonate user" : "Otillräckliga behörigheter för att imitera användare",
     "Cannot impersonate the user because it was never logged in" : "Kan inte imitera användaren eftersom de aldrig varit inloggade",
     "Cannot impersonate yourself" : "Kan inte imitera dig själv",
+    "Impersonate" : "Imitera",
     "Impersonate other users" : "Imitera andra användare",
     "By installing the impersonate app of your Nextcloud you enable administrators to impersonate other users on the Nextcloud server. This is especially useful for debugging issues reported by users.\n\nTo impersonate a user an administrator has to simply follow the following four steps:\n\n1. Login as administrator to Nextcloud.\n2. Open users administration interface.\n3. Select the impersonate button on the affected user.\n4. Confirm the impersonation.\n\nThe administrator is then logged-in as the user, to switch back to the regular user account they simply have to press the logout button.\n\n**Note:**\n\n- This app is not compatible with instances that have encryption enabled.\n- While impersonate actions are logged note that actions performed impersonated will be logged as the impersonated user.\n- Impersonating a user is only possible after their first login.\n- You can limit which users/groups can use impersonation in Administration settings > Additional settings." : "Genom att installera appen för att imitera din Nextcloud gör du det möjligt för administratörer att imitera andra användare på Nextcloud-servern. Detta är särskilt användbart för felsökning av problem som rapporterats av användare.\n\nFör att imitera en användare behöver administratören bara följa dessa fyra steg:\n\n1. Logga in som administratör på Nextcloud.\n2. Öppna användaradministrationsgränssnittet.\n3. Välj knappen för att imitera den berörda användaren.\n4. Bekräfta imitationen.\n\nAdministratören är då inloggad som användaren. För att växla tillbaka till det vanliga användarkontot behöver de bara trycka på knappen för att logga ut.\n\n**Observera:**\n\n- Denna app är inte kompatibel med instanser som har kryptering aktiverat.\n- Även om imitationer loggas, notera att åtgärder som utförs under imitation loggas som den imiterade användaren.\n- Det är endast möjligt att imitera en användare efter deras första inloggning.\n- Du kan begränsa vilka användare/grupper som kan använda imitation i Administrationsinställningar > Ytterligare inställningar.",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Dessa grupper kommer att kunna imitera användare som de får administrera. Om du tar bort alla grupper får varje gruppadministratör imitera."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Dessa grupper kommer att kunna imitera användare som de får administrera. Om du tar bort alla grupper får varje gruppadministratör imitera.",
+    "Could not impersonate user" : "Kunde inte imitera användare",
+    "Impersonate user" : "Imitera användare",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Är du säker att du vill imitera \"{userId}\"?",
+    "Could not log out, please try again" : "Det gick inte att logga ut, försök igen",
+    "Logged in as {name} ({uid})" : "Inloggad som {name} ({uid})"
 },
 "nplurals=2; plural=(n != 1);");

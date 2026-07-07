@@ -1,10 +1,10 @@
 OC.L10N.register(
     "impersonate",
     {
-    "Could not impersonate user" : "Käyttäjänä esiintyminen epäonnistui",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Oletko varma, että haluat esiintyä käyttäjänä \"{userId}\"?",
-    "Impersonate user" : "Esiinny käyttäjänä",
+    "User not found" : "Käyttäjää ei löytynyt",
     "Impersonate" : "Esiinny käyttäjänä",
-    "User not found" : "Käyttäjää ei löytynyt"
+    "Could not impersonate user" : "Käyttäjänä esiintyminen epäonnistui",
+    "Impersonate user" : "Esiinny käyttäjänä",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Oletko varma, että haluat esiintyä käyttäjänä \"{userId}\"?"
 },
 "nplurals=2; plural=(n != 1);");

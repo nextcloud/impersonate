@@ -1,16 +1,16 @@
 { "translations": {
-    "Could not impersonate user" : "Não foi possível fazer-se passar por outro utilizador",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Tem a certeza que quer fazer-se passar por \"{userId}\"?",
-    "Impersonate user" : "Fazer-se passar por outro utilizador",
-    "Impersonate" : "Fazer-se passar por",
-    "Could not log out, please try again" : "Não foi possível sair, tente novamente",
-    "Logged in as {name} ({uid})" : "Logado como {name} ({uid})",
     "User not found" : "Utilizador não encontrado",
     "Insufficient permissions to impersonate user" : "Não tem permissões suficientes para se fazer passar por outro utilizador",
     "Cannot impersonate the user because it was never logged in" : "Não é possível personificar o usuário porque ele nunca fez login",
     "Cannot impersonate yourself" : "Não é possível personificar a si mesmo",
+    "Impersonate" : "Fazer-se passar por",
     "Impersonate other users" : "Fazer-se passar por outros utilizadores",
     "By installing the impersonate app of your Nextcloud you enable administrators to impersonate other users on the Nextcloud server. This is especially useful for debugging issues reported by users.\n\nTo impersonate a user an administrator has to simply follow the following four steps:\n\n1. Login as administrator to Nextcloud.\n2. Open users administration interface.\n3. Select the impersonate button on the affected user.\n4. Confirm the impersonation.\n\nThe administrator is then logged-in as the user, to switch back to the regular user account they simply have to press the logout button.\n\n**Note:**\n\n- This app is not compatible with instances that have encryption enabled.\n- While impersonate actions are logged note that actions performed impersonated will be logged as the impersonated user.\n- Impersonating a user is only possible after their first login.\n- You can limit which users/groups can use impersonation in Administration settings > Additional settings." : "Ao instalar o aplicativo Personificar no seu Nextcloud, você permite que os administradores personifiquem outros usuários no servidor Nextcloud. Isso é especialmente útil para depurar problemas relatados pelos usuários.\n\nPara personificar um usuário, um administrador precisa simplesmente seguir as quatro etapas a seguir:\n\n1. Faça login como administrador no Nextcloud. \n2. Abra a interface de administração de usuários. \n3. Selecione o botão Personificar no usuário afetado. \n4. Confirme a personificação.\n\nO administrador é então logado como o usuário, para voltar à conta de usuário normal basta pressionar o botão de logout.\n\n**Observação:**\n\n- Este aplicativo não é compatível com instâncias que tenham a criptografia ativada. \n- Embora as ações personificadas sejam registradas, observe que as ações executadas personificadas serão registradas como o usuário personificado. \n- A personificação de um usuário só é possível após o primeiro login dele. \n- Você pode limitar quais usuários/grupos podem usar a personificação em Configurações de administração > Configurações adicionais.",
-    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Os membros destes grupos poderão fazer-se passar pelos utilizadores que tenham permissões para administrar. Se remover todos os grupos, todos os administradores de grupos terão permissão de se fazer passar pelos seus utilizadores."
+    "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Os membros destes grupos poderão fazer-se passar pelos utilizadores que tenham permissões para administrar. Se remover todos os grupos, todos os administradores de grupos terão permissão de se fazer passar pelos seus utilizadores.",
+    "Could not impersonate user" : "Não foi possível fazer-se passar por outro utilizador",
+    "Impersonate user" : "Fazer-se passar por outro utilizador",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Tem a certeza que quer fazer-se passar por \"{userId}\"?",
+    "Could not log out, please try again" : "Não foi possível sair, tente novamente",
+    "Logged in as {name} ({uid})" : "Logado como {name} ({uid})"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
