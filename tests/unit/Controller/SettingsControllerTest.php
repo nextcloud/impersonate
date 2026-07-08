@@ -12,6 +12,10 @@ use OC\Group\Manager;
 use OC\SubAdmin;
 use OCA\Impersonate\Controller\SettingsController;
 use OCA\Impersonate\Events\BeginImpersonateEvent;
+use OCA\Impersonate\Listener\BeginImpersonateListener;
+use OCA\Impersonate\Service\ConfigService;
+use OCA\Impersonate\Service\NotifierService;
+use OCP\App\IAppManager;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\EventDispatcher\IEventDispatcher;
@@ -45,6 +49,10 @@ class SettingsControllerTest extends TestCase {
 	private SettingsController $controller;
 	/** @var IEventDispatcher|IEventDispatcher&MockObject|MockObject */
 	private $eventDispatcher;
+	private IAppManager|MockObject $appManager;
+	private ConfigService|MockObject $configService;
+	/** @var NotifierService|NotifierService&MockObject|MockObject */
+	private NotifierService $notifierService;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -68,6 +76,12 @@ class SettingsControllerTest extends TestCase {
 			->method('getSubAdmin')
 			->willReturn($this->subadmin);
 		$this->eventDispatcher = $this->createMock(IEventDispatcher::class);
+		$this->appManager = $this->createMock(IAppManager::class);
+		$this->configService = $this->createMock(ConfigService::class);
+		$this->notifierService = $this->getMockBuilder(NotifierService::class)
+			->disableOriginalConstructor()
+			->onlyMethods(['notifyPush', 'notifyMail', 'notifyActivity'])
+			->getMock();
 
 		$this->controller = new SettingsController(
 			$this->appName,
@@ -79,7 +93,9 @@ class SettingsControllerTest extends TestCase {
 			$this->config,
 			$this->logger,
 			$this->l,
-			$this->eventDispatcher
+			$this->eventDispatcher,
+			$this->appManager,
+			$this->configService,
 		);
 	}
 
@@ -107,6 +123,14 @@ class SettingsControllerTest extends TestCase {
 		return [
 			['username', 'username'],
 			['UserName', 'username']
+		];
+	}
+
+	public function usersProviderNotifications(): array {
+		return [
+			['username', 'username', ConfigService::NOTIFICATION_PUSH, 'notifyPush'],
+			['username', 'username', ConfigService::NOTIFICATION_ACTIVITY, 'notifyActivity'],
+			['username', 'username', ConfigService::NOTIFICATION_MAIL, 'notifyMail'],
 		];
 	}
 
@@ -142,10 +166,11 @@ class SettingsControllerTest extends TestCase {
 			->method('setUser')
 			->with($user);
 
-		$this->groupManager->expects($this->once())
+		$this->groupManager->expects($this->exactly(2))
 			->method('isAdmin')
-			->with('admin')
-			->willReturn(true);
+			->willReturnCallback(function ($user) {
+				return $user === 'admin';
+			});
 
 		$this->groupManager->expects($this->once())
 			->method('getUserGroupIds')
@@ -202,9 +227,8 @@ class SettingsControllerTest extends TestCase {
 			->method('setUser')
 			->with($user);
 
-		$this->groupManager->expects($this->once())
+		$this->groupManager->expects($this->exactly(2))
 			->method('isAdmin')
-			->with('admin')
 			->willReturn(false);
 
 		$this->subadmin->expects($this->once())
@@ -337,6 +361,92 @@ class SettingsControllerTest extends TestCase {
 
 		$this->assertEquals(
 			new JSONResponse(['message' => 'Insufficient permissions to impersonate user'], Http::STATUS_FORBIDDEN),
+			$this->controller->impersonate($query)
+		);
+	}
+
+
+	/**
+	 * @dataProvider usersProviderNotifications
+	 * @param $query
+	 * @param $uid
+	 */
+	public function testAdminImpersonateNotify($query, $uid, $configValue, $notifierMethod) {
+
+		$beginImpersonateListener = new BeginImpersonateListener(
+			$this->configService,
+			$this->groupManager,
+			$this->notifierService,
+		);
+
+		$currentUser = $this->createMock(IUser::class);
+		$currentUser->expects($this->any())
+			->method('getUID')
+			->willReturn('admin');
+
+		$user = $this->createMock(IUser::class);
+		$user->expects($this->any())
+			->method('getUID')
+			->willReturn($uid);
+		$user->expects($this->any())
+			->method('getLastLogin')
+			->willReturn(1737662989);
+		$user->expects($this->any())
+			->method('getEmailAddress')
+			->willReturn('user@test.com');
+
+		$this->configService->expects($this->any())
+			->method('getUserNotificationSetting')
+			->with(false)
+			->willReturn($configValue);
+
+		$this->appManager->expects($this->any())
+			->method('isEnabledForUser')
+			->willReturn(true);
+
+		$this->userSession
+			->method('getUser')
+			->willReturn($currentUser);
+
+		$this->userManager->expects($this->once())
+			->method('get')
+			->with($query)
+			->willReturn($user);
+
+		$this->userSession->expects($this->once())
+			->method('setUser')
+			->with($user);
+
+		$this->groupManager->expects($this->exactly(3))
+			->method('isAdmin')
+			->willReturnCallback(function ($user) {
+				return $user === 'admin';
+			});
+
+		$this->groupManager->expects($this->once())
+			->method('getUserGroupIds')
+			->with($currentUser)
+			->willReturn(['admin']);
+
+		$this->config->expects($this->once())
+			->method('getValueString')
+			->with('impersonate', 'authorized', '["admin"]')
+			->willReturnArgument(2);
+
+		$this->eventDispatcher->expects($this->once())
+			->method('dispatchTyped')
+			->willReturnCallback(function (BeginImpersonateEvent $event) use ($currentUser, $user, $beginImpersonateListener) {
+				$this->assertSame($currentUser, $event->getImpersonator());
+				$this->assertSame($user, $event->getImpersonatedUser());
+				$beginImpersonateListener->handle($event);
+			});
+
+		$this->notifierService->expects($this->once())
+			->method($notifierMethod)
+			->with($user, $currentUser);
+
+		$this->assertEquals(
+			new JSONResponse(),
 			$this->controller->impersonate($query)
 		);
 	}
