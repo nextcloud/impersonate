@@ -94,7 +94,7 @@ class NotifierService {
 
 		$template->setSubject($l->t('An administrator accessed your account'));
 		$template->addHeader();
-		$template->addHeading($l->t('An administrator (\'%s\') accessed your account on %s at %s.', [$impersonator->getDisplayName(), $formattedDate, $formattedTime]));
+		$template->addHeading($l->t('An administrator (\'%1$s\') accessed your account on %2$s at %3$s.', [$impersonator->getDisplayName(), $formattedDate, $formattedTime]));
 		$template->addBodyText($l->t('This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it.'));
 		$template->addFooter();
 
