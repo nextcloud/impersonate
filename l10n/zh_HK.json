@@ -1,4 +1,5 @@
 { "translations": {
+    "An administrator ({actor}) accessed your account" : "管理員 ({actor}) 存取了您的帳號",
     "User not found" : "未找到用戶",
     "Insufficient permissions to impersonate user" : "權限不足，無法模擬用戶",
     "Cannot impersonate the user because it was never logged in" : "無法模擬用戶，因為該用戶從未登入",
