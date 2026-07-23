@@ -365,7 +365,6 @@ class SettingsControllerTest extends TestCase {
 		);
 	}
 
-
 	/**
 	 * @dataProvider usersProviderNotifications
 	 * @param $query
