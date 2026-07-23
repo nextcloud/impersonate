@@ -4,6 +4,7 @@
  * SPDX-FileCopyrightText: Framasoft
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
+
 namespace OCA\Impersonate\Activity;
 
 use OCA\Impersonate\AppInfo\Application;

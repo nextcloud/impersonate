@@ -7,7 +7,6 @@
 
 declare(strict_types=1);
 
-
 namespace OCA\Impersonate\Service;
 
 use DateTime;
@@ -98,7 +97,6 @@ class NotifierService {
 		$template->addHeading($l->t('An administrator (\'%s\') accessed your account on %s at %s.', [$impersonator->getDisplayName(), $formattedDate, $formattedTime]));
 		$template->addBodyText($l->t('This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it.'));
 		$template->addFooter();
-
 
 		$message = $this->mailer->createMessage();
 		$message->setTo([$user->getEMailAddress() => $user->getDisplayName()]);
