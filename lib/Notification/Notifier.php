@@ -58,7 +58,7 @@ class Notifier implements INotifier {
 		$notification->setIcon($this->urlGenerator->getAbsoluteURL($this->urlGenerator->imagePath(Application::APP_ID, 'actions/user-admin.svg')));
 
 		$notification->setParsedSubject(
-			$l->t('An administrator (\'%s\') accessed your account on %s at %s.', [$impersonator_name, $formattedDate, $formattedTime])
+			$l->t('An administrator (\'%1$s\') accessed your account on %2$s at %3$s.', [$impersonator_name, $formattedDate, $formattedTime])
 		);
 		return $notification;
 	}
