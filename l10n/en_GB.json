@@ -6,7 +6,6 @@
     "Cannot impersonate yourself" : "Cannot impersonate yourself",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active.",
     "Impersonate" : "Impersonate",
-    "An administrator ('%s') accessed your account on %s at %s." : "An administrator ('%s') accessed your account on %s at %s.",
     "An administrator accessed your account" : "An administrator accessed your account",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it.",
     "Impersonate other users" : "Impersonate other users",

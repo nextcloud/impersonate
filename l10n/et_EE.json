@@ -6,7 +6,6 @@
     "Cannot impersonate yourself" : "Ei saa endaks kehastuda",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Teise kasutajana kehastumine pole võimalik, kui mõni kehastumise seadistustes (nt „impersonate.notifications“) näidatud rakendus ei ole aktiivne.",
     "Impersonate" : "Kehastamine",
-    "An administrator ('%s') accessed your account on %s at %s." : "Peakasutaja (%s) on kasutanud ligipääsu sinu kontole: %s, %s.",
     "An administrator accessed your account" : "Peakasutaja on kasutanud ligipääsu sinu kontole",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "See tegevus võis olla vajalik platvormi hoolduse raames. Kui see tegevus tundub sulle kahtlane või soovid selle kohta lisateavet, siis sinu serveri haldaja või peakasutaja aitab sind.",
     "Impersonate other users" : "Kehasta teisi kasutajaid",
