@@ -8,7 +8,6 @@ OC.L10N.register(
     "Cannot impersonate yourself" : "Δεν μπορείτε να εξομοιώσετε τον εαυτό σας",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Η εξομοίωση χρήστη δεν μπορεί να προχωρήσει εάν κάποια εφαρμογή που ορίζεται στη ρύθμιση ειδοποιήσεων εξομοίωσης (π.χ. 'impersonate.notifications') δεν είναι ενεργή.",
     "Impersonate" : "Εξομοίωση χρήστη",
-    "An administrator ('%s') accessed your account on %s at %s." : "Ένας διαχειριστής ('%s') απέκτησε πρόσβαση στον λογαριασμό σας στις %s και ώρα %s.",
     "An administrator accessed your account" : "Ένας διαχειριστής απέκτησε πρόσβαση στον λογαριασμό σας",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "Αυτή η ενέργεια ενδέχεται να είναι απαραίτητη στο πλαίσιο της συντήρησης της πλατφόρμας. Παρακαλούμε επικοινωνήστε με αυτόν τον διαχειριστή εάν θεωρείτε αυτή την ενέργεια ύποπτη ή εάν επιθυμείτε περισσότερες πληροφορίες σχετικά με αυτήν.",
     "Impersonate other users" : "Εξομοίωση άλλων χρηστών",

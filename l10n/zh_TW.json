@@ -6,7 +6,6 @@
     "Cannot impersonate yourself" : "無法模擬您自己",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "若「模擬通知」設定（例如「impersonate.notifications」）中指定的任何應用程式未處於活躍狀態，則無法進行模擬操作。",
     "Impersonate" : "模擬",
-    "An administrator ('%s') accessed your account on %s at %s." : "管理員 ('%s') 存取了您的帳號在 %s 於 %s。",
     "An administrator accessed your account" : "管理員存取您的帳號",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "此動作可能是平台維護的一部分。若您認為此動作可疑，或希望進一步了解相關資訊，請聯絡此位管理員。",
     "Impersonate other users" : "模擬其他使用者",
