@@ -8,7 +8,6 @@ OC.L10N.register(
     "Cannot impersonate yourself" : "Ní féidir aithris a dhéanamh ort féin",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Ní féidir dul ar aghaidh leis an gcarachtar mura bhfuil aon fheidhmchlár atá sonraithe sa socrú fógraí carachtar (m.sh., 'impersonate.notifications') gníomhach.",
     "Impersonate" : "Déan aithris",
-    "An administrator ('%s') accessed your account on %s at %s." : "Fuair ​​riarthóir ('%s') rochtain ar do chuntas ar %s ag %s.",
     "An administrator accessed your account" : "Fuair ​​riarthóir rochtain ar do chuntas",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "D’fhéadfadh sé go mbeadh an gníomh seo riachtanach mar chuid de chothabháil an ardáin. Téigh i dteagmháil leis an riarthóir seo má cheapann tú go bhfuil an gníomh seo amhrasach nó más mian leat tuilleadh eolais a fháil faoi.",
     "Impersonate other users" : "Déan aithris ar úsáideoirí eile",

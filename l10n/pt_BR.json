@@ -6,7 +6,6 @@
     "Cannot impersonate yourself" : "Não é possível personificar a si mesmo",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "A impersonificação não poderá ser executada se algum aplicativo especificado na configuração de notificações de impersonificação (p. ex., ‘impersonate.notifications’) não estiver ativo.",
     "Impersonate" : "Personificar",
-    "An administrator ('%s') accessed your account on %s at %s." : "Um administrador (‘%s’) acessou sua conta em %s às %s.",
     "An administrator accessed your account" : "Um administrador acessou sua conta",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "Essa ação pode ser necessária como parte da manutenção da plataforma. Entre em contato com este administrador caso considere essa ação suspeita ou se desejar obter mais informações a respeito.",
     "Impersonate other users" : "Personificar outros usuários",
