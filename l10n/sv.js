@@ -8,7 +8,6 @@ OC.L10N.register(
     "Cannot impersonate yourself" : "Du kan inte agera som dig själv",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Det går inte att agera som användaren om någon app som anges i aviseringsinställningen för funktionen (t.ex. ”impersonate.notifications”) inte är aktiv.",
     "Impersonate" : "Agera som",
-    "An administrator ('%s') accessed your account on %s at %s." : "En administratör ('%s') fick åtkomst till ditt konto den %s kl. %s.",
     "An administrator accessed your account" : "En administratör fick åtkomst till ditt konto",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "Åtgärden kan vara nödvändig som en del av plattformsunderhållet. Kontakta administratören om du anser att åtgärden är misstänkt eller vill ha mer information om den.",
     "Impersonate other users" : "Agera som andra användare",

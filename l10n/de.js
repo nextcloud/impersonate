@@ -8,7 +8,6 @@ OC.L10N.register(
     "Cannot impersonate yourself" : "Sich selbst nachzuahmen ist nicht möglich",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Impersonisierung kann nicht fortgesetzt werden, wenn eine der in der Einstellung für Impersonisierung-Benachrichtigungen (z. B. „impersonate.notifications“) angegebenen Anwendungen nicht aktiv ist.",
     "Impersonate" : "Nachahmen",
-    "An administrator ('%s') accessed your account on %s at %s." : "Die Administration (\"%s\") hat auf %s am %s auf Ihr Konto zugegriffen",
     "An administrator accessed your account" : "Die Administration hat auf Ihr Konto zugegriffen",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "Diese Maßnahme kann im Rahmen der Plattformwartung erforderlich sein. Bitte wenden Sie sich an die Administration, falls Ihnen diese Maßnahme verdächtig erscheint oder Sie weitere Informationen dazu wünschen.",
     "Impersonate other users" : "Andere Benutzer nachahmen",

@@ -6,7 +6,6 @@
     "Cannot impersonate yourself" : "Negalite veikti savo paties vardu",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Veikimo kito asmens vardu procesas negali būti vykdomas, jei kuri nors programėlė, nurodyta veikimo kito asmens vardu pranešimų nuostatoje (pvz., „impersonate.notifications“), nėra aktyvi.",
     "Impersonate" : "Veikti kito vardu",
-    "An administrator ('%s') accessed your account on %s at %s." : "Administratorius (%s) prisijungė prie jūsų paskyros %s - %s.",
     "An administrator accessed your account" : "Administratorius prisijungė prie jūsų paskyros.",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "Šis veiksmas gali būti būtinas atliekant platformos priežiūros darbus. Prašome susisiekti su administratoriumi, jei šis veiksmas jums atrodo įtartinas arba jei norite gauti daugiau informacijos.",
     "Impersonate other users" : "Veikti kitų vartotojų vardu",
