@@ -7,6 +7,7 @@ OC.L10N.register(
     "Cannot impersonate the user because it was never logged in" : "Impossible de prendre l'identité de l'utilisateur car il ne s'est jamais connecté",
     "Cannot impersonate yourself" : "Impossible de prendre l'identité de vous-même",
     "Impersonate" : "Prendre l'identité",
+    "An administrator ('%1$s') accessed your account on %2$s at %3$s." : "Un administrateur ('%1$s') a accédé à votre compte le %2$s à %3$s.",
     "An administrator accessed your account" : "Un administrateur a accédé à votre compte",
     "This action may be necessary as part of platform maintenance. Please contact this administrator if you find this action suspicious or if you would like more information about it." : "Cette action peut être nécessaire dans le cadre de la maintenance de la plateforme. Veuillez contacter cet administrateur si vous trouvez cette action suspecte ou si vous souhaitez davantage d'informations à ce propos.",
     "Impersonate other users" : "Prendre l'identité d'un autre utilisateur",
