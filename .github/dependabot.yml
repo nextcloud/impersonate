@@ -21,6 +21,21 @@ updates:
     timezone: Europe/Paris
   cooldown:
     default-days: 10
+  target-branch: stable35
+  open-pull-requests-limit: 10
+  ignore:
+    # ignore all GitHub linguist patch updates
+    - dependency-name: "*"
+      update-types: ["version-update:semver-major", "version-update:semver-minor"]
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "03:00"
+    timezone: Europe/Paris
+  cooldown:
+    default-days: 10
   target-branch: stable34
   open-pull-requests-limit: 10
   ignore:
