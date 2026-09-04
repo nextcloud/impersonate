@@ -6,6 +6,7 @@ OC.L10N.register(
     "Insufficient permissions to impersonate user" : "Droits insuffisants pour prendre l'identité de cet utilisateur",
     "Cannot impersonate the user because it was never logged in" : "Impossible de prendre l'identité de l'utilisateur car il ne s'est jamais connecté",
     "Cannot impersonate yourself" : "Impossible de prendre l'identité de vous-même",
+    "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "L'usurpation d'identité ne peut pas être effectuée si les applications spécifiées dans les paramètres de notifications d'emprunt d'identité (par ex. « impersonate.notifications ») ne sont pas actives.",
     "Impersonate" : "Prendre l'identité",
     "An administrator ('%1$s') accessed your account on %2$s at %3$s." : "Un administrateur ('%1$s') a accédé à votre compte le %2$s à %3$s.",
     "An administrator accessed your account" : "Un administrateur a accédé à votre compte",
