@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 ?>
-<div id="impersonate"</div>
+<div id="impersonate"></div>
