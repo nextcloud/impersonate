@@ -5,6 +5,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 6.0.0
+
+### Added
+
+* feat(deps): Add Nextcloud 35 support on master by @nickvergessen in https://github.com/nextcloud/impersonate/pull/616
+* Feature impersonated user notifications by @smarinier in https://github.com/nextcloud/impersonate/pull/621
+* build(PHP): require PHP 8.3 or higher by @blizzz in https://github.com/nextcloud/impersonate/pull/644
+
 ## 4.0.0
 
 ### Added
