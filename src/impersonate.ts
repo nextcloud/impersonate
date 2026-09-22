@@ -34,11 +34,12 @@ interface User {
 				if (xhr.status === 0 || (xhr.status >= 200 && xhr.status < 300)) {
 					window.location = generateUrl('/')
 				} else {
-					showWarning(t('impersonate', 'Could not impersonate user'))
+					showWarning(xhr.response?.message ?? t('impersonate', 'Could not impersonate user'))
 				}
 			}
 		}
 		xhr.open('POST', generateUrl('apps/impersonate/user'))
+		xhr.responseType = 'json'
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 		xhr.send('userId=' + encodeURIComponent(userId) + '&requesttoken=' + encodeURIComponent(OC.requestToken))
 	}
