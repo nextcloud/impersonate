@@ -99,6 +99,20 @@ class SettingsController extends Controller {
 			}
 		}
 
+		$protected = json_decode($this->config->getValueString('impersonate', 'protected', '[]'));
+		if (!empty($protected)) {
+			$impersonateeGroups = $this->groupManager->getUserGroupIds($impersonatee);
+
+			if (array_intersect($impersonateeGroups, $protected)) {
+				return new JSONResponse(
+					[
+						'message' => $this->l->t('This user cannot be impersonated'),
+					],
+					Http::STATUS_FORBIDDEN
+				);
+			}
+		}
+
 		if ($impersonatee->getLastLogin() === 0) {
 			return new JSONResponse(
 				[
