@@ -14,7 +14,17 @@
 					v-model="authorizedGroups"
 					:label="t('impersonate', 'These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate.')"
 					style="width: 100%"
-					@update:modelValue="onSelectGroups" />
+					@update:modelValue="onSelectAuthorizedGroups" />
+			</NcFormGroup>
+			<NcFormGroup
+				:label="t('impersonate', 'Protected groups')"
+				:description="t('impersonate', 'Members of these groups cannot be impersonated, not even by members of the authorized groups. If you remove all groups, every user can be impersonated.')">
+				<NcSettingsSelectGroup
+					id="impersonate-protectedGroups"
+					v-model="protectedGroups"
+					:label="t('impersonate', 'Members of these groups cannot be impersonated, not even by members of the authorized groups. If you remove all groups, every user can be impersonated.')"
+					style="width: 100%"
+					@update:modelValue="onSelectProtectedGroups" />
 			</NcFormGroup>
 		</div>
 	</NcSettingsSection>
@@ -42,14 +52,19 @@ export default defineComponent({
 	data() {
 		return {
 			authorizedGroups: loadState<string[]>('impersonate', 'authorized'),
+			protectedGroups: loadState<string[]>('impersonate', 'protected'),
 		}
 	},
 
 	methods: {
 		t,
-		onSelectGroups(groups: string[]) {
+		onSelectAuthorizedGroups(groups: string[]) {
 			this.authorizedGroups = [...new Set(['admin', ...groups])]
 			OCP.AppConfig.setValue('impersonate', 'authorized', JSON.stringify(this.authorizedGroups))
+		},
+
+		onSelectProtectedGroups(groups: string[]) {
+			OCP.AppConfig.setValue('impersonate', 'protected', JSON.stringify(groups))
 		},
 	},
 })
