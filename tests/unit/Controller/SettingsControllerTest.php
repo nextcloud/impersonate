@@ -177,10 +177,12 @@ class SettingsControllerTest extends TestCase {
 			->with($currentUser)
 			->willReturn(['admin']);
 
-		$this->config->expects($this->once())
+		$this->config->expects($this->exactly(2))
 			->method('getValueString')
-			->with('impersonate', 'authorized', '["admin"]')
-			->willReturnArgument(2);
+			->willReturnMap([
+				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
+				['impersonate', 'protected', '[]', false, '[]'],
+			]);
 
 		$this->eventDispatcher->expects($this->once())
 			->method('dispatchTyped')
@@ -241,10 +243,12 @@ class SettingsControllerTest extends TestCase {
 			->with($currentUser)
 			->willReturn(['subadmin']);
 
-		$this->config->expects($this->once())
+		$this->config->expects($this->exactly(2))
 			->method('getValueString')
-			->with('impersonate', 'authorized', '["admin"]')
-			->willReturn(json_encode(['admin', 'subadmin']));
+			->willReturnMap([
+				['impersonate', 'authorized', '["admin"]', false, json_encode(['admin', 'subadmin'])],
+				['impersonate', 'protected', '[]', false, '[]'],
+			]);
 
 		$this->eventDispatcher->expects($this->once())
 			->method('dispatchTyped')
@@ -365,6 +369,125 @@ class SettingsControllerTest extends TestCase {
 		);
 	}
 
+	public function protectedGroupsProvider(): array {
+		return [
+			[['admin'], ['admin']],
+			[['users', 'management'], ['admin', 'management']],
+		];
+	}
+
+	/**
+	 * @dataProvider protectedGroupsProvider
+	 * @param string[] $userGroups
+	 * @param string[] $protectedGroups
+	 */
+	public function testImpersonateProtected($userGroups, $protectedGroups) {
+		$currentUser = $this->createMock(IUser::class);
+		$currentUser->expects($this->any())
+			->method('getUID')
+			->willReturn('admin');
+
+		$user = $this->createMock(IUser::class);
+		$user->expects($this->any())
+			->method('getUID')
+			->willReturn('username');
+
+		$this->userSession
+			->method('getUser')
+			->willReturn($currentUser);
+
+		$this->userManager->expects($this->once())
+			->method('get')
+			->with('username')
+			->willReturn($user);
+
+		$this->groupManager->expects($this->once())
+			->method('isAdmin')
+			->with('admin')
+			->willReturn(true);
+
+		$this->groupManager->expects($this->exactly(2))
+			->method('getUserGroupIds')
+			->willReturnMap([
+				[$currentUser, ['admin']],
+				[$user, $userGroups],
+			]);
+
+		$this->config->expects($this->exactly(2))
+			->method('getValueString')
+			->willReturnMap([
+				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
+				['impersonate', 'protected', '[]', false, json_encode($protectedGroups)],
+			]);
+
+		$this->userSession->expects($this->never())
+			->method('setUser');
+
+		$this->eventDispatcher->expects($this->never())
+			->method('dispatchTyped');
+
+		$this->assertEquals(
+			new JSONResponse(['message' => 'This user cannot be impersonated'], Http::STATUS_FORBIDDEN),
+			$this->controller->impersonate('username')
+		);
+	}
+
+	public function testImpersonateNotProtected() {
+		$currentUser = $this->createMock(IUser::class);
+		$currentUser->expects($this->any())
+			->method('getUID')
+			->willReturn('admin');
+
+		$user = $this->createMock(IUser::class);
+		$user->expects($this->any())
+			->method('getUID')
+			->willReturn('username');
+		$user->expects($this->any())
+			->method('getLastLogin')
+			->willReturn(1737662989);
+
+		$this->userSession
+			->method('getUser')
+			->willReturn($currentUser);
+
+		$this->userManager->expects($this->once())
+			->method('get')
+			->with('username')
+			->willReturn($user);
+
+		$this->groupManager->expects($this->exactly(2))
+			->method('isAdmin')
+			->willReturnCallback(function ($user) {
+				return $user === 'admin';
+			});
+
+		$this->groupManager->expects($this->exactly(2))
+			->method('getUserGroupIds')
+			->willReturnMap([
+				[$currentUser, ['admin']],
+				[$user, ['users']],
+			]);
+
+		$this->config->expects($this->exactly(2))
+			->method('getValueString')
+			->willReturnMap([
+				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
+				['impersonate', 'protected', '[]', false, json_encode(['admin', 'management'])],
+			]);
+
+		$this->userSession->expects($this->once())
+			->method('setUser')
+			->with($user);
+
+		$this->eventDispatcher->expects($this->once())
+			->method('dispatchTyped');
+
+		$this->assertEquals(
+			new JSONResponse(),
+			$this->controller->impersonate('username')
+		);
+	}
+
 	/**
 	 * @dataProvider usersProviderNotifications
 	 * @param $query
@@ -427,10 +550,12 @@ class SettingsControllerTest extends TestCase {
 			->with($currentUser)
 			->willReturn(['admin']);
 
-		$this->config->expects($this->once())
+		$this->config->expects($this->exactly(2))
 			->method('getValueString')
-			->with('impersonate', 'authorized', '["admin"]')
-			->willReturnArgument(2);
+			->willReturnMap([
+				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
+				['impersonate', 'protected', '[]', false, '[]'],
+			]);
 
 		$this->eventDispatcher->expects($this->once())
 			->method('dispatchTyped')
