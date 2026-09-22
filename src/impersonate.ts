@@ -5,6 +5,7 @@
  */
 
 import { showConfirmation, showWarning } from '@nextcloud/dialogs'
+import { loadState } from '@nextcloud/initial-state'
 import { t } from '@nextcloud/l10n'
 import { generateUrl } from '@nextcloud/router'
 import logger from './services/logger.ts'
@@ -16,9 +17,12 @@ declare const OCA: any
 
 interface User {
 	id: string
+	groups: string[]
 }
 
 (function(OC) {
+	const protectedGroups = loadState<string[]>('impersonate', 'protected', [])
+
 	/**
 	 *
 	 * @param userId of the targeted user
@@ -54,6 +58,14 @@ interface User {
 		}
 	}
 
+	/**
+	 *
+	 * @param user user object of the targeted account
+	 */
+	function isImpersonable(user: User): boolean {
+		return !user.groups.some((group) => protectedGroups.includes(group))
+	}
+
 	const registerFunction = function(event: Event, delay: number): void {
 		if (OCA.Settings === undefined) {
 			delay = delay * 2
@@ -68,7 +80,7 @@ interface User {
 				registerFunction(event, delay)
 			}, delay)
 		} else {
-			OCA.Settings.UserList.registerAction('icon-user', t('impersonate', 'Impersonate'), impersonateDialog)
+			OCA.Settings.UserList.registerAction('icon-user', t('impersonate', 'Impersonate'), impersonateDialog, isImpersonable)
 		}
 	}
 
