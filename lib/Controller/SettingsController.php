@@ -99,7 +99,7 @@ class SettingsController extends Controller {
 			}
 		}
 
-		$protected = json_decode($this->config->getValueString('impersonate', 'protected', '[]'));
+		$protected = json_decode($this->config->getValueString('impersonate', 'protected', '["admin"]'));
 		if (!empty($protected)) {
 			$impersonateeGroups = $this->groupManager->getUserGroupIds($impersonatee);
 
