@@ -22,7 +22,7 @@
 				<NcSettingsSelectGroup
 					id="impersonate-protectedGroups"
 					v-model="protectedGroups"
-					:label="t('impersonate', 'Members of these groups cannot be impersonated, not even by members of the authorized groups. If you remove all groups, every user can be impersonated.')"
+					:label="t('impersonate', 'Protected groups')"
 					style="width: 100%"
 					@update:modelValue="onSelectProtectedGroups" />
 			</NcFormGroup>
