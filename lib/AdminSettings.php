@@ -29,7 +29,7 @@ class AdminSettings implements ISettings {
 		$authorized = $this->config->getValueString(Application::APP_ID, 'authorized', '["admin"]');
 		$this->initialState->provideInitialState('authorized', json_decode($authorized, true));
 
-		$protected = $this->config->getValueString(Application::APP_ID, 'protected', '[]');
+		$protected = $this->config->getValueString(Application::APP_ID, 'protected', '["admin"]');
 		$this->initialState->provideInitialState('protected', json_decode($protected, true));
 		return new TemplateResponse(Application::APP_ID, 'admin_settings', [], 'blank');
 	}

@@ -46,7 +46,7 @@ readonly class BeforeTemplateRenderedListener implements IEventListener {
 		}
 
 		// Used to hide the action for protected users, the controller enforces it
-		$protected = $this->config->getValueString(Application::APP_ID, 'protected', '[]');
+		$protected = $this->config->getValueString(Application::APP_ID, 'protected', '["admin"]');
 		$this->initialState->provideInitialState('protected', json_decode($protected, true));
 		Util::addScript(Application::APP_ID, 'impersonate-accountAction');
 	}
