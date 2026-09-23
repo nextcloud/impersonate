@@ -181,7 +181,7 @@ class SettingsControllerTest extends TestCase {
 			->method('getValueString')
 			->willReturnMap([
 				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
-				['impersonate', 'protected', '[]', false, '[]'],
+				['impersonate', 'protected', '["admin"]', false, '[]'],
 			]);
 
 		$this->eventDispatcher->expects($this->once())
@@ -247,7 +247,7 @@ class SettingsControllerTest extends TestCase {
 			->method('getValueString')
 			->willReturnMap([
 				['impersonate', 'authorized', '["admin"]', false, json_encode(['admin', 'subadmin'])],
-				['impersonate', 'protected', '[]', false, '[]'],
+				['impersonate', 'protected', '["admin"]', false, '[]'],
 			]);
 
 		$this->eventDispatcher->expects($this->once())
@@ -417,7 +417,7 @@ class SettingsControllerTest extends TestCase {
 			->method('getValueString')
 			->willReturnMap([
 				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
-				['impersonate', 'protected', '[]', false, json_encode($protectedGroups)],
+				['impersonate', 'protected', '["admin"]', false, json_encode($protectedGroups)],
 			]);
 
 		$this->userSession->expects($this->never())
@@ -472,7 +472,7 @@ class SettingsControllerTest extends TestCase {
 			->method('getValueString')
 			->willReturnMap([
 				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
-				['impersonate', 'protected', '[]', false, json_encode(['admin', 'management'])],
+				['impersonate', 'protected', '["admin"]', false, json_encode(['admin', 'management'])],
 			]);
 
 		$this->userSession->expects($this->once())
@@ -554,7 +554,7 @@ class SettingsControllerTest extends TestCase {
 			->method('getValueString')
 			->willReturnMap([
 				['impersonate', 'authorized', '["admin"]', false, '["admin"]'],
-				['impersonate', 'protected', '[]', false, '[]'],
+				['impersonate', 'protected', '["admin"]', false, '[]'],
 			]);
 
 		$this->eventDispatcher->expects($this->once())
