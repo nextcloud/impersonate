@@ -10,6 +10,7 @@ namespace OCA\Impersonate\Listener;
 
 use OCA\Impersonate\AppInfo\Application;
 use OCA\Settings\Events\BeforeTemplateRenderedEvent;
+use OCP\AppFramework\Services\IInitialState;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\IAppConfig;
@@ -26,6 +27,7 @@ readonly class BeforeTemplateRenderedListener implements IEventListener {
 		private IAppConfig $config,
 		private IGroupManager $groupManager,
 		private IUserSession $userSession,
+		private IInitialState $initialState,
 	) {
 	}
 
@@ -42,6 +44,10 @@ readonly class BeforeTemplateRenderedListener implements IEventListener {
 				return;
 			}
 		}
+
+		// Used to hide the action for protected users, the controller enforces it
+		$protected = $this->config->getValueString(Application::APP_ID, 'protected', '["admin"]');
+		$this->initialState->provideInitialState('protected', json_decode($protected, true));
 		Util::addScript(Application::APP_ID, 'impersonate-accountAction');
 	}
 }
