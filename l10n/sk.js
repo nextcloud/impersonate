@@ -5,7 +5,7 @@ OC.L10N.register(
     "User not found" : "Používateľ nenájdený",
     "Insufficient permissions to impersonate user" : "Nedostatočné oprávnenie pre vystupovanie ako užívateľ",
     "Cannot impersonate the user because it was never logged in" : "Nie je možné vydávať sa za používateľa, pretože nebol nikdy prihlásený",
-    "Cannot impersonate yourself" : "Nemôžete sa vydávať za seba",
+    "Cannot impersonate yourself" : "Nemôžete sa prihlásiť za seba",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Vydávanie sa za používateľa nemôže pokračovať, ak nie je aktívna niektorá aplikácia uvedená v nastavení oznámení o vydávaní sa za používateľa (napr. 'impersonate.notifications').",
     "Impersonate" : "Zosobniť sa",
     "An administrator ('%1$s') accessed your account on %2$s at %3$s." : "Správca ('%1$s') získal prístup k vášmu kontu dňa %2$s o %3$s.",
@@ -17,7 +17,7 @@ OC.L10N.register(
     "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Členovia týchto skupín budú môcť vystupovať ako iní používatelia, ktorých účty je im povolené spravovať. Ak odstránite všetky skupiny, každý správca skupiny bude môcť vystupovať ako iný používateľ.",
     "Could not impersonate user" : "Nepodarilo sa zosobniť na používateľa",
     "Impersonate user" : "Zosobniť sa na používateľa",
-    "Are you sure you want to impersonate \"{userId}\"?" : "Ste si istý,  že sa chcete zosobniť na používateľa \"{userId}\"?",
+    "Are you sure you want to impersonate \"{userId}\"?" : "Ste si istý, že sa chcete prihlásiť za používateľa \"{userId}\"?",
     "Could not log out, please try again" : "Nepodarilo sa odhlásiť, prosím skúste to znova",
     "Logged in as {name} ({uid})" : "Prihlásený ako {name} ({uid})"
 },
