@@ -6,7 +6,7 @@ OC.L10N.register(
     "Insufficient permissions to impersonate user" : "Keine ausreichenden Berechtigungen zum Nachahmen des Benutzers",
     "Cannot impersonate the user because it was never logged in" : "Der Benutzer war noch nie angemeldet und kann daher nicht nachgeahmt werden",
     "Cannot impersonate yourself" : "Man kann sich nicht selbst nachahmen",
-    "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Impersonisierung kann nicht fortgesetzt werden, wenn eine der in der Einstellung für Impersonisierung-Benachrichtigungen (z. B. „impersonate.notifications“) angegebenen Anwendungen nicht aktiv ist.",
+    "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Impersonisierung kann nicht fortgesetzt werden, wenn eine der in der Einstellung für Impersonisierung-Benachrichtigungen (z. B. „impersonate.notifications“) angegebenen Anwendungen nicht aktiv ist.",
     "Impersonate" : "Nachahmen",
     "An administrator ('%1$s') accessed your account on %2$s at %3$s." : "Die Administration (\"%1$s\") hat auf %2$s am %3$s auf Ihr Konto zugegriffen",
     "An administrator accessed your account" : "Die Administration hat auf Ihr Konto zugegriffen",
