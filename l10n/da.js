@@ -4,7 +4,7 @@ OC.L10N.register(
     "An administrator ({actor}) accessed your account" : "En administrator ({actor}) har haft adgang til din konto",
     "User not found" : "Bruger ikke fundet",
     "Insufficient permissions to impersonate user" : "Du har ikke rettigheder til at udgive dig for at være andre brugere",
-    "Cannot impersonate the user because it was never logged in" : "Kan ikke efterligne brugeren, fordi vedkommende aldrig har været logget på",
+    "Cannot impersonate the user because it was never logged in" : "Du kan ikke udgive dig for at være brugeren, fordi vedkommende aldrig har været logget ind",
     "Cannot impersonate yourself" : "Kan ikke efterligne dig selv",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "Du kan ikke udgive dig for at være en anden bruger, hvis en af de apps, der er angivet i indstillingen for notifikationer om dette (f.eks. 'impersonate.notifications'), ikke er aktiv.",
     "Impersonate" : "Udgiv dig for at være",
