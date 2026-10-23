@@ -27,6 +27,6 @@
   "devDependencies": {
     "@nextcloud/eslint-config": "^9.0.0",
     "@nextcloud/vite-config": "^2.5.4",
-    "vite": "^7.3.6"
+    "vite": "^7.3.7"
   }
 }
