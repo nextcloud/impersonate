@@ -13,6 +13,7 @@ use OCA\Impersonate\Service\ConfigService;
 use OCP\App\IAppManager;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
+use OCP\AppFramework\Http\Attribute\PasswordConfirmationRequired;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Exceptions\AppConfigTypeConflictException;
@@ -49,6 +50,7 @@ class SettingsController extends Controller {
 	 * @NoAdminRequired
 	 * @throws AppConfigTypeConflictException
 	 */
+	#[PasswordConfirmationRequired(strict: true)]
 	public function impersonate(string $userId): JSONResponse {
 		/** @var IUser $impersonator */
 		$impersonator = $this->userSession->getUser();

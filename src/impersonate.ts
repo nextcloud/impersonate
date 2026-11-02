@@ -4,39 +4,35 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import axios from '@nextcloud/axios'
 import { showConfirmation, showWarning } from '@nextcloud/dialogs'
 import { t } from '@nextcloud/l10n'
+import { addPasswordConfirmationInterceptors, PwdConfirmationMode } from '@nextcloud/password-confirmation'
 import { generateUrl } from '@nextcloud/router'
 import logger from './services/logger.ts'
-
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-declare const OC: any
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-declare const OCA: any
 
 interface User {
 	id: string
 }
 
-(function(OC) {
+(function() {
 	/**
 	 *
 	 * @param userId of the targeted user
 	 */
 	function impersonate(userId: string): void {
-		const xhr = new XMLHttpRequest()
-		xhr.onreadystatechange = function(): void {
-			if (xhr.readyState === XMLHttpRequest.DONE) {
-				if (xhr.status === 0 || (xhr.status >= 200 && xhr.status < 300)) {
-					window.location = generateUrl('/')
-				} else {
-					showWarning(t('impersonate', 'Could not impersonate user'))
-				}
-			}
-		}
-		xhr.open('POST', generateUrl('apps/impersonate/user'))
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-		xhr.send('userId=' + encodeURIComponent(userId) + '&requesttoken=' + encodeURIComponent(OC.requestToken))
+		const url = generateUrl('apps/impersonate/user')
+		const params = new URLSearchParams({
+			userId,
+		})
+
+		axios.post(url, params, {
+			confirmPassword: PwdConfirmationMode.Strict,
+		}).then(() => {
+			window.location = generateUrl('/')
+		}).catch(() => {
+			showWarning(t('impersonate', 'Could not impersonate user'))
+		})
 	}
 
 	/**
@@ -55,6 +51,8 @@ interface User {
 	}
 
 	const registerFunction = function(event: Event, delay: number): void {
+		addPasswordConfirmationInterceptors(axios)
+
 		if (OCA.Settings === undefined) {
 			delay = delay * 2
 			if (delay === 0) {
@@ -75,4 +73,4 @@ interface User {
 	document.addEventListener('DOMContentLoaded', function(e: Event): void {
 		registerFunction(e, 0)
 	})
-})(OC)
+})()

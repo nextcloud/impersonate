@@ -5,6 +5,7 @@
  */
 
 import { getCurrentUser } from '@nextcloud/auth'
+import axios from '@nextcloud/axios'
 import { showWarning } from '@nextcloud/dialogs'
 import { t } from '@nextcloud/l10n'
 import { generateUrl } from '@nextcloud/router'
@@ -18,19 +19,12 @@ declare const OC: any
 	 *
 	 */
 	function logoutHandler(): void {
-		const xhr = new XMLHttpRequest()
-		xhr.onreadystatechange = function(): void {
-			if (xhr.readyState === XMLHttpRequest.DONE) {
-				if (xhr.status === 0 || (xhr.status >= 200 && xhr.status < 400)) {
-					window.location = generateUrl('settings/users')
-				} else {
-					showWarning(t('impersonate', 'Could not log out, please try again'))
-				}
-			}
-		}
-		xhr.open('POST', generateUrl('apps/impersonate/logout'))
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-		xhr.send('requesttoken=' + encodeURIComponent(OC.requestToken))
+		const url = generateUrl('apps/impersonate/logout')
+		axios.post(url).then(() => {
+			window.location = generateUrl('settings/users')
+		}).catch(() => {
+			showWarning(t('impersonate', 'Could not log out, please try again'))
+		})
 	}
 	/**
 	 *
