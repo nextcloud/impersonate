@@ -22,7 +22,7 @@
     "@nextcloud/logger": "^3.0.3",
     "@nextcloud/router": "^3.1.0",
     "@nextcloud/vue": "^9.8.2",
-    "vue": "^3.5.39"
+    "vue": "^3.5.43"
   },
   "devDependencies": {
     "@nextcloud/eslint-config": "^9.0.0",
