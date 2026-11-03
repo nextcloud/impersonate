@@ -7,6 +7,7 @@ OC.L10N.register(
     "Cannot impersonate yourself" : "Неможе да се имитирате самите себеси",
     "Impersonate" : "Имитирај",
     "Impersonate other users" : "Имитирај други корисници",
+    "Authorized groups" : "Овластени групи",
     "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Овие групи ќе бидат во можност да ги имитираат оние корисници чии се администратори. Ако ја отстраните оваа група, секој администратор на група ќе може да имитира.",
     "Could not impersonate user" : "Неможам да го имитирам корисникот",
     "Impersonate user" : "Имитирај корисник",
