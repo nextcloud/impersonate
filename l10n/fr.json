@@ -12,6 +12,7 @@
     "Impersonate other users" : "Prendre l'identité d'un autre utilisateur",
     "Authorized groups" : "Groupes autorisés",
     "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Ces groupes pourront prendre l'identité des utilisateurs qu'ils sont autorisés à administrer. Si vous supprimez tous les groupes, tous les administrateurs de groupe seront autorisés à emprunter une identité.",
+    "Protected groups" : "Groupes protégés",
     "Could not impersonate user" : "Impossible de prendre l'identité de l'utilisateur",
     "Impersonate user" : "Prendre l'identité de l'utilisateur",
     "Are you sure you want to impersonate \"{userId}\"?" : "Êtes-vous certain de vouloir prendre l'identité de « {userId} » ?",
