@@ -16,6 +16,7 @@ OC.L10N.register(
     "Authorized groups" : "Autorisierte Gruppen",
     "These groups will be able to impersonate users they are allowed to administrate. If you remove all groups, every group administrator will be allowed to impersonate." : "Diese Gruppen haben administrative Rechte und können daher Benutzer nachahmen. Wenn alle Gruppen entfernt werden, dann erhält jeder Gruppen-Administrator die Berechtigung Benutzer nachzuahmen.",
     "Protected groups" : "Geschützte Gruppen",
+    "Members of these groups cannot be impersonated, not even by members of the authorized groups. If you remove all groups, every user can be impersonated." : "Mitglieder dieser Gruppen können nicht nachgeahmt werden, auch nicht von Mitgliedern der berechtigten Gruppen. Wenn Sie alle Gruppen entfernen, kann jeder Benutzer nachgeahmt werden.",
     "Could not impersonate user" : "Benutzer konnte nicht nachgeahmt werden",
     "Impersonate user" : "Benutzer nachahmen",
     "Are you sure you want to impersonate \"{userId}\"?" : "Möchten Sie \"{userId}\" nachahmen?",
