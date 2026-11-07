@@ -4,7 +4,7 @@ OC.L10N.register(
     "An administrator ({actor}) accessed your account" : "Um administrador ({actor}) acessou sua conta",
     "User not found" : "Usuário não encontrado",
     "Insufficient permissions to impersonate user" : "Permissões insuficientes para personificar o usuário",
-    "This user cannot be impersonated" : "Não é possível impersonar este usuário",
+    "This user cannot be impersonated" : "Não é possível se passar por este usuário",
     "Cannot impersonate the user because it was never logged in" : "Não é possível personificar o usuário porque ele nunca fez login",
     "Cannot impersonate yourself" : "Não é possível personificar a si mesmo",
     "Impersonation cannot proceed if any application specified in the impersonation notifications setting (e.g., 'impersonate.notifications') is not active." : "A impersonificação não poderá ser executada se algum aplicativo especificado na configuração de notificações de impersonificação (p. ex., ‘impersonate.notifications’) não estiver ativo.",
