@@ -49,5 +49,6 @@ readonly class BeforeTemplateRenderedListener implements IEventListener {
 		$protected = $this->config->getValueString(Application::APP_ID, 'protected', '[]');
 		$this->initialState->provideInitialState('protected', json_decode($protected, true));
 		Util::addScript(Application::APP_ID, 'impersonate-accountAction');
+		Util::addStyle(Application::APP_ID, 'impersonate-accountAction');
 	}
 }
